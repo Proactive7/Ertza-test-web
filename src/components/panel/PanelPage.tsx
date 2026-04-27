@@ -40,6 +40,7 @@ function StatCard({ title, value, subtitle }: StatCardProps) {
 
 export default function PanelPage({ onBack }: PanelPageProps) {
   const results = useMemo(() => getStoredResults(), []);
+
   const currentPoints = useMemo(() => {
     if (typeof window === "undefined") return 0;
     const saved = Number(window.localStorage.getItem(USER_POINTS_KEY) || "0");
@@ -50,15 +51,13 @@ export default function PanelPage({ onBack }: PanelPageProps) {
   const approvedTests = getApprovedTestsCount(results);
   const currentStreak = getCurrentStreak(results);
   const bestScore = getBestScore(results);
-  const recentResults = getRecentResults(results, 5);
+  const recentResults = getRecentResults(results, 7);
   const mostPlayedTopic = getMostPlayedTopic(results);
   const currentBadge = getBadgeByPoints(currentPoints);
 
   return (
     <main className="min-h-screen bg-[#d8dde4] px-3 py-4 md:px-4 md:py-5">
       <div className="mx-auto max-w-[1050px] overflow-hidden rounded-[20px] border border-white/60 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
-        
-        {/* HEADER */}
         <div className="flex items-center justify-between border-b border-slate-100 px-4 py-4 md:px-6">
           <button onClick={onBack}>
             <img
@@ -76,20 +75,19 @@ export default function PanelPage({ onBack }: PanelPageProps) {
           </button>
         </div>
 
-        {/* HERO */}
         <section className="bg-[linear-gradient(135deg,#0f3577_0%,#184a99_55%,#5f89d8_100%)] px-4 py-6 text-white md:px-6">
           <h1 className="text-[24px] font-extrabold md:text-[30px]">
             Panel del opositor
           </h1>
         </section>
 
-        {/* STATS */}
         <section className="px-4 py-6 md:px-6">
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            
             <StatCard
               title="Nota media"
-              value={results.length ? `${averageScore.toFixed(1)} / 40` : "-- / 40"}
+              value={
+                results.length ? `${averageScore.toFixed(1)} / 40` : "-- / 40"
+              }
               subtitle=""
             />
 
@@ -99,7 +97,6 @@ export default function PanelPage({ onBack }: PanelPageProps) {
               subtitle=""
             />
 
-            {/* INSIGNIA */}
             <div className="flex min-h-[138px] flex-col items-center justify-center rounded-[18px] border border-[#dbe7ff] bg-[#f8fbff] p-4 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
                 Insignia actual
@@ -127,7 +124,6 @@ export default function PanelPage({ onBack }: PanelPageProps) {
             />
           </div>
 
-          {/* RESTO IGUAL */}
           <div className="mt-5 grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
             <div className="rounded-[18px] border border-slate-200 bg-white p-4 shadow-sm">
               <h2 className="mb-4 text-[18px] font-extrabold text-[#1f3762]">
@@ -139,7 +135,7 @@ export default function PanelPage({ onBack }: PanelPageProps) {
                   Aún no has completado ningún test.
                 </p>
               ) : (
-                <div className="space-y-3">
+                <div className="space-y-1">
                   {recentResults.map((result) => (
                     <PanelTimelineItem
                       key={result.id}
@@ -159,26 +155,34 @@ export default function PanelPage({ onBack }: PanelPageProps) {
                 </h2>
 
                 <div className="space-y-3 text-sm text-slate-700">
-                  <div className="flex justify-between bg-[#f8fbff] px-3 py-2 rounded-xl">
+                  <div className="flex justify-between rounded-xl bg-[#f8fbff] px-3 py-2">
                     <span>Mejor nota</span>
                     <span className="font-bold text-[#123b86]">
-                      {results.length ? `${bestScore.toFixed(1)} / 40` : "-- / 40"}
+                      {results.length
+                        ? `${bestScore.toFixed(1)} / 40`
+                        : "-- / 40"}
                     </span>
                   </div>
 
-                  <div className="flex justify-between bg-[#f8fbff] px-3 py-2 rounded-xl">
+                  <div className="flex justify-between rounded-xl bg-[#f8fbff] px-3 py-2">
                     <span>Tema más practicado</span>
-                    <span className="font-bold text-[#123b86]">{mostPlayedTopic}</span>
+                    <span className="font-bold text-[#123b86]">
+                      {mostPlayedTopic}
+                    </span>
                   </div>
 
-                  <div className="flex justify-between bg-[#f8fbff] px-3 py-2 rounded-xl">
+                  <div className="flex justify-between rounded-xl bg-[#f8fbff] px-3 py-2">
                     <span>Tests realizados</span>
-                    <span className="font-bold text-[#123b86]">{results.length}</span>
+                    <span className="font-bold text-[#123b86]">
+                      {results.length}
+                    </span>
                   </div>
 
-                  <div className="flex justify-between bg-[#f8fbff] px-3 py-2 rounded-xl">
+                  <div className="flex justify-between rounded-xl bg-[#f8fbff] px-3 py-2">
                     <span>Puntos acumulados</span>
-                    <span className="font-bold text-[#123b86]">{currentPoints}</span>
+                    <span className="font-bold text-[#123b86]">
+                      {currentPoints}
+                    </span>
                   </div>
                 </div>
               </div>

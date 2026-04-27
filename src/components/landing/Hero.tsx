@@ -9,6 +9,7 @@ import { formatVisits } from "@/lib/formatVisits";
 type HeroProps = {
   onOpenTopics: () => void;
   onOpenPremium: () => void;
+  isLoggedIn?: boolean;
 };
 
 const chartPoints = [
@@ -17,8 +18,21 @@ const chartPoints = [
   "0,35 18,27 36,24 54,19 72,16 90,13 108,10 126,5",
 ];
 
-export default function Hero({ onOpenTopics, onOpenPremium }: HeroProps) {
+export default function Hero({
+  onOpenTopics,
+  onOpenPremium,
+  isLoggedIn = false,
+}: HeroProps) {
   const visits = useVisitsCounter();
+
+  function handleStartPreparation(): void {
+    if (isLoggedIn) {
+      onOpenTopics();
+      return;
+    }
+
+    window.location.href = "/login";
+  }
 
   return (
     <section className="relative overflow-hidden px-6 pb-10 pt-2 md:px-8 lg:px-10">
@@ -34,8 +48,12 @@ export default function Hero({ onOpenTopics, onOpenPremium }: HeroProps) {
           <div className="absolute -left-10 bottom-0 h-48 w-72 rounded-full bg-white/6 blur-2xl" />
           <div className="absolute right-8 top-10 h-28 w-28 rounded-full border border-white/20" />
           <div className="absolute left-[48%] top-20 h-4 w-4 rounded-full bg-white/20" />
-          <div className="absolute right-[7%] top-[15%] text-2xl text-white/20">♥</div>
-          <div className="absolute right-[10%] bottom-[12%] text-xl text-white/20">♥</div>
+          <div className="absolute right-[7%] top-[15%] text-2xl text-white/20">
+            ♥
+          </div>
+          <div className="absolute right-[10%] bottom-[12%] text-xl text-white/20">
+            ♥
+          </div>
         </div>
 
         <div className="relative grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
@@ -82,7 +100,7 @@ export default function Hero({ onOpenTopics, onOpenPremium }: HeroProps) {
 
             <div className="flex flex-wrap gap-4">
               <button
-                onClick={onOpenTopics}
+                onClick={handleStartPreparation}
                 className="rounded-xl bg-[#ef4444] px-7 py-4 font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#dc2626]"
               >
                 Empieza tu preparación
@@ -100,10 +118,7 @@ export default function Hero({ onOpenTopics, onOpenPremium }: HeroProps) {
               <MetricCard number="Temario" label="Contenido actualizado" />
               <MetricCard number="9,99 €" label="Premium mensual" />
               <MetricCard number="40" label="Preguntas por test" />
-              <MetricCard
-                number="+1 / -0,3"
-                label="Sistema de puntuación"
-              />
+              <MetricCard number="+1 / -0,3" label="Sistema de puntuación" />
             </div>
 
             <div className="mt-8 flex flex-col gap-3 text-lg font-semibold text-blue-100">

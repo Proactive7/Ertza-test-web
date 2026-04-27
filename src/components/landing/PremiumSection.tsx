@@ -1,10 +1,30 @@
+"use client";
+
 import Benefit from "@/components/ui/Benefit";
 import PremiumCard from "@/components/ui/PremiumCard";
 
-export default function PremiumSection() {
+type Props = {
+  isLoggedIn?: boolean;
+  hasActiveSubscription?: boolean;
+};
+
+export default function PremiumSection({
+  isLoggedIn = false,
+  hasActiveSubscription = false,
+}: Props) {
+  function handleClick() {
+    if (!isLoggedIn) {
+      window.location.href = "/login";
+      return;
+    }
+
+    alert("Ir a pasarela de pago (Stripe próximamente)");
+  }
+
   return (
     <section className="border-t border-slate-100 bg-[linear-gradient(180deg,#f8fbff_0%,#f1f5fb_100%)] px-6 py-12 md:px-8 lg:px-10">
       <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        {/* IZQUIERDA */}
         <div className="rounded-[28px] border border-[#dbe7ff] bg-white p-6 shadow-[0_18px_50px_rgba(37,99,235,0.08)]">
           <div className="mb-5 inline-flex rounded-full bg-[#e8f1ff] px-3 py-1 text-sm font-bold text-[#2156b4]">
             Servicio premium
@@ -32,6 +52,7 @@ export default function PremiumSection() {
           </div>
         </div>
 
+        {/* DERECHA */}
         <div>
           <p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-[#2156b4]">
             Preparación completa
@@ -58,17 +79,20 @@ export default function PremiumSection() {
             <Benefit text="Media de resultados" />
           </div>
 
+          {/* BOTÓN INTELIGENTE */}
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              onClick={() =>
-                alert(
-                  "La suscripción premium se conectará al sistema de usuarios y pagos en el siguiente paso."
-                )
-              }
-              className="rounded-xl bg-[#ef4444] px-7 py-4 text-base font-bold text-white shadow-[0_16px_30px_rgba(239,68,68,0.28)] transition hover:bg-[#dc2626]"
-            >
-              Hazte premium
-            </button>
+            {isLoggedIn && hasActiveSubscription ? (
+              <div className="rounded-xl border border-green-200 bg-green-50 px-7 py-4 text-base font-bold text-green-700">
+                Suscripción activa ✅
+              </div>
+            ) : (
+              <button
+                onClick={handleClick}
+                className="rounded-xl bg-[#ef4444] px-7 py-4 text-base font-bold text-white shadow-[0_16px_30px_rgba(239,68,68,0.28)] transition hover:bg-[#dc2626]"
+              >
+                Hazte premium
+              </button>
+            )}
 
             <div className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-600 shadow-sm">
               Suscripción mensual:{" "}

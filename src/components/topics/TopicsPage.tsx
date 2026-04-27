@@ -4,13 +4,26 @@ import { TopicKey } from "@/types/quiz";
 type TopicsPageProps = {
   onBack: () => void;
   onStart: (topicKey: TopicKey) => void;
+  hasActiveSubscription?: boolean;
 };
 
-export default function TopicsPage({ onBack, onStart }: TopicsPageProps) {
+export default function TopicsPage({
+  onBack,
+  onStart,
+  hasActiveSubscription = false,
+}: TopicsPageProps) {
+  function handleSimulacroClick(): void {
+    if (!hasActiveSubscription) {
+      alert("🔒 El simulacro es exclusivo para usuarios Premium.");
+      return;
+    }
+
+    onStart("simulacro");
+  }
+
   return (
     <main className="min-h-screen bg-[#d8dde4] px-3 py-4 md:px-4 md:py-5">
       <div className="mx-auto max-w-[1050px] overflow-hidden rounded-[20px] border border-white/60 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
-
         {/* HEADER */}
         <div className="flex items-center justify-between border-b border-slate-100 px-4 py-4 md:px-6">
           <button onClick={onBack} aria-label="Volver al inicio">
@@ -36,14 +49,14 @@ export default function TopicsPage({ onBack, onStart }: TopicsPageProps) {
           </h1>
 
           <p className="max-w-[620px] text-[14px] leading-[1.6] text-blue-100 md:text-[15px]">
-            Practica por temas o lanza un simulacro completo con preguntas mezcladas.
+            Practica por temas o lanza un simulacro completo con preguntas
+            mezcladas.
           </p>
         </section>
 
         {/* GRID */}
         <section className="px-4 py-6 md:px-6">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-
             {/* TEMAS */}
             {TOPICS.map((topic) => (
               <button
@@ -69,17 +82,21 @@ export default function TopicsPage({ onBack, onStart }: TopicsPageProps) {
               </button>
             ))}
 
-            {/* SIMULACRO (manteniendo estilo premium rojo) */}
+            {/* SIMULACRO PREMIUM */}
             <button
-              onClick={() => onStart("simulacro")}
-              className="rounded-[16px] border border-[#f5b4b4] bg-[#ef4444] p-4 text-left text-white shadow-[0_12px_24px_rgba(239,68,68,0.18)] transition hover:-translate-y-0.5 hover:bg-[#dc2626]"
+              onClick={handleSimulacroClick}
+              className={`rounded-[16px] border p-4 text-left shadow-[0_12px_24px_rgba(239,68,68,0.18)] transition hover:-translate-y-0.5 ${
+                hasActiveSubscription
+                  ? "border-[#f5b4b4] bg-[#ef4444] text-white hover:bg-[#dc2626]"
+                  : "border-[#f5b4b4] bg-[#ef4444]/90 text-white opacity-90 hover:bg-[#dc2626]"
+              }`}
             >
               <div className="mb-2 inline-flex rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-bold">
-                Premium
+                Premium {!hasActiveSubscription ? "🔒" : ""}
               </div>
 
               <h3 className="mb-2 text-[18px] font-extrabold">
-                Simulacro
+                Simulacro {!hasActiveSubscription ? "🔒" : ""}
               </h3>
 
               <p className="mb-3 text-[13px] leading-[1.5] text-red-100">
@@ -87,10 +104,9 @@ export default function TopicsPage({ onBack, onStart }: TopicsPageProps) {
               </p>
 
               <span className="text-[13px] font-bold">
-                Empezar →
+                {hasActiveSubscription ? "Empezar →" : "Bloqueado Premium →"}
               </span>
             </button>
-
           </div>
         </section>
       </div>

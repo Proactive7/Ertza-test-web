@@ -10,6 +10,8 @@ import PrivacyContent from "@/components/legal/PrivacyContent";
 import TermsContent from "@/components/legal/TermsContent";
 import Quiz from "@/components/quiz/Quiz";
 import TopicsPage from "@/components/topics/TopicsPage";
+import { useUser } from "@/hooks/useUser";
+import { supabase } from "@/lib/supabaseClient";
 import {
   BADGE_LEVELS,
   USER_POINTS_KEY,
@@ -19,9 +21,15 @@ import {
 import { TopicKey, ViewMode } from "@/types/quiz";
 
 export default function Home() {
+  const user = useUser();
+
   const [view, setView] = useState<ViewMode>("home");
   const [tema, setTema] = useState<TopicKey | null>(null);
+
+  // De momento false para probar bloqueos premium.
+  // Más adelante esto vendrá de Supabase/Stripe.
   const [hasActiveSubscription] = useState<boolean>(true);
+
   const [badgePoints, setBadgePoints] = useState<number>(0);
 
   useEffect(() => {
@@ -50,62 +58,130 @@ export default function Home() {
     setBadgePoints(Number.isNaN(saved) ? 0 : saved);
   }, [view]);
 
+  async function logout(): Promise<void> {
+    await supabase.auth.signOut();
+    window.location.href = "/";
+  }
+
+  function requireLogin(): boolean {
+    if (!user) {
+      window.location.href = "/login";
+      return false;
+    }
+
+    return true;
+  }
+
+  function showPremiumRequired(message: string): void {
+    alert(`🔒 ${message}`);
+  }
+
+  function scrollTop(): void {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
   function goHome(): void {
     setView("home");
     setTema(null);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openTopics(): void {
+    if (!requireLogin()) return;
+
     setView("topics");
     setTema(null);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openQuiz(topicKey: TopicKey): void {
+    if (!requireLogin()) return;
+
+    if (topicKey === "simulacro" && !hasActiveSubscription) {
+      showPremiumRequired(
+        "Los simulacros están bloqueados. Necesitas Premium para hacer simulacros."
+      );
+      return;
+    }
+
     setTema(topicKey);
     setView("quiz");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openPanel(): void {
+    if (!requireLogin()) return;
+
+    if (!hasActiveSubscription) {
+      showPremiumRequired(
+        "El panel está bloqueado. Necesitas Premium para acceder."
+      );
+      return;
+    }
+
     setView("panel");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openBadges(): void {
+    if (!requireLogin()) return;
+
+    if (!hasActiveSubscription) {
+      showPremiumRequired(
+        "Las insignias están bloqueadas. Necesitas Premium para ver tu progresión."
+      );
+      return;
+    }
+
     if (typeof window !== "undefined") {
       const saved = Number(window.localStorage.getItem(USER_POINTS_KEY) || "0");
       setBadgePoints(Number.isNaN(saved) ? 0 : saved);
     }
 
     setView("insignias");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openMockExam(): void {
+    if (!requireLogin()) return;
+
+    if (!hasActiveSubscription) {
+      showPremiumRequired(
+        "Los simulacros están bloqueados. Necesitas Premium para hacer simulacros."
+      );
+      return;
+    }
+
     setTema("simulacro");
     setView("quiz");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openLegalTerms(): void {
     setView("legal_terms");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openLegalPrivacy(): void {
     setView("legal_privacy");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   function openLegalCookies(): void {
     setView("legal_cookies");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTop();
   }
 
   if (view === "topics") {
-    return <TopicsPage onBack={goHome} onStart={openQuiz} />;
+    return (
+      <TopicsPage
+        onBack={goHome}
+        onStart={openQuiz}
+        hasActiveSubscription={hasActiveSubscription}
+      />
+    );
   }
 
   if (view === "quiz" && tema) {
@@ -122,7 +198,6 @@ export default function Home() {
     const currentBadge = getBadgeByPoints(currentPoints);
     const nextBadge = progressData.next;
     const progressPercent = Math.round(progressData.progress);
-
     const currentBadgeLabel = currentBadge.name;
 
     return (
@@ -159,22 +234,26 @@ export default function Home() {
             </h1>
 
             <p className="mt-2 max-w-[620px] text-[14px] leading-[1.6] text-blue-100 md:text-[15px]">
-              Acumula puntos aprobando tests y sube de rango con nuevas insignias.
-              Cuanto mejor rindas, más rápido progresas.
+              Acumula puntos aprobando tests y sube de rango con nuevas
+              insignias. Cuanto mejor rindas, más rápido progresas.
             </p>
           </section>
 
           <section className="px-4 py-6 md:px-6">
             <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               <div className="rounded-[16px] border border-slate-200 bg-white p-4 shadow-sm">
-                <p className="text-xs font-bold text-slate-500">Puntos actuales</p>
+                <p className="text-xs font-bold text-slate-500">
+                  Puntos actuales
+                </p>
                 <p className="mt-1 text-[24px] font-extrabold text-[#123b86]">
                   {currentPoints}
                 </p>
               </div>
 
               <div className="rounded-[16px] border border-slate-200 bg-white p-4 shadow-sm">
-                <p className="text-xs font-bold text-slate-500">Insignia actual</p>
+                <p className="text-xs font-bold text-slate-500">
+                  Insignia actual
+                </p>
                 <div className="mt-1 flex items-center gap-2 text-[20px] font-extrabold text-[#123b86]">
                   <img
                     src={currentBadge.icon}
@@ -186,7 +265,9 @@ export default function Home() {
               </div>
 
               <div className="rounded-[16px] border border-slate-200 bg-white p-4 shadow-sm">
-                <p className="text-xs font-bold text-slate-500">Siguiente rango</p>
+                <p className="text-xs font-bold text-slate-500">
+                  Siguiente rango
+                </p>
                 <div className="mt-1 flex items-center gap-2 text-[20px] font-extrabold text-[#123b86]">
                   {nextBadge ? (
                     <>
@@ -204,7 +285,9 @@ export default function Home() {
               </div>
 
               <div className="rounded-[16px] border border-slate-200 bg-[#f8fbff] p-4 shadow-sm">
-                <p className="text-xs font-bold text-slate-500">Progreso actual</p>
+                <p className="text-xs font-bold text-slate-500">
+                  Progreso actual
+                </p>
                 <p className="mt-1 text-[20px] font-extrabold text-[#123b86]">
                   {nextBadge
                     ? `${currentPoints} / ${nextBadge.min}`
@@ -238,18 +321,26 @@ export default function Home() {
             </div>
 
             <div className="mt-5 rounded-[18px] border border-[#dbe7ff] bg-[linear-gradient(135deg,#0f3577_0%,#184a99_55%,#5f89d8_100%)] p-4 text-white shadow-[0_18px_40px_rgba(15,53,119,0.18)]">
-              <h2 className="mb-3 text-[18px] font-extrabold">Cómo funciona</h2>
+              <h2 className="mb-3 text-[18px] font-extrabold">
+                Cómo funciona
+              </h2>
 
               <div className="grid gap-3 md:grid-cols-3">
                 <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
-                  <p className="text-xs font-bold text-blue-100">Test aprobado</p>
+                  <p className="text-xs font-bold text-blue-100">
+                    Test aprobado
+                  </p>
                   <p className="mt-1 text-[22px] font-extrabold">+1 punto</p>
                 </div>
 
                 <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
-                  <p className="text-xs font-bold text-blue-100">Test excelente</p>
+                  <p className="text-xs font-bold text-blue-100">
+                    Test excelente
+                  </p>
                   <p className="mt-1 text-[22px] font-extrabold">+2 puntos</p>
-                  <p className="mt-1 text-xs text-blue-100">Nota entre 30 y 40</p>
+                  <p className="mt-1 text-xs text-blue-100">
+                    Nota entre 30 y 40
+                  </p>
                 </div>
 
                 <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
@@ -280,7 +371,9 @@ export default function Home() {
                     >
                       <div
                         className={`mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full ${
-                          isUnlocked ? "bg-[#eef5ff]" : "bg-slate-100 opacity-70"
+                          isUnlocked
+                            ? "bg-[#eef5ff]"
+                            : "bg-slate-100 opacity-70"
                         }`}
                       >
                         <img
@@ -349,6 +442,8 @@ export default function Home() {
       onOpenLegalPrivacy={openLegalPrivacy}
       onOpenLegalCookies={openLegalCookies}
       hasActiveSubscription={hasActiveSubscription}
+      user={user}
+      onLogout={logout}
     />
   );
 }
