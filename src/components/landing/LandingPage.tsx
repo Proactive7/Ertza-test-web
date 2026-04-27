@@ -16,6 +16,7 @@ type LandingPageProps = {
   onOpenPanel: () => void;
   onOpenBadges: () => void;
   onOpenMockExam: () => void;
+  onOpenRanking: () => void;
   onOpenLegalTerms: () => void;
   onOpenLegalPrivacy: () => void;
   onOpenLegalCookies: () => void;
@@ -30,6 +31,7 @@ export default function LandingPage({
   onOpenPanel,
   onOpenBadges,
   onOpenMockExam,
+  onOpenRanking,
   onOpenLegalTerms,
   onOpenLegalPrivacy,
   onOpenLegalCookies,
@@ -62,6 +64,7 @@ export default function LandingPage({
           onOpenPanel={onOpenPanel}
           onOpenBadges={onOpenBadges}
           onOpenMockExam={onOpenMockExam}
+          onOpenRanking={onOpenRanking}
           onOpenPremium={scrollToPremium}
           username={username}
           isLoggedIn={isLoggedIn}

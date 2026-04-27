@@ -8,6 +8,7 @@ type HeaderProps = {
   onOpenPanel: () => void;
   onOpenBadges: () => void;
   onOpenMockExam: () => void;
+  onOpenRanking: () => void;
 
   username?: string | null;
   isLoggedIn?: boolean;
@@ -21,6 +22,7 @@ export default function Header({
   onOpenPanel,
   onOpenBadges,
   onOpenMockExam,
+  onOpenRanking,
   username,
   isLoggedIn = false,
   hasActiveSubscription = false,
@@ -34,7 +36,6 @@ export default function Header({
       return;
     }
 
-    // Aquí irá Stripe luego
     alert("Ir a pasarela de pago (Stripe próximamente)");
   }
 
@@ -64,11 +65,15 @@ export default function Header({
         <button onClick={onOpenBadges}>
           Insignias {showLocks ? "🔒" : ""}
         </button>
+
+        <button onClick={onOpenRanking}>
+          Ranking {showLocks ? "🔒" : ""}
+        </button>
       </nav>
 
       {/* DERECHA */}
       <div className="flex items-center gap-3">
-        {/* 🔴 PREMIUM (lógica correcta) */}
+        {/* PREMIUM */}
         {isLoggedIn && hasActiveSubscription ? (
           <span className="rounded-xl border border-green-200 bg-green-50 px-4 py-2 text-sm font-bold text-green-700">
             Premium activo ✅
