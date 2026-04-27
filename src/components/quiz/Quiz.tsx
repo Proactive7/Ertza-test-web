@@ -11,6 +11,8 @@ import {
   type BadgeName,
 } from "@/lib/badges";
 import { saveTestResult } from "@/lib/stats";
+import { supabase } from "@/lib/supabaseClient";
+import { useUser } from "@/hooks/useUser";
 import InfoBox from "./InfoBox";
 import ResultRow from "./ResultRow";
 import { OptionKey, Question, TopicKey } from "@/types/quiz";
@@ -83,6 +85,8 @@ const BADGE_CONFIG: Record<DisplayBadgeKey, BadgeConfig> = {
 };
 
 export default function Quiz({ tema, onExit, onHome }: QuizProps) {
+  const user = useUser();
+
   const [questions, setQuestions] = useState<Question[]>([]);
   const [index, setIndex] = useState<number>(0);
   const [scoreReal, setScoreReal] = useState<number>(0);
@@ -185,7 +189,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
 
     setUserPoints(nextPoints);
 
-    saveTestResult({
+    const resultPayload = {
       id: `${Date.now()}-${tema}-${Math.random().toString(36).slice(2, 8)}`,
       topicKey: tema,
       topicName,
@@ -199,7 +203,31 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
       pointsEarned: earnedPoints,
       timeRemainingSeconds: time,
       timeSpentSeconds: 40 * 60 - time,
-    });
+    };
+
+    saveTestResult(resultPayload);
+
+    async function saveResultToSupabase() {
+      if (!user) return;
+
+      const { error } = await supabase.from("test_results").insert({
+        user_id: user.id,
+        topic_key: tema,
+        topic_name: topicName,
+        score: finalScore,
+        correct_answers: correctas,
+        wrong_answers: falladas,
+        blank_answers: enBlanco,
+        passed: finalScore >= 20,
+        points_earned: earnedPoints,
+      });
+
+      if (error) {
+        console.error("Error guardando resultado en Supabase:", error.message);
+      }
+    }
+
+    saveResultToSupabase();
 
     if (nextBadge && nextBadge.name !== previousBadge.name) {
       setLastUnlockedBadge(nextBadge.name);
@@ -224,6 +252,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     enBlanco,
     questions.length,
     time,
+    user,
   ]);
 
   if (!questions.length) {
@@ -265,7 +294,9 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
 
             {falladasDetalle.length === 0 ? (
               <div className="rounded-[18px] border border-green-200 bg-green-50 p-5 text-green-900">
-                <p className="text-lg font-bold">No has fallado ninguna pregunta.</p>
+                <p className="text-lg font-bold">
+                  No has fallado ninguna pregunta.
+                </p>
                 <p className="mt-1 text-sm">
                   No hay correcciones que mostrar en este intento.
                 </p>
@@ -294,13 +325,17 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
                           "rounded-[14px] border px-4 py-3 text-left text-[15px] leading-snug transition ";
 
                         if (isSelected && isCorrect) {
-                          className += "border-green-500 bg-green-100 text-green-900";
+                          className +=
+                            "border-green-500 bg-green-100 text-green-900";
                         } else if (isSelected) {
-                          className += "border-red-500 bg-red-100 text-red-900";
+                          className +=
+                            "border-red-500 bg-red-100 text-red-900";
                         } else if (isCorrect) {
-                          className += "border-green-500 bg-green-50 text-green-900";
+                          className +=
+                            "border-green-500 bg-green-50 text-green-900";
                         } else {
-                          className += "border-[#dbe3ef] bg-white text-slate-700";
+                          className +=
+                            "border-[#dbe3ef] bg-white text-slate-700";
                         }
 
                         return (
@@ -402,7 +437,9 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
                 <span className="font-semibold text-[#17305c]">
                   Puntos conseguidos en este test:
                 </span>{" "}
-                <span className="font-bold text-[#1d4ed8]">+{earnedPoints}</span>
+                <span className="font-bold text-[#1d4ed8]">
+                  +{earnedPoints}
+                </span>
               </div>
             </div>
 
@@ -430,8 +467,8 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
             </div>
 
             <p className="mt-3 text-xs font-medium leading-snug text-[#dc2626] md:text-sm">
-              La corrección muestra tus preguntas falladas, la opción elegida y la
-              respuesta correcta.
+              La corrección muestra tus preguntas falladas, la opción elegida y
+              la respuesta correcta.
             </p>
           </div>
         </div>

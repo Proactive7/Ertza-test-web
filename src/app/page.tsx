@@ -14,7 +14,6 @@ import { useUser } from "@/hooks/useUser";
 import { supabase } from "@/lib/supabaseClient";
 import {
   BADGE_LEVELS,
-  USER_POINTS_KEY,
   getBadgeByPoints,
   getProgressToNextBadge,
 } from "@/lib/badges";
@@ -25,41 +24,59 @@ export default function Home() {
 
   const [view, setView] = useState<ViewMode>("home");
   const [tema, setTema] = useState<TopicKey | null>(null);
-
-  // De momento false para probar bloqueos premium.
-  // Más adelante esto vendrá de Supabase/Stripe.
-  const [hasActiveSubscription] = useState<boolean>(true);
-
+  const [hasActiveSubscription, setHasActiveSubscription] = useState(false);
   const [badgePoints, setBadgePoints] = useState<number>(0);
 
+  async function fetchBadgePoints(userId: string): Promise<void> {
+    const { data, error } = await supabase
+      .from("test_results")
+      .select("points_earned")
+      .eq("user_id", userId);
+
+    if (error) {
+      console.error("Error cargando puntos:", error.message);
+      setBadgePoints(0);
+      return;
+    }
+
+    const totalPoints = (data || []).reduce(
+      (sum, result) => sum + Number(result.points_earned || 0),
+      0
+    );
+
+    setBadgePoints(totalPoints);
+  }
+
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    async function fetchProfile() {
+      if (!user) {
+        setHasActiveSubscription(false);
+        setBadgePoints(0);
+        return;
+      }
 
-    const refreshPoints = () => {
-      const saved = Number(window.localStorage.getItem(USER_POINTS_KEY) || "0");
-      setBadgePoints(Number.isNaN(saved) ? 0 : saved);
-    };
+      const { data, error } = await supabase
+        .from("profiles")
+        .select("premium")
+        .eq("id", user.id)
+        .single();
 
-    refreshPoints();
+      if (error) {
+        setHasActiveSubscription(false);
+      } else {
+        setHasActiveSubscription(Boolean(data?.premium));
+      }
 
-    window.addEventListener("focus", refreshPoints);
-    window.addEventListener("storage", refreshPoints);
+      await fetchBadgePoints(user.id);
+    }
 
-    return () => {
-      window.removeEventListener("focus", refreshPoints);
-      window.removeEventListener("storage", refreshPoints);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const saved = Number(window.localStorage.getItem(USER_POINTS_KEY) || "0");
-    setBadgePoints(Number.isNaN(saved) ? 0 : saved);
-  }, [view]);
+    fetchProfile();
+  }, [user]);
 
   async function logout(): Promise<void> {
     await supabase.auth.signOut();
+    setHasActiveSubscription(false);
+    setBadgePoints(0);
     window.location.href = "/";
   }
 
@@ -125,7 +142,7 @@ export default function Home() {
     scrollTop();
   }
 
-  function openBadges(): void {
+  async function openBadges(): Promise<void> {
     if (!requireLogin()) return;
 
     if (!hasActiveSubscription) {
@@ -135,9 +152,8 @@ export default function Home() {
       return;
     }
 
-    if (typeof window !== "undefined") {
-      const saved = Number(window.localStorage.getItem(USER_POINTS_KEY) || "0");
-      setBadgePoints(Number.isNaN(saved) ? 0 : saved);
+    if (user) {
+      await fetchBadgePoints(user.id);
     }
 
     setView("insignias");
