@@ -65,7 +65,7 @@ function StatCard({ title, value, subtitle }: StatCardProps) {
 }
 
 export default function PanelPage({ onBack }: PanelPageProps) {
-  const user = useUser();
+  const { user, loading: userLoading } = useUser();
 
   const [results, setResults] = useState<DbTestResult[]>([]);
   const [ranking, setRanking] = useState<RankingRow[]>([]);
@@ -73,7 +73,9 @@ export default function PanelPage({ onBack }: PanelPageProps) {
 
   useEffect(() => {
     async function fetchResults() {
-      if (!user) {
+      if (userLoading) return;
+
+      if (!user?.id) {
         setResults([]);
         setRanking([]);
         setLoading(false);
@@ -112,7 +114,7 @@ export default function PanelPage({ onBack }: PanelPageProps) {
     }
 
     fetchResults();
-  }, [user]);
+  }, [user, userLoading]);
 
   const averageScore = useMemo(() => {
     if (!results.length) return 0;
@@ -193,11 +195,11 @@ export default function PanelPage({ onBack }: PanelPageProps) {
   }, [results]);
 
   const userRankingPosition = useMemo(() => {
-    if (!user) return null;
+    if (!user?.id) return null;
 
     const index = ranking.findIndex((row) => row.user_id === user.id);
     return index >= 0 ? index + 1 : null;
-  }, [ranking, user]);
+  }, [ranking, user?.id]);
 
   const topOpositoresValue =
     simulacrosRealizados < 20
@@ -219,7 +221,7 @@ export default function PanelPage({ onBack }: PanelPageProps) {
             <img
               src="/ErtzaTest.png"
               alt="ErtzaTest"
-              className="h-[44px] md:h-[52px]"
+              className="h-[44px] w-auto object-contain md:h-[52px]"
             />
           </button>
 
@@ -244,7 +246,7 @@ export default function PanelPage({ onBack }: PanelPageProps) {
               value={
                 results.length ? `${formatScore(averageScore)} / 40` : "-- / 40"
               }
-              subtitle={loading ? "Cargando..." : ""}
+              subtitle={loading ? "Cargando..." : "Media general"}
             />
 
             <div className="flex min-h-[138px] flex-col items-center justify-center rounded-[18px] border border-[#dbe7ff] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] p-4 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -266,15 +268,23 @@ export default function PanelPage({ onBack }: PanelPageProps) {
                 Insignia actual
               </p>
 
-              <img
-                src={currentBadge.icon}
-                alt={currentBadge.name}
-                className="mt-2 h-12 w-12 object-contain"
-              />
+              {currentBadge ? (
+                <>
+                  <img
+                    src={currentBadge.icon}
+                    alt={currentBadge.name}
+                    className="mt-2 h-12 w-12 object-contain"
+                  />
 
-              <p className="mt-2 text-[20px] font-extrabold text-[#123b86]">
-                {currentBadge.name}
-              </p>
+                  <p className="mt-2 text-[20px] font-extrabold text-[#123b86]">
+                    {currentBadge.name}
+                  </p>
+                </>
+              ) : (
+                <p className="mt-2 text-[20px] font-extrabold text-[#123b86]">
+                  Sin insignia
+                </p>
+              )}
 
               <p className="mt-2 text-sm text-slate-500">
                 {currentPoints} puntos

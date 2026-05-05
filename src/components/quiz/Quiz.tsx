@@ -85,7 +85,7 @@ const BADGE_CONFIG: Record<DisplayBadgeKey, BadgeConfig> = {
 };
 
 export default function Quiz({ tema, onExit, onHome }: QuizProps) {
-  const user = useUser();
+  const { user } = useUser();
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [index, setIndex] = useState<number>(0);
@@ -160,6 +160,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
           setFinished(true);
           return 0;
         }
+
         return t - 1;
       });
     }, 1000);
@@ -208,7 +209,10 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     saveTestResult(resultPayload);
 
     async function saveResultToSupabase() {
-      if (!user) return;
+      if (!user?.id) {
+        console.error("Usuario no disponible. No se guarda el resultado.");
+        return;
+      }
 
       const { error } = await supabase.from("test_results").insert({
         user_id: user.id,
@@ -252,7 +256,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     enBlanco,
     questions.length,
     time,
-    user,
+    user?.id,
   ]);
 
   if (!questions.length) {

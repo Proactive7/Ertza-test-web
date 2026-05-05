@@ -9,6 +9,8 @@ type HeaderProps = {
   onOpenBadges: () => void;
   onOpenMockExam: () => void;
   onOpenRanking: () => void;
+  onOpenPremium?: () => void;
+  onOpenProfile?: () => void;
 
   username?: string | null;
   isLoggedIn?: boolean;
@@ -23,6 +25,8 @@ export default function Header({
   onOpenBadges,
   onOpenMockExam,
   onOpenRanking,
+  onOpenPremium,
+  onOpenProfile,
   username,
   isLoggedIn = false,
   hasActiveSubscription = false,
@@ -36,7 +40,20 @@ export default function Header({
       return;
     }
 
-    alert("Ir a pasarela de pago (Stripe próximamente)");
+    // 🔥 POR AHORA → bajar a sección premium
+    if (onOpenPremium) {
+      onOpenPremium();
+      return;
+    }
+
+    // 🔮 FUTURO → aquí irá Stripe
+    // window.location.href = "/checkout";
+  }
+
+  function handleProfileClick(): void {
+    if (onOpenProfile) {
+      onOpenProfile();
+    }
   }
 
   return (
@@ -90,12 +107,16 @@ export default function Header({
         {/* LOGIN / USER */}
         {isLoggedIn ? (
           <>
-            <div className="hidden flex-col text-right sm:flex">
+            <button
+              onClick={handleProfileClick}
+              className="hidden flex-col rounded-xl px-2 py-1 text-right transition hover:bg-[#f8fbff] sm:flex"
+              title="Abrir perfil"
+            >
               <span className="text-xs text-slate-500">Conectado como</span>
-              <span className="text-sm font-bold text-[#123b86]">
-                {username}
+              <span className="text-sm font-bold text-[#123b86] underline-offset-4 hover:underline">
+                {username || "Usuario"}
               </span>
-            </div>
+            </button>
 
             <button
               onClick={onLogout}
