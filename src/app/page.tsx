@@ -12,6 +12,7 @@ import PrivacyContent from "@/components/legal/PrivacyContent";
 import TermsContent from "@/components/legal/TermsContent";
 import Quiz from "@/components/quiz/Quiz";
 import TopicsPage from "@/components/topics/TopicsPage";
+import IdleSessionGuard from "@/components/idlesessionguard/IdleSessionGuard";
 import { useUser } from "@/hooks/useUser";
 import { supabase } from "@/lib/supabaseClient";
 import {
@@ -89,6 +90,21 @@ function InteractiveEffects({ children }: { children: React.ReactNode }) {
 
       {children}
     </>
+  );
+}
+
+function AppShell({
+  children,
+  isLoggedIn,
+}: {
+  children: React.ReactNode;
+  isLoggedIn: boolean;
+}) {
+  return (
+    <InteractiveEffects>
+      {isLoggedIn ? <IdleSessionGuard /> : null}
+      {children}
+    </InteractiveEffects>
   );
 }
 
@@ -315,9 +331,11 @@ export default function Home() {
     scrollTop();
   }
 
+  const isLoggedIn = Boolean(user?.id);
+
   if (loading) {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={false}>
         <main className="flex min-h-screen items-center justify-center bg-[#d8dde4] px-4">
           <div className="rounded-2xl border border-white/60 bg-white px-6 py-5 text-center shadow-lg">
             <img
@@ -330,54 +348,54 @@ export default function Home() {
             </p>
           </div>
         </main>
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "topics") {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <TopicsPage
           onBack={goHome}
           onStart={openQuiz}
           hasActiveSubscription={hasActiveSubscription}
         />
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "quiz" && tema) {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <Quiz tema={tema} onExit={openTopics} onHome={goHome} />
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "panel") {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <PanelPage onBack={goHome} />
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "profile") {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <ProfilePage
           user={user}
           hasActiveSubscription={hasActiveSubscription}
           onBack={goHome}
           onLogout={logout}
         />
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "ranking") {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <main className="min-h-screen bg-[#d8dde4] px-3 py-4 md:px-4 md:py-5">
           <div className="mx-auto max-w-[1050px] overflow-hidden rounded-[20px] border border-white/60 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
             <div className="flex items-center justify-between border-b border-slate-100 px-4 py-4 md:px-6">
@@ -533,7 +551,7 @@ export default function Home() {
             </section>
           </div>
         </main>
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
@@ -546,7 +564,7 @@ export default function Home() {
     const currentBadgeLabel = currentBadge.name;
 
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <main className="min-h-screen bg-[#d8dde4] px-3 py-4 md:px-4 md:py-5">
           <div className="mx-auto max-w-[1050px] overflow-hidden rounded-[20px] border border-white/60 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
             <div className="flex items-center justify-between border-b border-slate-100 px-4 py-4 md:px-6">
@@ -756,48 +774,48 @@ export default function Home() {
             </section>
           </div>
         </main>
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "legal_terms") {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <LegalPage
           title="Términos legales"
           onBack={goHome}
           content={<TermsContent />}
         />
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "legal_privacy") {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <LegalPage
           title="Política de privacidad"
           onBack={goHome}
           content={<PrivacyContent />}
         />
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   if (view === "legal_cookies") {
     return (
-      <InteractiveEffects>
+      <AppShell isLoggedIn={isLoggedIn}>
         <LegalPage
           title="Política de cookies"
           onBack={goHome}
           content={<CookiesContent />}
         />
-      </InteractiveEffects>
+      </AppShell>
     );
   }
 
   return (
-    <InteractiveEffects>
+    <AppShell isLoggedIn={isLoggedIn}>
       <LandingPage
         onOpenTopics={openTopics}
         onGoHome={goHome}
@@ -813,6 +831,6 @@ export default function Home() {
         user={user}
         onLogout={logout}
       />
-    </InteractiveEffects>
+    </AppShell>
   );
 }

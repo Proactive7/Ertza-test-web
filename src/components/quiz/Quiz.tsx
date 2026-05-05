@@ -5,7 +5,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { QUESTIONS_DB } from "@/data/questions";
 import { TOPICS } from "@/data/topics";
 import {
-  USER_POINTS_KEY,
   getAwardedPoints,
   getBadgeByPoints,
   type BadgeName,
@@ -121,14 +120,35 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
   const currentBadgeKey: DisplayBadgeKey = currentBadgeLevel.name;
   const currentBadgeConfig = BADGE_CONFIG[currentBadgeKey];
 
-  useEffect(() => {
-    const savedPoints =
-      typeof window !== "undefined"
-        ? Number(window.localStorage.getItem(USER_POINTS_KEY) || "0")
-        : 0;
+  async function fetchUserPoints(): Promise<number> {
+    if (!user?.id) {
+      setUserPoints(0);
+      return 0;
+    }
 
-    setUserPoints(Number.isNaN(savedPoints) ? 0 : savedPoints);
-  }, []);
+    const { data, error } = await supabase
+      .from("test_results")
+      .select("points_earned")
+      .eq("user_id", user.id);
+
+    if (error) {
+      console.error("Error cargando puntos de Supabase:", error.message);
+      setUserPoints(0);
+      return 0;
+    }
+
+    const totalPoints = (data || []).reduce(
+      (sum, result) => sum + Number(result.points_earned || 0),
+      0
+    );
+
+    setUserPoints(totalPoints);
+    return totalPoints;
+  }
+
+  useEffect(() => {
+    fetchUserPoints();
+  }, [user?.id]);
 
   useEffect(() => {
     const pool = QUESTIONS_DB[tema] || [];
@@ -173,22 +193,6 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
 
     const finalScore = Math.max(0, scoreReal);
     const earnedPoints = getAwardedPoints(finalScore);
-    const previousPoints =
-      typeof window !== "undefined"
-        ? Number(window.localStorage.getItem(USER_POINTS_KEY) || "0")
-        : 0;
-
-    const safePreviousPoints = Number.isNaN(previousPoints) ? 0 : previousPoints;
-    const nextPoints = safePreviousPoints + earnedPoints;
-
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(USER_POINTS_KEY, String(nextPoints));
-    }
-
-    const previousBadge = getBadgeByPoints(safePreviousPoints);
-    const nextBadge = getBadgeByPoints(nextPoints);
-
-    setUserPoints(nextPoints);
 
     const resultPayload = {
       id: `${Date.now()}-${tema}-${Math.random().toString(36).slice(2, 8)}`,
@@ -211,8 +215,12 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     async function saveResultToSupabase() {
       if (!user?.id) {
         console.error("Usuario no disponible. No se guarda el resultado.");
+        pointsAwardedRef.current = true;
         return;
       }
+
+      const previousPoints = await fetchUserPoints();
+      const previousBadge = getBadgeByPoints(previousPoints);
 
       const { error } = await supabase.from("test_results").insert({
         user_id: user.id,
@@ -228,24 +236,28 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
 
       if (error) {
         console.error("Error guardando resultado en Supabase:", error.message);
+        pointsAwardedRef.current = true;
+        return;
       }
+
+      const nextPoints = previousPoints + earnedPoints;
+      const nextBadge = getBadgeByPoints(nextPoints);
+
+      setUserPoints(nextPoints);
+
+      if (nextBadge && nextBadge.name !== previousBadge.name) {
+        setLastUnlockedBadge(nextBadge.name);
+        setShowBadgeAnimation(true);
+
+        setTimeout(() => {
+          setShowBadgeAnimation(false);
+        }, 2600);
+      }
+
+      pointsAwardedRef.current = true;
     }
 
     saveResultToSupabase();
-
-    if (nextBadge && nextBadge.name !== previousBadge.name) {
-      setLastUnlockedBadge(nextBadge.name);
-      setShowBadgeAnimation(true);
-
-      const timeout = setTimeout(() => {
-        setShowBadgeAnimation(false);
-      }, 2600);
-
-      pointsAwardedRef.current = true;
-      return () => clearTimeout(timeout);
-    }
-
-    pointsAwardedRef.current = true;
   }, [
     finished,
     scoreReal,
@@ -603,7 +615,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#eff6ff_0%,_#e8f0ff_35%,_#edf2f7_100%)] px-3 py-3 md:px-4 md:py-4">
       <div className="mx-auto max-w-4xl">
         <div className="mb-3 rounded-[20px] border border-[#d7e5ff] bg-[linear-gradient(135deg,_rgba(255,255,255,0.97)_0%,_rgba(239,246,255,0.93)_100%)] px-3 py-3 shadow-[0_14px_40px_rgba(37,99,235,0.08)] backdrop-blur-sm md:px-4 md:py-3.5">
-          <div className="grid gap-3 md:grid-cols-[1fr_auto_1fr] md:items-center">
+          <div className="grid items-center gap-3 md:grid-cols-[1.15fr_0.7fr_1.15fr]">
             <div className="flex items-center justify-center gap-3 md:justify-start">
               <button
                 onClick={onHome}
@@ -647,8 +659,8 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
               </div>
             </div>
 
-            <div className="flex justify-center gap-2.5 md:justify-end">
-              <div className="min-w-[150px] rounded-xl border border-[#cfe0ff] bg-[linear-gradient(135deg,_#eef5ff_0%,_#dbeafe_100%)] px-4 py-2.5 text-center shadow-sm md:min-w-[165px]">
+            <div className="grid grid-cols-2 gap-2.5">
+              <div className="min-w-0 rounded-xl border border-[#cfe0ff] bg-[linear-gradient(135deg,_#eef5ff_0%,_#dbeafe_100%)] px-4 py-2.5 text-center shadow-sm">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#5f76a0]">
                   Tiempo restante
                 </p>
@@ -657,7 +669,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
                 </div>
               </div>
 
-              <div className="min-w-[150px] rounded-xl border border-[#d7e5ff] bg-white/90 px-4 py-2.5 text-center shadow-sm md:min-w-[165px]">
+              <div className="min-w-0 rounded-xl border border-[#d7e5ff] bg-white/90 px-4 py-2.5 text-center shadow-sm">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#5f76a0]">
                   Progreso
                 </p>
@@ -672,8 +684,8 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
         <div className="mb-3 grid gap-2.5 md:grid-cols-3">
           <InfoBox label="Tema" value={topicName} />
           <InfoBox
-            label="Aciertos / Fallos"
-            value={`${correctas} / ${falladas}`}
+            label="Aciertos / Fallos / Blancas"
+            value={`${correctas} / ${falladas} / ${enBlanco}`}
           />
           <InfoBox
             label="Puntuación actual"
