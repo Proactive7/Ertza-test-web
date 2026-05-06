@@ -21,6 +21,7 @@ type LandingPageProps = {
   onOpenLegalTerms: () => void;
   onOpenLegalPrivacy: () => void;
   onOpenLegalCookies: () => void;
+  onOpenCheckout: () => void | Promise<void>;
   hasActiveSubscription?: boolean;
   user: User | null;
   onLogout: () => void | Promise<void>;
@@ -37,6 +38,7 @@ export default function LandingPage({
   onOpenLegalTerms,
   onOpenLegalPrivacy,
   onOpenLegalCookies,
+  onOpenCheckout,
   hasActiveSubscription = false,
   user,
   onLogout,
@@ -67,7 +69,7 @@ export default function LandingPage({
           onOpenBadges={onOpenBadges}
           onOpenMockExam={onOpenMockExam}
           onOpenRanking={onOpenRanking}
-          onOpenPremium={scrollToPremium}
+          onOpenPremium={onOpenCheckout}
           onOpenProfile={onOpenProfile}
           username={username}
           isLoggedIn={isLoggedIn}
@@ -87,6 +89,7 @@ export default function LandingPage({
           <PremiumSection
             isLoggedIn={isLoggedIn}
             hasActiveSubscription={hasActiveSubscription}
+            onOpenCheckout={onOpenCheckout}
           />
         </div>
 

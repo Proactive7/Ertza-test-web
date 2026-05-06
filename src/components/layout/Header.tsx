@@ -9,7 +9,7 @@ type HeaderProps = {
   onOpenBadges: () => void;
   onOpenMockExam: () => void;
   onOpenRanking: () => void;
-  onOpenPremium?: () => void;
+  onOpenPremium?: () => void | Promise<void>;
   onOpenProfile?: () => void;
 
   username?: string | null;
@@ -40,14 +40,27 @@ export default function Header({
       return;
     }
 
-    // 🔥 POR AHORA → bajar a sección premium
+    if (hasActiveSubscription) return;
+
     if (onOpenPremium) {
-      onOpenPremium();
+      void onOpenPremium();
+    }
+  }
+
+  function handlePremiumProtectedClick(action: () => void): void {
+    if (!isLoggedIn) {
+      window.location.href = "/login";
       return;
     }
 
-    // 🔮 FUTURO → aquí irá Stripe
-    // window.location.href = "/checkout";
+    if (!hasActiveSubscription) {
+      if (onOpenPremium) {
+        void onOpenPremium();
+      }
+      return;
+    }
+
+    action();
   }
 
   function handleProfileClick(): void {
@@ -71,19 +84,19 @@ export default function Header({
       <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-700 md:flex">
         <button onClick={onOpenTopics}>Temas</button>
 
-        <button onClick={onOpenMockExam}>
+        <button onClick={() => handlePremiumProtectedClick(onOpenMockExam)}>
           Simulacro {showLocks ? "🔒" : ""}
         </button>
 
-        <button onClick={onOpenPanel}>
+        <button onClick={() => handlePremiumProtectedClick(onOpenPanel)}>
           Panel {showLocks ? "🔒" : ""}
         </button>
 
-        <button onClick={onOpenBadges}>
+        <button onClick={() => handlePremiumProtectedClick(onOpenBadges)}>
           Insignias {showLocks ? "🔒" : ""}
         </button>
 
-        <button onClick={onOpenRanking}>
+        <button onClick={() => handlePremiumProtectedClick(onOpenRanking)}>
           Ranking {showLocks ? "🔒" : ""}
         </button>
       </nav>
@@ -128,6 +141,7 @@ export default function Header({
         ) : (
           <Link
             href="/login"
+            role="button"
             className="rounded-xl bg-[#123b86] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#0f3577]"
           >
             Acceder

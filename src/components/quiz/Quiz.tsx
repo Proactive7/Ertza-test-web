@@ -99,6 +99,11 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
   const [reviewMode, setReviewMode] = useState<boolean>(false);
   const [answerHistory, setAnswerHistory] = useState<AnswerRecord[]>([]);
 
+  const [showExitConfirm, setShowExitConfirm] = useState<boolean>(false);
+  const [pendingExitAction, setPendingExitAction] = useState<null | (() => void)>(
+    null
+  );
+
   const [userPoints, setUserPoints] = useState<number>(0);
   const [showBadgeAnimation, setShowBadgeAnimation] = useState<boolean>(false);
   const [lastUnlockedBadge, setLastUnlockedBadge] = useState<BadgeName | null>(
@@ -106,6 +111,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
   );
 
   const pointsAwardedRef = useRef<boolean>(false);
+  const timeoutFinishedRef = useRef<boolean>(false);
 
   const topicName = useMemo(() => {
     if (tema === "simulacro") return "Simulacro oficial";
@@ -146,6 +152,59 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     return totalPoints;
   }
 
+  function requestExit(action: () => void): void {
+    if (finished) {
+      action();
+      return;
+    }
+
+    setPendingExitAction(() => action);
+    setShowExitConfirm(true);
+  }
+
+  function confirmExit(): void {
+    if (pendingExitAction) {
+      pendingExitAction();
+    }
+  }
+
+  function cancelExit(): void {
+    setShowExitConfirm(false);
+    setPendingExitAction(null);
+  }
+
+  function finishByTimeout(): void {
+    if (timeoutFinishedRef.current) return;
+
+    timeoutFinishedRef.current = true;
+
+    const answeredQuestionIds = new Set(
+      answerHistory.map((item) => item.question.id)
+    );
+
+    const unansweredQuestions = questions.filter(
+      (question) => !answeredQuestionIds.has(question.id)
+    );
+
+    if (unansweredQuestions.length > 0) {
+      setAnswerHistory((prev) => [
+        ...prev,
+        ...unansweredQuestions.map((question) => ({
+          question,
+          selectedOption: null,
+          correctOption: question.correcta,
+          isCorrect: false,
+        })),
+      ]);
+
+      setEnBlanco((prev) => prev + unansweredQuestions.length);
+    }
+
+    setSelectedOption(null);
+    setShowResult(false);
+    setFinished(true);
+  }
+
   useEffect(() => {
     fetchUserPoints();
   }, [user?.id]);
@@ -166,9 +225,12 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     setShowResult(false);
     setReviewMode(false);
     setAnswerHistory([]);
+    setShowExitConfirm(false);
+    setPendingExitAction(null);
     setShowBadgeAnimation(false);
     setLastUnlockedBadge(null);
     pointsAwardedRef.current = false;
+    timeoutFinishedRef.current = false;
   }, [tema]);
 
   useEffect(() => {
@@ -177,7 +239,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     const interval = setInterval(() => {
       setTime((t) => {
         if (t <= 1) {
-          setFinished(true);
+          finishByTimeout();
           return 0;
         }
 
@@ -186,7 +248,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [finished, questions.length]);
+  }, [finished, questions, answerHistory]);
 
   useEffect(() => {
     if (!finished || pointsAwardedRef.current) return;
@@ -618,7 +680,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
           <div className="grid items-center gap-3 md:grid-cols-[1.15fr_0.7fr_1.15fr]">
             <div className="flex items-center justify-center gap-3 md:justify-start">
               <button
-                onClick={onHome}
+                onClick={() => requestExit(onHome)}
                 aria-label="Volver al inicio"
                 className="flex items-center transition hover:opacity-80"
               >
@@ -633,7 +695,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
               </button>
 
               <button
-                onClick={onExit}
+                onClick={() => requestExit(onExit)}
                 className="rounded-lg border border-[#cfdcf3] bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-[#f8fbff] md:px-4 md:py-2 md:text-sm"
               >
                 Salir
@@ -736,6 +798,37 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
           </div>
         </div>
       </div>
+
+      {showExitConfirm && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-2xl">
+            <h2 className="text-xl font-extrabold text-[#123b86]">
+              ¿Salir del test?
+            </h2>
+
+            <p className="mt-2 text-sm text-slate-600">
+              Si sales ahora, perderás el progreso de este test y no se guardará
+              el resultado.
+            </p>
+
+            <div className="mt-5 flex gap-3">
+              <button
+                onClick={cancelExit}
+                className="flex-1 rounded-xl border border-slate-300 px-4 py-2 text-sm font-bold text-slate-600 transition hover:bg-slate-50"
+              >
+                Cancelar
+              </button>
+
+              <button
+                onClick={confirmExit}
+                className="flex-1 rounded-xl bg-[#ef4444] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#dc2626]"
+              >
+                Sí, salir
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

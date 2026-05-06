@@ -210,8 +210,46 @@ export default function Home() {
     return true;
   }
 
-  function showPremiumRequired(message: string): void {
-    alert(`🔒 ${message}`);
+  async function goToCheckout(): Promise<void> {
+    if (!requireLogin()) return;
+
+    if (!user?.id) {
+      window.location.href = "/login";
+      return;
+    }
+
+    if (hasActiveSubscription) {
+      return;
+    }
+
+    const { data, error } = await supabase.auth.getSession();
+
+    if (error || !data.session?.access_token) {
+      console.error("No se pudo obtener la sesión para Stripe:", error?.message);
+      window.location.href = "/login";
+      return;
+    }
+
+    const response = await fetch("/api/stripe/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${data.session.access_token}`,
+      },
+      body: JSON.stringify({
+        userId: user.id,
+      }),
+    });
+
+    const checkoutData = await response.json();
+
+    if (!response.ok || !checkoutData?.url) {
+      console.error("Error creando checkout:", checkoutData);
+      alert("No se pudo abrir la pasarela de pago. Inténtalo de nuevo.");
+      return;
+    }
+
+    window.location.href = checkoutData.url;
   }
 
   function scrollTop(): void {
@@ -238,9 +276,7 @@ export default function Home() {
     if (!requireLogin()) return;
 
     if (topicKey === "simulacro" && !hasActiveSubscription) {
-      showPremiumRequired(
-        "Los simulacros están bloqueados. Necesitas Premium para hacer simulacros."
-      );
+      void goToCheckout();
       return;
     }
 
@@ -253,9 +289,7 @@ export default function Home() {
     if (!requireLogin()) return;
 
     if (!hasActiveSubscription) {
-      showPremiumRequired(
-        "El panel está bloqueado. Necesitas Premium para acceder."
-      );
+      void goToCheckout();
       return;
     }
 
@@ -267,9 +301,7 @@ export default function Home() {
     if (!requireLogin()) return;
 
     if (!hasActiveSubscription) {
-      showPremiumRequired(
-        "Las insignias están bloqueadas. Necesitas Premium para ver tu progresión."
-      );
+      void goToCheckout();
       return;
     }
 
@@ -283,9 +315,7 @@ export default function Home() {
     if (!requireLogin()) return;
 
     if (!hasActiveSubscription) {
-      showPremiumRequired(
-        "Los simulacros están bloqueados. Necesitas Premium para hacer simulacros."
-      );
+      void goToCheckout();
       return;
     }
 
@@ -298,9 +328,7 @@ export default function Home() {
     if (!requireLogin()) return;
 
     if (!hasActiveSubscription) {
-      showPremiumRequired(
-        "El ranking está bloqueado. Necesitas Premium para ver el Top de opositores."
-      );
+      void goToCheckout();
       return;
     }
 
@@ -358,6 +386,7 @@ export default function Home() {
         <TopicsPage
           onBack={goHome}
           onStart={openQuiz}
+          onOpenCheckout={goToCheckout}
           hasActiveSubscription={hasActiveSubscription}
         />
       </AppShell>
@@ -388,6 +417,7 @@ export default function Home() {
           hasActiveSubscription={hasActiveSubscription}
           onBack={goHome}
           onLogout={logout}
+          onOpenCheckout={goToCheckout}
         />
       </AppShell>
     );
@@ -827,6 +857,7 @@ export default function Home() {
         onOpenLegalTerms={openLegalTerms}
         onOpenLegalPrivacy={openLegalPrivacy}
         onOpenLegalCookies={openLegalCookies}
+        onOpenCheckout={goToCheckout}
         hasActiveSubscription={hasActiveSubscription}
         user={user}
         onLogout={logout}

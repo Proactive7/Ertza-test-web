@@ -5,6 +5,17 @@ import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
+const SESSION_ID_KEY = "ertzatest_session_id";
+const LAST_ACTIVITY_KEY = "ertzatest_last_activity_at";
+
+function createSessionId(): string {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
 export default function LoginPage() {
   const router = useRouter();
 
@@ -21,15 +32,43 @@ export default function LoginPage() {
     setMessage("");
     setLoading(true);
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: email.trim(),
       password,
     });
 
+    if (error || !data.user?.id) {
+      setLoading(false);
+      setMessage("Email o contraseña incorrectos.");
+      return;
+    }
+
+    const sessionId = createSessionId();
+
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(SESSION_ID_KEY, sessionId);
+      window.localStorage.setItem(LAST_ACTIVITY_KEY, String(Date.now()));
+    }
+
+    const { error: sessionError } = await supabase
+      .from("active_sessions")
+      .upsert(
+        {
+          user_id: data.user.id,
+          session_id: sessionId,
+          updated_at: new Date().toISOString(),
+        },
+        {
+          onConflict: "user_id",
+        }
+      );
+
     setLoading(false);
 
-    if (error) {
-      setMessage("Email o contraseña incorrectos.");
+    if (sessionError) {
+      console.error("Error registrando sesión activa:", sessionError.message);
+      setMessage("No se ha podido iniciar la sesión correctamente.");
+      await supabase.auth.signOut();
       return;
     }
 

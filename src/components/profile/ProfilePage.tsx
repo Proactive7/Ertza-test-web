@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabaseClient";
 
@@ -9,6 +9,12 @@ type ProfilePageProps = {
   hasActiveSubscription: boolean;
   onBack: () => void;
   onLogout: () => void | Promise<void>;
+  onOpenCheckout?: () => void | Promise<void>;
+};
+
+type PremiumProfileData = {
+  premium_until: string | null;
+  cancel_at_period_end: boolean | null;
 };
 
 export default function ProfilePage({
@@ -16,6 +22,7 @@ export default function ProfilePage({
   hasActiveSubscription,
   onBack,
   onLogout,
+  onOpenCheckout,
 }: ProfilePageProps) {
   const fallbackUsername = user?.email?.split("@")[0] || "Usuario";
 
@@ -23,7 +30,13 @@ export default function ProfilePage({
   const [savedUsername, setSavedUsername] = useState(fallbackUsername);
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [premiumLoading, setPremiumLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  const [premiumProfile, setPremiumProfile] = useState<PremiumProfileData>({
+    premium_until: null,
+    cancel_at_period_end: false,
+  });
 
   const email = user?.email || "Sin email";
 
@@ -31,13 +44,38 @@ export default function ProfilePage({
     ? new Date(user.created_at).toLocaleDateString("es-ES")
     : "No disponible";
 
+  const premiumUntilDate = useMemo(() => {
+    if (!premiumProfile.premium_until) return null;
+
+    const date = new Date(premiumProfile.premium_until);
+
+    return Number.isNaN(date.getTime()) ? null : date;
+  }, [premiumProfile.premium_until]);
+
+  const premiumUntilText = premiumUntilDate
+    ? premiumUntilDate.toLocaleDateString("es-ES", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      })
+    : "No disponible";
+
+  const premiumDaysRemaining = useMemo(() => {
+    if (!premiumUntilDate) return null;
+
+    const diffMs = premiumUntilDate.getTime() - Date.now();
+    const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+    return Math.max(diffDays, 0);
+  }, [premiumUntilDate]);
+
   useEffect(() => {
     async function loadProfile() {
       if (!user?.id) return;
 
       const { data, error } = await supabase
         .from("profiles")
-        .select("username")
+        .select("username, premium_until, cancel_at_period_end")
         .eq("id", user.id)
         .maybeSingle();
 
@@ -51,6 +89,11 @@ export default function ProfilePage({
 
       setUsername(profileUsername);
       setSavedUsername(profileUsername);
+
+      setPremiumProfile({
+        premium_until: data?.premium_until || null,
+        cancel_at_period_end: Boolean(data?.cancel_at_period_end),
+      });
     }
 
     loadProfile();
@@ -134,6 +177,57 @@ export default function ProfilePage({
     }
 
     setMessage("Te hemos enviado un email para cambiar la contraseña.");
+  }
+
+  async function openStripePortal(): Promise<void> {
+    setPremiumLoading(true);
+    setMessage("");
+
+    const { data, error } = await supabase.auth.getSession();
+
+    if (error || !data.session?.access_token) {
+      setPremiumLoading(false);
+      setMessage("No se pudo validar tu sesión. Vuelve a iniciar sesión.");
+      return;
+    }
+
+    const response = await fetch("/api/stripe/portal", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${data.session.access_token}`,
+      },
+    });
+
+    const portalData = await response.json();
+
+    setPremiumLoading(false);
+
+    if (!response.ok || !portalData?.url) {
+      console.error("Error abriendo Stripe Portal:", portalData);
+      setMessage(
+        portalData?.error ||
+          "No se pudo abrir la gestión de suscripción. Inténtalo de nuevo."
+      );
+      return;
+    }
+
+    window.location.href = portalData.url;
+  }
+
+  async function handlePremiumButton(): Promise<void> {
+    if (premiumLoading) return;
+
+    if (hasActiveSubscription) {
+      await openStripePortal();
+      return;
+    }
+
+    if (onOpenCheckout) {
+      setPremiumLoading(true);
+      await onOpenCheckout();
+      setPremiumLoading(false);
+    }
   }
 
   return (
@@ -274,25 +368,50 @@ export default function ProfilePage({
                   {hasActiveSubscription ? "Premium activo" : "Plan gratuito"}
                 </p>
 
-                <p className="mt-2 text-sm text-slate-500">
-                  {hasActiveSubscription
-                    ? "Tu acceso Premium está activo. Próximamente aquí verás los días restantes y la fecha de renovación."
-                    : "Actualmente no tienes Premium activo. Puedes activarlo para desbloquear simulacros, ranking, panel e insignias."}
-                </p>
+                {hasActiveSubscription ? (
+                  <div className="mt-4 grid gap-2 text-sm">
+                    <div className="rounded-xl border border-[#dbe7ff] bg-[#f8fbff] px-4 py-3 text-[#123b86]">
+                      <p className="font-bold">
+                        Próxima renovación: {premiumUntilText}
+                      </p>
+                      <p className="mt-1 text-xs font-semibold text-slate-500">
+                        Días restantes:{" "}
+                        {premiumDaysRemaining !== null
+                          ? premiumDaysRemaining
+                          : "No disponible"}
+                      </p>
+                    </div>
+
+                    {premiumProfile.cancel_at_period_end ? (
+                      <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-700">
+                        <p className="font-bold">Renovación cancelada</p>
+                        <p className="mt-1 text-xs font-semibold">
+                          Mantendrás Premium hasta el final del periodo pagado.
+                        </p>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : (
+                  <p className="mt-2 text-sm text-slate-500">
+                    Actualmente no tienes Premium activo. Puedes activarlo para
+                    desbloquear simulacros, ranking, panel e insignias.
+                  </p>
+                )}
 
                 <button
-                  onClick={() =>
-                    alert("Gestión de suscripción próximamente con Stripe.")
-                  }
-                  className={`mt-5 rounded-xl px-4 py-2 text-sm font-bold text-white transition ${
+                  onClick={handlePremiumButton}
+                  disabled={premiumLoading}
+                  className={`mt-5 rounded-xl px-4 py-2 text-sm font-bold text-white transition disabled:cursor-not-allowed disabled:opacity-60 ${
                     hasActiveSubscription
                       ? "bg-[#123b86] hover:bg-[#0f3577]"
                       : "bg-[#ef4444] hover:bg-[#dc2626]"
                   }`}
                 >
-                  {hasActiveSubscription
-                    ? "Gestionar suscripción"
-                    : "Activar Premium"}
+                  {premiumLoading
+                    ? "Abriendo..."
+                    : hasActiveSubscription
+                      ? "Gestionar suscripción"
+                      : "Activar Premium"}
                 </button>
               </div>
             </div>

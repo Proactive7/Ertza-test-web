@@ -4,17 +4,21 @@ import { TopicKey } from "@/types/quiz";
 type TopicsPageProps = {
   onBack: () => void;
   onStart: (topicKey: TopicKey) => void;
+  onOpenCheckout?: () => void | Promise<void>;
   hasActiveSubscription?: boolean;
 };
 
 export default function TopicsPage({
   onBack,
   onStart,
+  onOpenCheckout,
   hasActiveSubscription = false,
 }: TopicsPageProps) {
   function handleSimulacroClick(): void {
     if (!hasActiveSubscription) {
-      alert("🔒 El simulacro es exclusivo para usuarios Premium.");
+      if (onOpenCheckout) {
+        void onOpenCheckout();
+      }
       return;
     }
 
@@ -104,7 +108,7 @@ export default function TopicsPage({
               </p>
 
               <span className="text-[13px] font-bold">
-                {hasActiveSubscription ? "Empezar →" : "Bloqueado Premium →"}
+                {hasActiveSubscription ? "Empezar →" : "Hazte Premium →"}
               </span>
             </button>
           </div>

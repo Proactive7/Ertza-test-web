@@ -6,19 +6,25 @@ import PremiumCard from "@/components/ui/PremiumCard";
 type Props = {
   isLoggedIn?: boolean;
   hasActiveSubscription?: boolean;
+  onOpenCheckout?: () => void | Promise<void>;
 };
 
 export default function PremiumSection({
   isLoggedIn = false,
   hasActiveSubscription = false,
+  onOpenCheckout,
 }: Props) {
-  function handleClick() {
+  function handleClick(): void {
     if (!isLoggedIn) {
       window.location.href = "/login";
       return;
     }
 
-    alert("Ir a pasarela de pago (Stripe próximamente)");
+    if (hasActiveSubscription) return;
+
+    if (onOpenCheckout) {
+      void onOpenCheckout();
+    }
   }
 
   return (
@@ -33,8 +39,14 @@ export default function PremiumSection({
           <div className="grid gap-4 sm:grid-cols-2">
             <PremiumCard title="Preparación real" value="Exámenes oficiales" />
             <PremiumCard title="Mejora continua" value="Detecta tus errores" />
-            <PremiumCard title="Seguimiento claro" value="Visualiza tu progreso" />
-            <PremiumCard title="Ventaja competitiva" value="Las mejores herramientas" />
+            <PremiumCard
+              title="Seguimiento claro"
+              value="Visualiza tu progreso"
+            />
+            <PremiumCard
+              title="Ventaja competitiva"
+              value="Las mejores herramientas"
+            />
           </div>
 
           <div className="mt-6 rounded-2xl bg-[#0f3577] p-5 text-white">
