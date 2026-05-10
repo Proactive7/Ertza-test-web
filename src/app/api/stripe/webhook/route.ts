@@ -49,6 +49,7 @@ async function setPremiumFromSubscription({
       stripe_subscription_status: subscription.status,
       premium_until: premiumUntil,
       cancel_at_period_end: subscription.cancel_at_period_end,
+      trial_used: true,
     })
     .eq("id", userId);
 
@@ -71,6 +72,7 @@ async function updateSubscriptionById(subscription: Stripe.Subscription) {
       stripe_subscription_status: subscription.status,
       premium_until: premiumUntil,
       cancel_at_period_end: subscription.cancel_at_period_end,
+      trial_used: true,
     })
     .eq("stripe_subscription_id", subscription.id);
 
@@ -91,6 +93,7 @@ async function deactivatePremiumBySubscription(subscriptionId: string) {
       stripe_subscription_id: null,
       premium_until: null,
       cancel_at_period_end: false,
+      trial_used: true,
     })
     .eq("stripe_subscription_id", subscriptionId);
 

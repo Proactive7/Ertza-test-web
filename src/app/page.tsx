@@ -114,6 +114,7 @@ export default function Home() {
   const [view, setView] = useState<AppViewMode>("home");
   const [tema, setTema] = useState<TopicKey | null>(null);
   const [hasActiveSubscription, setHasActiveSubscription] = useState(false);
+  const [trialUsed, setTrialUsed] = useState(false);
   const [badgePoints, setBadgePoints] = useState<number>(0);
 
   const [ranking, setRanking] = useState<RankingRow[]>([]);
@@ -169,21 +170,24 @@ export default function Home() {
 
       if (!user?.id) {
         setHasActiveSubscription(false);
+        setTrialUsed(false);
         setBadgePoints(0);
         return;
       }
 
       const { data, error } = await supabase
         .from("profiles")
-        .select("premium")
+        .select("premium, trial_used")
         .eq("id", user.id)
         .single();
 
       if (error) {
         console.error("Error cargando perfil:", error.message);
         setHasActiveSubscription(false);
+        setTrialUsed(false);
       } else {
         setHasActiveSubscription(Boolean(data?.premium));
+        setTrialUsed(Boolean(data?.trial_used));
       }
 
       await fetchBadgePoints(user.id);
@@ -195,6 +199,7 @@ export default function Home() {
   async function logout(): Promise<void> {
     await supabase.auth.signOut();
     setHasActiveSubscription(false);
+    setTrialUsed(false);
     setBadgePoints(0);
     window.location.href = "/";
   }
@@ -388,6 +393,7 @@ export default function Home() {
           onStart={openQuiz}
           onOpenCheckout={goToCheckout}
           hasActiveSubscription={hasActiveSubscription}
+          trialUsed={trialUsed}
         />
       </AppShell>
     );
@@ -415,6 +421,7 @@ export default function Home() {
         <ProfilePage
           user={user}
           hasActiveSubscription={hasActiveSubscription}
+          trialUsed={trialUsed}
           onBack={goHome}
           onLogout={logout}
           onOpenCheckout={goToCheckout}
@@ -859,6 +866,7 @@ export default function Home() {
         onOpenLegalCookies={openLegalCookies}
         onOpenCheckout={goToCheckout}
         hasActiveSubscription={hasActiveSubscription}
+        trialUsed={trialUsed}
         user={user}
         onLogout={logout}
       />

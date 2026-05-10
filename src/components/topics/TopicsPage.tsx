@@ -6,6 +6,7 @@ type TopicsPageProps = {
   onStart: (topicKey: TopicKey) => void;
   onOpenCheckout?: () => void | Promise<void>;
   hasActiveSubscription?: boolean;
+  trialUsed?: boolean;
 };
 
 export default function TopicsPage({
@@ -13,7 +14,32 @@ export default function TopicsPage({
   onStart,
   onOpenCheckout,
   hasActiveSubscription = false,
+  trialUsed = false,
 }: TopicsPageProps) {
+  const premiumBadgeText = hasActiveSubscription
+    ? "Premium activo"
+    : trialUsed
+      ? "Premium 🔒"
+      : "Premium · 7 días gratis 🔒";
+
+  const simulacroTitle = hasActiveSubscription
+    ? "Simulacro"
+    : trialUsed
+      ? "Simulacro Premium 🔒"
+      : "Simulacro Premium 🔒";
+
+  const simulacroDescription = hasActiveSubscription
+    ? "Examen completo con preguntas mezcladas de todos los temas."
+    : trialUsed
+      ? "Activa Premium para acceder al simulacro completo, ranking, panel e insignias."
+      : "Prueba Premium 7 días gratis y accede al simulacro completo, ranking, panel e insignias.";
+
+  const simulacroButtonText = hasActiveSubscription
+    ? "Empezar →"
+    : trialUsed
+      ? "Activar Premium →"
+      : "Probar 7 días gratis →";
+
   function handleSimulacroClick(): void {
     if (!hasActiveSubscription) {
       if (onOpenCheckout) {
@@ -96,19 +122,19 @@ export default function TopicsPage({
               }`}
             >
               <div className="mb-2 inline-flex rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-bold">
-                Premium {!hasActiveSubscription ? "🔒" : ""}
+                {premiumBadgeText}
               </div>
 
               <h3 className="mb-2 text-[18px] font-extrabold">
-                Simulacro {!hasActiveSubscription ? "🔒" : ""}
+                {simulacroTitle}
               </h3>
 
               <p className="mb-3 text-[13px] leading-[1.5] text-red-100">
-                Examen completo con preguntas mezcladas de todos los temas.
+                {simulacroDescription}
               </p>
 
               <span className="text-[13px] font-bold">
-                {hasActiveSubscription ? "Empezar →" : "Hazte Premium →"}
+                {simulacroButtonText}
               </span>
             </button>
           </div>

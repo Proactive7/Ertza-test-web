@@ -16,6 +16,19 @@ export default function RegisterPage() {
     e.preventDefault();
     setMessage("");
 
+    const cleanUsername = username.trim();
+    const cleanEmail = email.trim().toLowerCase();
+
+    if (!cleanUsername) {
+      setMessage("El nombre de usuario es obligatorio.");
+      return;
+    }
+
+    if (cleanUsername.length < 3) {
+      setMessage("El nombre de usuario debe tener al menos 3 caracteres.");
+      return;
+    }
+
     if (password !== repeatPassword) {
       setMessage("Las contraseñas no coinciden.");
       return;
@@ -28,29 +41,53 @@ export default function RegisterPage() {
 
     setLoading(true);
 
-    const { error } = await supabase.auth.signUp({
-      email,
+    const { data, error } = await supabase.auth.signUp({
+      email: cleanEmail,
       password,
       options: {
-        data: { username },
+        data: {
+          username: cleanUsername,
+        },
       },
     });
 
-    setLoading(false);
-
     if (error) {
+      setLoading(false);
       setMessage(error.message);
       return;
     }
 
-    setMessage("Cuenta creada correctamente. Revisa tu correo.");
+    const userId = data.user?.id;
+
+    if (userId && data.session) {
+      const { error: profileError } = await supabase.from("profiles").upsert(
+        {
+          id: userId,
+          username: cleanUsername,
+          premium: false,
+        },
+        {
+          onConflict: "id",
+        }
+      );
+
+      if (profileError) {
+        console.error("Error creando perfil:", profileError.message);
+      }
+    }
+
+    setLoading(false);
+    setUsername("");
+    setEmail("");
+    setPassword("");
+    setRepeatPassword("");
+
+    setMessage("Cuenta creada correctamente. Revisa tu correo para activarla.");
   }
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#d8dde4] px-4 py-4">
       <div className="w-full max-w-md rounded-[24px] border border-white/60 bg-white p-5 shadow-[0_24px_60px_rgba(15,23,42,0.12)] md:p-6">
-        
-        {/* LOGO GRANDE */}
         <div className="mb-2 flex justify-center">
           <Link href="/">
             <img
@@ -61,7 +98,6 @@ export default function RegisterPage() {
           </Link>
         </div>
 
-        {/* TITULO */}
         <h1 className="text-center text-[26px] font-extrabold text-[#123b86]">
           Crear cuenta
         </h1>
@@ -70,7 +106,6 @@ export default function RegisterPage() {
           Empieza a preparar tu oposición
         </p>
 
-        {/* FORM */}
         <form onSubmit={handleRegister} className="mt-4 space-y-3">
           <input
             className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
@@ -122,7 +157,6 @@ export default function RegisterPage() {
           )}
         </form>
 
-        {/* FOOTER */}
         <div className="mt-4 text-center">
           <p className="text-xs text-slate-600">
             ¿Ya tienes cuenta?{" "}

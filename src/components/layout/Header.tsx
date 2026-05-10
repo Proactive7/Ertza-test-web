@@ -15,6 +15,7 @@ type HeaderProps = {
   username?: string | null;
   isLoggedIn?: boolean;
   hasActiveSubscription?: boolean;
+  trialUsed?: boolean;
   onLogout?: () => void | Promise<void>;
 };
 
@@ -30,9 +31,12 @@ export default function Header({
   username,
   isLoggedIn = false,
   hasActiveSubscription = false,
+  trialUsed = false,
   onLogout,
 }: HeaderProps) {
   const showLocks = isLoggedIn && !hasActiveSubscription;
+
+  const premiumButtonText = trialUsed ? "Premium" : "Premium 7 días gratis";
 
   function handlePremiumClick(): void {
     if (!isLoggedIn) {
@@ -113,7 +117,7 @@ export default function Header({
             onClick={handlePremiumClick}
             className="rounded-xl bg-[#ef4444] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#dc2626]"
           >
-            Premium
+            {premiumButtonText}
           </button>
         )}
 

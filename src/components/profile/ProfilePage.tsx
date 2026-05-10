@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabaseClient";
 type ProfilePageProps = {
   user: User | null;
   hasActiveSubscription: boolean;
+  trialUsed?: boolean;
   onBack: () => void;
   onLogout: () => void | Promise<void>;
   onOpenCheckout?: () => void | Promise<void>;
@@ -15,11 +16,14 @@ type ProfilePageProps = {
 type PremiumProfileData = {
   premium_until: string | null;
   cancel_at_period_end: boolean | null;
+  stripe_subscription_status: string | null;
+  trial_used: boolean | null;
 };
 
 export default function ProfilePage({
   user,
   hasActiveSubscription,
+  trialUsed = false,
   onBack,
   onLogout,
   onOpenCheckout,
@@ -36,6 +40,8 @@ export default function ProfilePage({
   const [premiumProfile, setPremiumProfile] = useState<PremiumProfileData>({
     premium_until: null,
     cancel_at_period_end: false,
+    stripe_subscription_status: null,
+    trial_used: trialUsed,
   });
 
   const email = user?.email || "Sin email";
@@ -43,6 +49,14 @@ export default function ProfilePage({
   const createdAt = user?.created_at
     ? new Date(user.created_at).toLocaleDateString("es-ES")
     : "No disponible";
+
+  const effectiveTrialUsed = Boolean(
+    premiumProfile.trial_used || trialUsed
+  );
+
+  const isTrialing =
+    hasActiveSubscription &&
+    premiumProfile.stripe_subscription_status === "trialing";
 
   const premiumUntilDate = useMemo(() => {
     if (!premiumProfile.premium_until) return null;
@@ -69,13 +83,39 @@ export default function ProfilePage({
     return Math.max(diffDays, 0);
   }, [premiumUntilDate]);
 
+  const planTitle = hasActiveSubscription
+    ? isTrialing
+      ? "Prueba gratuita activa"
+      : "Premium activo"
+    : "Plan gratuito";
+
+  const renewalLabel = isTrialing
+    ? "Fin de la prueba gratuita"
+    : premiumProfile.cancel_at_period_end
+      ? "Premium activo hasta"
+      : "Próxima renovación";
+
+  const inactiveDescription = effectiveTrialUsed
+    ? "Ya has utilizado la prueba gratuita. Puedes activar Premium por 9,99 €/mes para desbloquear simulacros, ranking, panel e insignias."
+    : "Puedes probar Premium gratis durante 7 días. No se cobrará nada hasta que termine la prueba gratuita.";
+
+  const premiumButtonText = premiumLoading
+    ? "Abriendo..."
+    : hasActiveSubscription
+      ? "Gestionar suscripción"
+      : effectiveTrialUsed
+        ? "Activar Premium"
+        : "Probar 7 días gratis";
+
   useEffect(() => {
     async function loadProfile() {
       if (!user?.id) return;
 
       const { data, error } = await supabase
         .from("profiles")
-        .select("username, premium_until, cancel_at_period_end")
+        .select(
+          "username, premium_until, cancel_at_period_end, stripe_subscription_status, trial_used"
+        )
         .eq("id", user.id)
         .maybeSingle();
 
@@ -93,6 +133,8 @@ export default function ProfilePage({
       setPremiumProfile({
         premium_until: data?.premium_until || null,
         cancel_at_period_end: Boolean(data?.cancel_at_period_end),
+        stripe_subscription_status: data?.stripe_subscription_status || null,
+        trial_used: Boolean(data?.trial_used),
       });
     }
 
@@ -362,17 +404,21 @@ export default function ProfilePage({
 
                 <p
                   className={`mt-2 text-[28px] font-extrabold ${
-                    hasActiveSubscription ? "text-green-600" : "text-red-500"
+                    hasActiveSubscription
+                      ? isTrialing
+                        ? "text-[#123b86]"
+                        : "text-green-600"
+                      : "text-red-500"
                   }`}
                 >
-                  {hasActiveSubscription ? "Premium activo" : "Plan gratuito"}
+                  {planTitle}
                 </p>
 
                 {hasActiveSubscription ? (
                   <div className="mt-4 grid gap-2 text-sm">
                     <div className="rounded-xl border border-[#dbe7ff] bg-[#f8fbff] px-4 py-3 text-[#123b86]">
                       <p className="font-bold">
-                        Próxima renovación: {premiumUntilText}
+                        {renewalLabel}: {premiumUntilText}
                       </p>
                       <p className="mt-1 text-xs font-semibold text-slate-500">
                         Días restantes:{" "}
@@ -381,6 +427,17 @@ export default function ProfilePage({
                           : "No disponible"}
                       </p>
                     </div>
+
+                    {isTrialing ? (
+                      <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-blue-700">
+                        <p className="font-bold">
+                          Estás disfrutando de la prueba gratuita de 7 días.
+                        </p>
+                        <p className="mt-1 text-xs font-semibold">
+                          No se cobrará nada hasta que finalice la prueba.
+                        </p>
+                      </div>
+                    ) : null}
 
                     {premiumProfile.cancel_at_period_end ? (
                       <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-700">
@@ -392,10 +449,19 @@ export default function ProfilePage({
                     ) : null}
                   </div>
                 ) : (
-                  <p className="mt-2 text-sm text-slate-500">
-                    Actualmente no tienes Premium activo. Puedes activarlo para
-                    desbloquear simulacros, ranking, panel e insignias.
-                  </p>
+                  <div className="mt-3 rounded-xl border border-slate-200 bg-[#f8fbff] px-4 py-3 text-sm text-slate-500">
+                    <p>{inactiveDescription}</p>
+
+                    {!effectiveTrialUsed ? (
+                      <p className="mt-2 font-bold text-[#123b86]">
+                        7 días gratis · después 9,99 €/mes
+                      </p>
+                    ) : (
+                      <p className="mt-2 font-bold text-[#123b86]">
+                        Suscripción Premium: 9,99 €/mes
+                      </p>
+                    )}
+                  </div>
                 )}
 
                 <button
@@ -407,11 +473,7 @@ export default function ProfilePage({
                       : "bg-[#ef4444] hover:bg-[#dc2626]"
                   }`}
                 >
-                  {premiumLoading
-                    ? "Abriendo..."
-                    : hasActiveSubscription
-                      ? "Gestionar suscripción"
-                      : "Activar Premium"}
+                  {premiumButtonText}
                 </button>
               </div>
             </div>
