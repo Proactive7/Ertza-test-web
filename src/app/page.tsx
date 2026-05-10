@@ -27,6 +27,7 @@ type RankingRow = {
   simulacros_realizados: number;
   media_simulacros: number;
   mejor_simulacro: number;
+  badge_points: number;
 };
 
 function InteractiveEffects({ children }: { children: React.ReactNode }) {

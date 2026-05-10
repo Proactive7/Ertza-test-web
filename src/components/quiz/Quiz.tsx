@@ -677,8 +677,8 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#eff6ff_0%,_#e8f0ff_35%,_#edf2f7_100%)] px-3 py-3 md:px-4 md:py-4">
       <div className="mx-auto max-w-4xl">
         <div className="mb-3 rounded-[20px] border border-[#d7e5ff] bg-[linear-gradient(135deg,_rgba(255,255,255,0.97)_0%,_rgba(239,246,255,0.93)_100%)] px-3 py-3 shadow-[0_14px_40px_rgba(37,99,235,0.08)] backdrop-blur-sm md:px-4 md:py-3.5">
-          <div className="grid items-center gap-3 md:grid-cols-[1.15fr_0.7fr_1.15fr]">
-            <div className="flex items-center justify-center gap-3 md:justify-start">
+          <div className="grid items-center gap-3 md:grid-cols-[120px_minmax(215px,1fr)_120px_minmax(215px,1fr)_120px]">
+            <div className="flex items-center justify-center md:justify-start">
               <button
                 onClick={() => requestExit(onHome)}
                 aria-label="Volver al inicio"
@@ -693,13 +693,15 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
                   priority
                 />
               </button>
+            </div>
 
-              <button
-                onClick={() => requestExit(onExit)}
-                className="rounded-lg border border-[#cfdcf3] bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-[#f8fbff] md:px-4 md:py-2 md:text-sm"
-              >
-                Salir
-              </button>
+            <div className="flex h-[74px] min-w-0 flex-col items-center justify-center rounded-xl border border-[#cfe0ff] bg-[linear-gradient(135deg,_#eef5ff_0%,_#dbeafe_100%)] px-4 py-2.5 text-center shadow-sm">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#5f76a0]">
+                Progreso
+              </p>
+              <div className="mt-1 text-sm font-extrabold text-[#17305c] md:text-[16px]">
+                Pregunta {index + 1} / {questions.length}
+              </div>
             </div>
 
             <div className="flex justify-center">
@@ -721,24 +723,22 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-2.5">
-              <div className="min-w-0 rounded-xl border border-[#cfe0ff] bg-[linear-gradient(135deg,_#eef5ff_0%,_#dbeafe_100%)] px-4 py-2.5 text-center shadow-sm">
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#5f76a0]">
-                  Tiempo restante
-                </p>
-                <div className="mt-0.5 text-lg font-extrabold text-[#17305c] md:text-xl">
-                  {minutes}:{seconds.toString().padStart(2, "0")}
-                </div>
+            <div className="flex h-[74px] min-w-0 flex-col items-center justify-center rounded-xl border border-[#cfe0ff] bg-[linear-gradient(135deg,_#eef5ff_0%,_#dbeafe_100%)] px-4 py-2.5 text-center shadow-sm">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#5f76a0]">
+                Tiempo restante
+              </p>
+              <div className="mt-1 text-[24px] font-extrabold leading-none text-[#17305c]">
+                {minutes}:{seconds.toString().padStart(2, "0")}
               </div>
+            </div>
 
-              <div className="min-w-0 rounded-xl border border-[#d7e5ff] bg-white/90 px-4 py-2.5 text-center shadow-sm">
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#5f76a0]">
-                  Progreso
-                </p>
-                <div className="mt-0.5 text-xs font-bold text-[#17305c] md:text-sm">
-                  Pregunta {index + 1} / {questions.length}
-                </div>
-              </div>
+            <div className="flex justify-center md:justify-end">
+              <button
+                onClick={() => requestExit(onExit)}
+                className="rounded-lg border border-[#cfdcf3] bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-[#f8fbff] md:px-4 md:py-2 md:text-sm"
+              >
+                Volver
+              </button>
             </div>
           </div>
         </div>

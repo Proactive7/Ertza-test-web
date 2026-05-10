@@ -1,4 +1,5 @@
 import type { User } from "@supabase/supabase-js";
+import { getBadgeByPoints } from "@/lib/badges";
 
 type RankingRow = {
   user_id: string;
@@ -6,6 +7,7 @@ type RankingRow = {
   simulacros_realizados: number;
   media_simulacros: number;
   mejor_simulacro: number;
+  badge_points: number;
 };
 
 type RankingPageProps = {
@@ -20,6 +22,128 @@ function formatScore(score: number): string {
   return Number.isInteger(numericScore)
     ? String(numericScore)
     : numericScore.toFixed(1);
+}
+
+function CrownRank({
+  rank,
+  color,
+  stroke,
+  laurel,
+}: {
+  rank: number;
+  color: string;
+  stroke: string;
+  laurel: string;
+}) {
+  return (
+    <div className="relative flex h-[66px] w-[74px] items-center justify-center">
+      <svg
+        viewBox="0 0 90 76"
+        className="h-[66px] w-[74px] drop-shadow-sm"
+        aria-hidden="true"
+      >
+        <g
+          fill="none"
+          stroke={laurel}
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.95"
+        >
+          <path d="M25 62 C14 56 9 45 10 35" />
+          <path d="M65 62 C76 56 81 45 80 35" />
+
+          <path d="M18 55 C12 55 9 52 7 48" />
+          <path d="M16 48 C10 47 8 43 7 39" />
+          <path d="M17 41 C12 38 12 34 13 30" />
+
+          <path d="M72 55 C78 55 81 52 83 48" />
+          <path d="M74 48 C80 47 82 43 83 39" />
+          <path d="M73 41 C78 38 78 34 77 30" />
+        </g>
+
+        <path
+          d="M22 28 L34 39 L45 15 L56 39 L68 28 L63 53 H27 Z"
+          fill={color}
+          stroke={stroke}
+          strokeWidth="3"
+          strokeLinejoin="round"
+        />
+
+        <circle
+          cx="22"
+          cy="27"
+          r="4"
+          fill={color}
+          stroke={stroke}
+          strokeWidth="2.5"
+        />
+        <circle
+          cx="45"
+          cy="14"
+          r="4"
+          fill={color}
+          stroke={stroke}
+          strokeWidth="2.5"
+        />
+        <circle
+          cx="68"
+          cy="27"
+          r="4"
+          fill={color}
+          stroke={stroke}
+          strokeWidth="2.5"
+        />
+
+        <path
+          d="M29 53 H61 V60 H29 Z"
+          fill={color}
+          stroke={stroke}
+          strokeWidth="3"
+          strokeLinejoin="round"
+        />
+
+        <text
+          x="45"
+          y="48"
+          textAnchor="middle"
+          fontSize="23"
+          fontWeight="900"
+          fill="white"
+          stroke={stroke}
+          strokeWidth="0.6"
+        >
+          {rank}
+        </text>
+      </svg>
+    </div>
+  );
+}
+
+function getRankBadge(rank: number) {
+  if (rank === 1) {
+    return (
+      <CrownRank rank={1} color="#f6b72b" stroke="#d18a00" laurel="#e0a51f" />
+    );
+  }
+
+  if (rank === 2) {
+    return (
+      <CrownRank rank={2} color="#c9d1dc" stroke="#8b98a8" laurel="#9aa6b5" />
+    );
+  }
+
+  if (rank === 3) {
+    return (
+      <CrownRank rank={3} color="#c97938" stroke="#9a4f1f" laurel="#b8612d" />
+    );
+  }
+
+  return (
+    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#9ec5ff] bg-[#eef5ff] text-sm font-extrabold text-[#123b86] shadow-sm">
+      {rank}
+    </span>
+  );
 }
 
 export default function RankingPage({
@@ -52,55 +176,60 @@ export default function RankingPage({
           </button>
         </div>
 
-        <section className="bg-[linear-gradient(135deg,#0f3577_0%,#184a99_55%,#5f89d8_100%)] px-4 py-6 text-white md:px-6">
-          <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold text-blue-100 backdrop-blur">
+        <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0f3577_0%,#184a99_55%,#5f89d8_100%)] px-4 py-7 text-white md:px-6">
+          <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold text-blue-100 backdrop-blur">
             Ranking premium
           </div>
 
-          <h1 className="mt-3 text-[24px] font-extrabold md:text-[30px]">
+          <h1 className="mt-4 text-[28px] font-extrabold md:text-[34px]">
             Top opositores
           </h1>
 
-          <p className="mt-2 max-w-[720px] text-[14px] leading-[1.6] text-blue-100 md:text-[15px]">
+          <p className="mt-2 max-w-[720px] text-[14px] leading-[1.7] text-blue-100 md:text-[15px]">
             Ranking basado únicamente en simulacros oficiales. Para aparecer en
             el Top necesitas completar al menos 20 simulacros.
           </p>
+
+          <div className="pointer-events-none absolute right-8 top-4 hidden text-[130px] opacity-10 md:block">
+            🏆
+          </div>
         </section>
 
         <section className="px-4 py-6 md:px-6">
           <div className="mb-5 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-[16px] border border-slate-200 bg-white p-4 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+            <div className="rounded-[16px] border border-slate-200 bg-white p-4 text-center shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
                 Clasificación
               </p>
-              <p className="mt-1 text-[24px] font-extrabold text-[#123b86]">
+              <p className="mt-1 text-[25px] font-extrabold text-[#123b86]">
                 Top 100
               </p>
             </div>
 
-            <div className="rounded-[16px] border border-slate-200 bg-white p-4 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+            <div className="rounded-[16px] border border-slate-200 bg-white p-4 text-center shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
                 Requisito
               </p>
-              <p className="mt-1 text-[24px] font-extrabold text-[#123b86]">
+              <p className="mt-1 text-[25px] font-extrabold text-[#123b86]">
                 20 simulacros
               </p>
             </div>
 
-            <div className="rounded-[16px] border border-slate-200 bg-[#f8fbff] p-4 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
+            <div className="rounded-[16px] border border-slate-200 bg-[#f8fbff] p-4 text-center shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
                 Criterio
               </p>
-              <p className="mt-1 text-[24px] font-extrabold text-[#123b86]">
+              <p className="mt-1 text-[25px] font-extrabold text-[#123b86]">
                 Media global
               </p>
             </div>
           </div>
 
           <div className="overflow-hidden rounded-[18px] border border-slate-200 bg-white shadow-sm">
-            <div className="grid grid-cols-[70px_1fr_120px_120px_120px] border-b border-slate-100 bg-[#f8fbff] px-4 py-3 text-xs font-extrabold uppercase tracking-[0.10em] text-slate-500 max-md:hidden">
-              <span>Rank</span>
-              <span>Usuario</span>
+            <div className="hidden grid-cols-[105px_1.2fr_1.2fr_1fr_1fr_1fr] items-center border-b border-slate-100 bg-[#f8fbff] px-4 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-slate-500 md:grid">
+              <span className="text-center">Rank</span>
+              <span className="text-center">Usuario</span>
+              <span className="text-center">Insignia</span>
               <span className="text-center">Media</span>
               <span className="text-center">Mejor</span>
               <span className="text-center">Simulacros</span>
@@ -125,31 +254,20 @@ export default function RankingPage({
                 {ranking.map((row, index) => {
                   const rank = index + 1;
                   const isCurrentUser = user?.id === row.user_id;
+                  const badge = getBadgeByPoints(Number(row.badge_points || 0));
 
                   return (
                     <div
                       key={row.user_id}
-                      className={`grid items-center gap-3 px-4 py-3 text-sm md:grid-cols-[70px_1fr_120px_120px_120px] ${
+                      className={`grid items-center gap-3 px-4 py-4 text-sm md:grid-cols-[105px_1.2fr_1.2fr_1fr_1fr_1fr] ${
                         isCurrentUser ? "bg-[#eef5ff]" : "bg-white"
                       }`}
                     >
-                      <div className="flex items-center gap-2">
-                        <span
-                          className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-extrabold ${
-                            rank === 1
-                              ? "bg-[#fff7d6] text-[#8a6a00]"
-                              : rank === 2
-                                ? "bg-slate-100 text-slate-600"
-                                : rank === 3
-                                  ? "bg-[#fff0e6] text-[#9a5b00]"
-                                  : "bg-[#eef5ff] text-[#123b86]"
-                          }`}
-                        >
-                          {rank}
-                        </span>
+                      <div className="flex items-center justify-center">
+                        {getRankBadge(rank)}
                       </div>
 
-                      <div>
+                      <div className="text-center">
                         <p className="font-extrabold text-[#1f3762]">
                           {row.username}
                           {isCurrentUser ? (
@@ -158,21 +276,45 @@ export default function RankingPage({
                             </span>
                           ) : null}
                         </p>
-                        <p className="text-xs text-slate-500 md:hidden">
-                          Media {formatScore(row.media_simulacros)} / 40 ·{" "}
+
+                        <div className="mt-2 flex items-center justify-center gap-2 md:hidden">
+                          <img
+                            src={badge.icon}
+                            alt={badge.name}
+                            className="h-7 w-7 object-contain"
+                          />
+                          <span className="text-xs font-bold text-slate-500">
+                            {badge.name}
+                          </span>
+                        </div>
+
+                        <p className="mt-1 text-xs text-slate-500 md:hidden">
+                          Media {formatScore(row.media_simulacros)} / 40 · Mejor{" "}
+                          {formatScore(row.mejor_simulacro)} / 40 ·{" "}
                           {row.simulacros_realizados} simulacros
                         </p>
                       </div>
 
-                      <div className="hidden text-center font-bold text-[#123b86] md:block">
+                      <div className="hidden flex-col items-center justify-center md:flex">
+                        <img
+                          src={badge.icon}
+                          alt={badge.name}
+                          className="h-9 w-9 object-contain"
+                        />
+                        <span className="mt-1 text-xs font-bold text-[#1f3762]">
+                          {badge.name}
+                        </span>
+                      </div>
+
+                      <div className="hidden text-center font-extrabold text-[#123b86] md:block">
                         {formatScore(row.media_simulacros)} / 40
                       </div>
 
-                      <div className="hidden text-center font-bold text-[#123b86] md:block">
+                      <div className="hidden text-center font-extrabold text-[#123b86] md:block">
                         {formatScore(row.mejor_simulacro)} / 40
                       </div>
 
-                      <div className="hidden text-center font-bold text-[#123b86] md:block">
+                      <div className="hidden text-center font-extrabold text-[#123b86] md:block">
                         {row.simulacros_realizados}
                       </div>
                     </div>
