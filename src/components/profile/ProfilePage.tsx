@@ -50,9 +50,7 @@ export default function ProfilePage({
     ? new Date(user.created_at).toLocaleDateString("es-ES")
     : "No disponible";
 
-  const effectiveTrialUsed = Boolean(
-    premiumProfile.trial_used || trialUsed
-  );
+  const effectiveTrialUsed = Boolean(premiumProfile.trial_used || trialUsed);
 
   const isTrialing =
     hasActiveSubscription &&
@@ -159,18 +157,12 @@ export default function ProfilePage({
     setSaving(true);
     setMessage("");
 
-    const { error: profileError } = await supabase.from("profiles").upsert(
-      {
-        id: user.id,
-        username: cleanUsername,
-      },
-      {
-        onConflict: "id",
-      }
-    );
+    const { error: profileError } = await supabase.rpc("update_my_username", {
+      new_username: cleanUsername,
+    });
 
     if (profileError) {
-      console.error("Error actualizando profiles:", profileError);
+      console.error("Error actualizando username:", profileError);
       setSaving(false);
       setMessage(`Error Supabase: ${profileError.message}`);
       return;
