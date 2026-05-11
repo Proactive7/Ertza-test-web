@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { createClient } from "@supabase/supabase-js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: "2025-04-30.basil",
+  apiVersion: "2026-04-22.dahlia",
 });
 
 const supabase = createClient(
@@ -22,6 +22,18 @@ function getSubscriptionPeriodEnd(
   const firstItem = subscription.items?.data?.[0];
 
   return unixToIsoDate(firstItem?.current_period_end);
+}
+
+function getInvoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
+  const invoiceWithSubscription = invoice as Stripe.Invoice & {
+    subscription?: string | Stripe.Subscription | null;
+  };
+
+  const subscription = invoiceWithSubscription.subscription;
+
+  if (typeof subscription === "string") return subscription;
+
+  return subscription?.id || null;
 }
 
 function isPremiumStatus(status: Stripe.Subscription.Status): boolean {
@@ -191,9 +203,7 @@ export async function POST(req: NextRequest) {
 
       case "invoice.payment_succeeded": {
         const invoice = event.data.object as Stripe.Invoice;
-
-        const subscriptionId =
-          typeof invoice.subscription === "string" ? invoice.subscription : null;
+        const subscriptionId = getInvoiceSubscriptionId(invoice);
 
         if (subscriptionId) {
           const subscription = await stripe.subscriptions.retrieve(
@@ -211,9 +221,7 @@ export async function POST(req: NextRequest) {
 
       case "invoice.payment_failed": {
         const invoice = event.data.object as Stripe.Invoice;
-
-        const subscriptionId =
-          typeof invoice.subscription === "string" ? invoice.subscription : null;
+        const subscriptionId = getInvoiceSubscriptionId(invoice);
 
         if (subscriptionId) {
           const subscription = await stripe.subscriptions.retrieve(
