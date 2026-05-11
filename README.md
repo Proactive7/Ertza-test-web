@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ErtzaTest
 
-## Getting Started
+Plataforma web de tests y simulacros para oposiciones de la Ertzaintza.
 
-First, run the development server:
+ErtzaTest permite realizar cuestionarios por temas, simulacros completos, seguimiento de estadísticas, ranking de opositores, sistema de insignias y gestión Premium mediante Stripe.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Tecnologías utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 14
+- React 18
+- TypeScript
+- TailwindCSS
+- Supabase
+- Stripe
+- Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Funcionalidades principales
 
-To learn more about Next.js, take a look at the following resources:
+## Sistema de autenticación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Registro e inicio de sesión
+- Gestión de sesiones
+- Recuperación de contraseña
+- Perfil editable
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tests y simulacros
 
-## Deploy on Vercel
+- Tests por temas
+- Simulacros oficiales
+- Corrección automática
+- Preguntas aleatorias
+- Temporizador en tiempo real
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estadísticas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Nota media
+- Mejor nota
+- Tests aprobados
+- Tema más practicado
+- Actividad reciente
+- Ranking global
+- Sistema de insignias
+
+## Premium
+
+- Suscripción mensual con Stripe
+- Prueba gratuita de 7 días
+- Portal de cliente Stripe
+- Control automático de estado Premium
+
+---
+
+# Variables de entorno
+
+Crear un archivo `.env.local` usando como referencia `.env.example`.
+
+Ejemplo:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+
+SUPABASE_SERVICE_ROLE_KEY=
+
+STRIPE_SECRET_KEY=
+STRIPE_PRICE_ID=
+STRIPE_WEBHOOK_SECRET=
+
+NEXT_PUBLIC_SITE_URL=
