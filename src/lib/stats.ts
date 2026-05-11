@@ -1,4 +1,4 @@
-export const USER_RESULTS_KEY = "ertzatest_user_results";
+import { supabase } from "@/lib/supabaseClient";
 
 export type StoredTestResult = {
   id: string;
@@ -16,32 +16,34 @@ export type StoredTestResult = {
   timeSpentSeconds: number;
 };
 
-function canUseStorage(): boolean {
-  return typeof window !== "undefined";
-}
+export async function saveTestResult(
+  result: StoredTestResult
+): Promise<void> {
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
 
-export function getStoredResults(): StoredTestResult[] {
-  if (!canUseStorage()) return [];
-
-  try {
-    const raw = window.localStorage.getItem(USER_RESULTS_KEY);
-    if (!raw) return [];
-
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-
-    return parsed as StoredTestResult[];
-  } catch {
-    return [];
+  if (userError || !user) {
+    console.error("No hay usuario logueado para guardar el resultado.");
+    return;
   }
-}
 
-export function saveTestResult(result: StoredTestResult): void {
-  if (!canUseStorage()) return;
+  const { error } = await supabase.from("test_results").insert({
+    user_id: user.id,
+    topic_key: result.topicKey,
+    topic_name: result.topicName,
+    score: result.score,
+    correct_answers: result.correct,
+    wrong_answers: result.incorrect,
+    blank_answers: result.blank,
+    passed: result.score >= 20,
+    points_earned: result.pointsEarned,
+  });
 
-  const current = getStoredResults();
-  const updated = [result, ...current];
-  window.localStorage.setItem(USER_RESULTS_KEY, JSON.stringify(updated));
+  if (error) {
+    console.error("Error guardando resultado en Supabase:", error.message);
+  }
 }
 
 export function getAverageScore(results: StoredTestResult[]): number {
@@ -104,8 +106,9 @@ function toDayKey(dateISO: string): string {
 export function getCurrentStreak(results: StoredTestResult[]): number {
   if (!results.length) return 0;
 
-  const uniqueDays = Array.from(new Set(results.map((item) => toDayKey(item.dateISO))))
-    .sort((a, b) => (a < b ? 1 : -1));
+  const uniqueDays = Array.from(
+    new Set(results.map((item) => toDayKey(item.dateISO)))
+  ).sort((a, b) => (a < b ? 1 : -1));
 
   if (!uniqueDays.length) return 0;
 

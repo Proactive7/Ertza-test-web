@@ -206,7 +206,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
   }
 
   useEffect(() => {
-    fetchUserPoints();
+    void fetchUserPoints();
   }, [user?.id]);
 
   useEffect(() => {
@@ -253,54 +253,35 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
   useEffect(() => {
     if (!finished || pointsAwardedRef.current) return;
 
-    const finalScore = Math.max(0, scoreReal);
-    const earnedPoints = getAwardedPoints(finalScore);
+    pointsAwardedRef.current = true;
 
-    const resultPayload = {
-      id: `${Date.now()}-${tema}-${Math.random().toString(36).slice(2, 8)}`,
-      topicKey: tema,
-      topicName,
-      dateISO: new Date().toISOString(),
-      score: finalScore,
-      correct: correctas,
-      incorrect: falladas,
-      blank: enBlanco,
-      answered: correctas + falladas,
-      totalQuestions: questions.length,
-      pointsEarned: earnedPoints,
-      timeRemainingSeconds: time,
-      timeSpentSeconds: 40 * 60 - time,
-    };
-
-    saveTestResult(resultPayload);
-
-    async function saveResultToSupabase() {
+    async function persistResult() {
       if (!user?.id) {
         console.error("Usuario no disponible. No se guarda el resultado.");
-        pointsAwardedRef.current = true;
         return;
       }
+
+      const finalScore = Math.max(0, scoreReal);
+      const earnedPoints = getAwardedPoints(finalScore);
 
       const previousPoints = await fetchUserPoints();
       const previousBadge = getBadgeByPoints(previousPoints);
 
-      const { error } = await supabase.from("test_results").insert({
-        user_id: user.id,
-        topic_key: tema,
-        topic_name: topicName,
+      await saveTestResult({
+        id: `${Date.now()}-${tema}-${Math.random().toString(36).slice(2, 8)}`,
+        topicKey: tema,
+        topicName,
+        dateISO: new Date().toISOString(),
         score: finalScore,
-        correct_answers: correctas,
-        wrong_answers: falladas,
-        blank_answers: enBlanco,
-        passed: finalScore >= 20,
-        points_earned: earnedPoints,
+        correct: correctas,
+        incorrect: falladas,
+        blank: enBlanco,
+        answered: correctas + falladas,
+        totalQuestions: questions.length,
+        pointsEarned: earnedPoints,
+        timeRemainingSeconds: time,
+        timeSpentSeconds: 40 * 60 - time,
       });
-
-      if (error) {
-        console.error("Error guardando resultado en Supabase:", error.message);
-        pointsAwardedRef.current = true;
-        return;
-      }
 
       const nextPoints = previousPoints + earnedPoints;
       const nextBadge = getBadgeByPoints(nextPoints);
@@ -315,11 +296,9 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
           setShowBadgeAnimation(false);
         }, 2600);
       }
-
-      pointsAwardedRef.current = true;
     }
 
-    saveResultToSupabase();
+    void persistResult();
   }, [
     finished,
     scoreReal,
