@@ -9,8 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ErtzaTest",
-  description: "Plataforma de preparación para la oposición de la Ertzaintza",
+  title: "ErtzaTest | Tests Ertzaintza",
+  description:
+    "Prepárate la oposición de la Ertzaintza con tests, simulacros y estadísticas reales.",
 };
 
 export default function RootLayout({

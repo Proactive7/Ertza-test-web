@@ -25,7 +25,7 @@ export const traficoQuestions: Question[] = [
   a: "Circular con tasas de alcohol superiores a las reglamentariamente establecidas",
   b: "Circular con presencia de drogas en el organismo",
   c: "Circular con una tasa de alcohol que supere el doble de la permitida",
-  d: "Es una infracción cuya sanción será de 1.000 euros",
+  d: "B y C son correctas",
   correcta: "d",
 },
 {
