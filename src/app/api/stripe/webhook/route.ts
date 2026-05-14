@@ -21,7 +21,16 @@ function getSubscriptionPeriodEnd(
 ): string | null {
   const firstItem = subscription.items?.data?.[0];
 
-  return unixToIsoDate(firstItem?.current_period_end);
+  const timestamp =
+    subscription.cancel_at ||
+    subscription.trial_end ||
+    firstItem?.current_period_end;
+
+  return unixToIsoDate(timestamp);
+}
+
+function getCancelAtPeriodEnd(subscription: Stripe.Subscription): boolean {
+  return Boolean(subscription.cancel_at_period_end) || Boolean(subscription.cancel_at);
 }
 
 function getInvoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
@@ -51,6 +60,7 @@ async function setPremiumFromSubscription({
 }) {
   const premiumActive = isPremiumStatus(subscription.status);
   const premiumUntil = getSubscriptionPeriodEnd(subscription);
+  const cancelAtPeriodEnd = getCancelAtPeriodEnd(subscription);
 
   const { error } = await supabase
     .from("profiles")
@@ -60,7 +70,7 @@ async function setPremiumFromSubscription({
       stripe_subscription_id: subscription.id,
       stripe_subscription_status: subscription.status,
       premium_until: premiumUntil,
-      cancel_at_period_end: subscription.cancel_at_period_end,
+      cancel_at_period_end: cancelAtPeriodEnd,
       trial_used: true,
     })
     .eq("id", userId);
@@ -76,6 +86,7 @@ async function setPremiumFromSubscription({
 async function updateSubscriptionById(subscription: Stripe.Subscription) {
   const premiumActive = isPremiumStatus(subscription.status);
   const premiumUntil = getSubscriptionPeriodEnd(subscription);
+  const cancelAtPeriodEnd = getCancelAtPeriodEnd(subscription);
 
   const { error } = await supabase
     .from("profiles")
@@ -83,7 +94,7 @@ async function updateSubscriptionById(subscription: Stripe.Subscription) {
       premium: premiumActive,
       stripe_subscription_status: subscription.status,
       premium_until: premiumUntil,
-      cancel_at_period_end: subscription.cancel_at_period_end,
+      cancel_at_period_end: cancelAtPeriodEnd,
       trial_used: true,
     })
     .eq("stripe_subscription_id", subscription.id);
@@ -201,7 +212,8 @@ export async function POST(req: NextRequest) {
         break;
       }
 
-      case "invoice.payment_succeeded": {
+      case "invoice.payment_succeeded":
+      case "invoice_payment.paid": {
         const invoice = event.data.object as Stripe.Invoice;
         const subscriptionId = getInvoiceSubscriptionId(invoice);
 
