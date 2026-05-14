@@ -40,43 +40,43 @@ type BadgeConfig = {
 
 const BADGE_CONFIG: Record<DisplayBadgeKey, BadgeConfig> = {
   "Nivel 1": {
-    icon: "/ranks/rank1.png",
+    icon: "/ranks/rank1.PNG",
     textClass: "text-[#6a7a99]",
     bgClass: "bg-[linear-gradient(135deg,_#f8fbff_0%,_#e9f1ff_100%)]",
     borderClass: "border-[#d7e5ff]",
   },
   "Nivel 2": {
-    icon: "/ranks/rank2.png",
+    icon: "/ranks/rank2.PNG",
     textClass: "text-[#8a4b20]",
     bgClass: "bg-[linear-gradient(135deg,_#fff5ec_0%,_#f2d4b7_100%)]",
     borderClass: "border-[#e1b78f]",
   },
   "Nivel 3": {
-    icon: "/ranks/rank3.png",
+    icon: "/ranks/rank3.PNG",
     textClass: "text-[#5a6876]",
     bgClass: "bg-[linear-gradient(135deg,_#f8fbff_0%,_#dee6ef_100%)]",
     borderClass: "border-[#cfd7e2]",
   },
   "Nivel 4": {
-    icon: "/ranks/rank4.png",
+    icon: "/ranks/rank4.PNG",
     textClass: "text-[#8a6a00]",
     bgClass: "bg-[linear-gradient(135deg,_#fffbe3_0%,_#f4dc8d_100%)]",
     borderClass: "border-[#e6cf77]",
   },
   "Nivel 5": {
-    icon: "/ranks/rank5.png",
+    icon: "/ranks/rank5.PNG",
     textClass: "text-[#0f6b86]",
     bgClass: "bg-[linear-gradient(135deg,_#edfaff_0%,_#cceef7_100%)]",
     borderClass: "border-[#b9e0ea]",
   },
   "Nivel 6": {
-    icon: "/ranks/rank6.png",
+    icon: "/ranks/rank6.PNG",
     textClass: "text-[#9a5b00]",
     bgClass: "bg-[linear-gradient(135deg,_#fff7ed_0%,_#fed7aa_100%)]",
     borderClass: "border-[#fdba74]",
   },
   "Nivel 7": {
-    icon: "/ranks/rank7.png",
+    icon: "/ranks/rank7.PNG",
     textClass: "text-[#5a35b1]",
     bgClass: "bg-[linear-gradient(135deg,_#f4eeff_0%,_#ddd0ff_100%)]",
     borderClass: "border-[#cdb8ff]",
