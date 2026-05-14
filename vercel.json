@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/premium/sync-expired",
+      "schedule": "0 * * * *"
+    }
+  ]
+}
