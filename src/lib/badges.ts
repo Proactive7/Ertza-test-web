@@ -17,13 +17,13 @@ export type BadgeLevel = {
 export const USER_POINTS_KEY = "ertzatest_user_points";
 
 export const BADGE_LEVELS: BadgeLevel[] = [
-  { name: "Nivel 1", min: 0, max: 49, icon: "/ranks/rank1.png" },
-  { name: "Nivel 2", min: 50, max: 99, icon: "/ranks/rank2.png" },
-  { name: "Nivel 3", min: 100, max: 249, icon: "/ranks/rank3.png" },
-  { name: "Nivel 4", min: 250, max: 499, icon: "/ranks/rank4.png" },
-  { name: "Nivel 5", min: 500, max: 749, icon: "/ranks/rank5.png" },
-  { name: "Nivel 6", min: 750, max: 999, icon: "/ranks/rank6.png" },
-  { name: "Nivel 7", min: 1000, max: Infinity, icon: "/ranks/rank7.png" },
+  { name: "Nivel 1", min: 0, max: 49, icon: "/ranks/rank1.PNG" },
+  { name: "Nivel 2", min: 50, max: 99, icon: "/ranks/rank2.PNG" },
+  { name: "Nivel 3", min: 100, max: 249, icon: "/ranks/rank3.PNG" },
+  { name: "Nivel 4", min: 250, max: 499, icon: "/ranks/rank4.PNG" },
+  { name: "Nivel 5", min: 500, max: 749, icon: "/ranks/rank5.PNG" },
+  { name: "Nivel 6", min: 750, max: 999, icon: "/ranks/rank6.PNG" },
+  { name: "Nivel 7", min: 1000, max: Infinity, icon: "/ranks/rank7.PNG" },
 ];
 
 export function getBadgeByPoints(points: number): BadgeLevel {
