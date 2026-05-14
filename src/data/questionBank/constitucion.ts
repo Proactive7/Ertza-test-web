@@ -9,7 +9,7 @@ export const constitucionQuestions: Question[] = [
     c: "Orden Ministerial.",
     d: "Decreto Legislativo.",
     correcta: "b",
-  },,
+  },
   {
     id: 2,
     pregunta: "La libertad de residencia y circulación puede ser limitada:",
