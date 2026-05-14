@@ -18,7 +18,7 @@ export const constitucionQuestions: Question[] = [
     c: "Por motivos distintos a los políticos o ideológicos.",
     d: "En ningún caso puede ser limitada esta libertad.",
     correcta: "c",
-  },,
+  },
   {
     id: 3,
     pregunta: "¿La Administración civil puede imponer sanciones que subsidiariamente impliquen privación de libertad?",
@@ -27,7 +27,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sí, cuando así lo autorice una ley orgánica.",
     d: "No.",
     correcta: "d",
-  },,
+  },
   {
     id: 4,
     pregunta: "Nadie puede ser condenado por acciones u omisiones que en el momento de producirse no constituyan delito o falta según:",
@@ -36,7 +36,7 @@ export const constitucionQuestions: Question[] = [
     c: "El reglamento regulador.",
     d: "Los tribunales ordinarios.",
     correcta: "b",
-  },,
+  },
   {
     id: 5,
     pregunta: "¿En qué ámbito se prohíben los tribunales de honor?",
@@ -45,7 +45,7 @@ export const constitucionQuestions: Question[] = [
     c: "En todos los ámbitos.",
     d: "En ningún caso.",
     correcta: "a",
-  },,
+  },
   {
     id: 6,
     pregunta: "La ley regulará la organización y el control de los medios de comunicación social dependientes del Estado:",
@@ -54,7 +54,7 @@ export const constitucionQuestions: Question[] = [
     c: "A través de la Administración.",
     d: "A través del Defensor del Pueblo.",
     correcta: "a",
-  },,
+  },
   {
     id: 7,
     pregunta: "Se garantiza el secreto de las comunicaciones:",
@@ -63,7 +63,7 @@ export const constitucionQuestions: Question[] = [
     c: "En cualquier caso.",
     d: "Salvo resolución judicial o en el estado de alarma.",
     correcta: "d",
-  },,
+  },
   {
     id: 8,
     pregunta: "Según el artículo 10 de la CE las normas relativas a los derechos fundamentales y a las libertades públicas que la Constitución reconoce se interpretarán conforme:",
@@ -72,7 +72,7 @@ export const constitucionQuestions: Question[] = [
     c: "A la Declaración Universal de los Derechos Humanos y los demás Tratados Internacionales sobre la materia ratificados por España.",
     d: "A los Tratados Internacionales.",
     correcta: "c",
-  },,
+  },
   {
     id: 9,
     pregunta: "¿En qué artículo se regula el derecho a la vida?",
@@ -81,7 +81,7 @@ export const constitucionQuestions: Question[] = [
     c: "En el artículo 16.",
     d: "En el artículo 17.",
     correcta: "b",
-  },,
+  },
   {
     id: 10,
     pregunta: "Los poderes públicos garantizan el derecho que asiste a los padres para que sus hijos reciban la formación religiosa y moral que esté de acuerdo con:",
@@ -90,7 +90,7 @@ export const constitucionQuestions: Question[] = [
     c: "Los sentimientos mayoritarios de los españoles.",
     d: "Los preceptos y principios que rigen en Europa.",
     correcta: "a",
-  },,
+  },
   {
     id: 11,
     pregunta: "¿Quién puede ser obligado a declarar?",
@@ -99,7 +99,7 @@ export const constitucionQuestions: Question[] = [
     c: "Ningún detenido puede ser obligado a declarar.",
     d: "Las personas detenidas que pertenezcan a bandas armadas y grupos terroristas.",
     correcta: "b",
-  },,
+  },
   {
     id: 12,
     pregunta: "La detención preventiva:",
@@ -108,7 +108,7 @@ export const constitucionQuestions: Question[] = [
     c: "Es inconstitucional.",
     d: "Ninguna de las respuestas anteriores es correcta.",
     correcta: "b",
-  },,
+  },
   {
     id: 13,
     pregunta: "El derecho de huelga:",
@@ -117,7 +117,7 @@ export const constitucionQuestions: Question[] = [
     c: "Es ilimitado, siempre que se utilice por los trabajadores para la defensa de sus intereses.",
     d: "Ninguna de las respuestas anteriores es correcta.",
     correcta: "d",
-  },,
+  },
   {
     id: 14,
     pregunta: "La extradición solo se concederá en cumplimiento de un tratado o de la ley, atendiendo al principio de:",
@@ -126,7 +126,7 @@ export const constitucionQuestions: Question[] = [
     c: "Reciprocidad.",
     d: "Cooperación.",
     correcta: "c",
-  },,
+  },
   {
     id: 15,
     pregunta: "¿Qué artículo recoge la igualdad de los españoles ante la ley y el principio de no discriminación?",
@@ -135,7 +135,7 @@ export const constitucionQuestions: Question[] = [
     c: "En el artículo 14.",
     d: "En el artículo 13.",
     correcta: "c",
-  },,
+  },
   {
     id: 16,
     pregunta: "Las asociaciones se inscribirán en un registro a efectos de:",
@@ -144,7 +144,7 @@ export const constitucionQuestions: Question[] = [
     c: "Publicidad.",
     d: "Legalidad.",
     correcta: "c",
-  },,
+  },
   {
     id: 17,
     pregunta: "¿Se puede limitar el uso de la informática?",
@@ -153,7 +153,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sí, por Real Decreto.",
     d: "No.",
     correcta: "a",
-  },,
+  },
   {
     id: 18,
     pregunta: "¿Quiénes no pueden ejercer el derecho de petición de forma colectiva?",
@@ -162,7 +162,7 @@ export const constitucionQuestions: Question[] = [
     c: "Los miembros de las Fuerzas Armadas.",
     d: "Todas las respuestas anteriores son correctas.",
     correcta: "c",
-  },,
+  },
   {
     id: 19,
     pregunta: "¿Cuándo un español de origen puede ser privado de su nacionalidad?",
@@ -171,7 +171,7 @@ export const constitucionQuestions: Question[] = [
     c: "Cuando cometa un delito de traición o contra la seguridad del Estado.",
     d: "En ningún caso.",
     correcta: "d",
-  },,
+  },
   {
     id: 20,
     pregunta: "El derecho a la tutela judicial recogido en el artículo 24 de la Constitución comprende:",
@@ -180,7 +180,7 @@ export const constitucionQuestions: Question[] = [
     c: "El derecho a un juez ordinario predeterminado por ley.",
     d: "Todas las respuestas anteriores son correctas.",
     correcta: "d",
-  },,
+  },
   {
     id: 21,
     pregunta: "La Enseñanza Básica es:",
@@ -189,7 +189,7 @@ export const constitucionQuestions: Question[] = [
     c: "Obligatoria y gratuita.",
     d: "Gratuita.",
     correcta: "c",
-  },,
+  },
   {
     id: 22,
     pregunta: "Según la Constitución, el libre desarrollo de la personalidad es:",
@@ -198,7 +198,7 @@ export const constitucionQuestions: Question[] = [
     c: "Un principio rector de la política social y económica.",
     d: "Un derecho garantizado por las organizaciones profesionales.",
     correcta: "a",
-  },,
+  },
   {
     id: 23,
     pregunta: "La presunción de inocencia se encuadra dentro de:",
@@ -207,7 +207,7 @@ export const constitucionQuestions: Question[] = [
     c: "El derecho al honor.",
     d: "El derecho de petición.",
     correcta: "a",
-  },,
+  },
   {
     id: 24,
     pregunta: "¿Qué confesión tiene carácter estatal?",
@@ -216,7 +216,7 @@ export const constitucionQuestions: Question[] = [
     c: "Ninguna religión.",
     d: "Depende del partido político que esté en el poder.",
     correcta: "c",
-  },,
+  },
   {
     id: 25,
     pregunta: "La negociación colectiva laboral:",
@@ -225,7 +225,7 @@ export const constitucionQuestions: Question[] = [
     c: "Es una garantía laboral.",
     d: "Es una libertad fundamental.",
     correcta: "b",
-  },,
+  },
   {
     id: 26,
     pregunta: "En caso de flagrante delito, ¿es necesaria una autorización judicial para entrar en un domicilio particular?",
@@ -234,7 +234,7 @@ export const constitucionQuestions: Question[] = [
     c: "En algunos casos.",
     d: "No, cuando son delitos de tráfico de drogas.",
     correcta: "b",
-  },,
+  },
   {
     id: 27,
     pregunta: "La mayoría de edad se establece a los:",
@@ -243,7 +243,7 @@ export const constitucionQuestions: Question[] = [
     c: "21 años.",
     d: "20 años.",
     correcta: "b",
-  },,
+  },
   {
     id: 28,
     pregunta: "¿Cuándo pueden consistir las penas privativas de libertad en trabajos forzados?",
@@ -252,7 +252,7 @@ export const constitucionQuestions: Question[] = [
     c: "Cuando penen un delito considerado muy grave.",
     d: "Cuando a través de ellos se procure la reinserción social.",
     correcta: "a",
-  },,
+  },
   {
     id: 29,
     pregunta: "A toda persona detenida:",
@@ -261,7 +261,7 @@ export const constitucionQuestions: Question[] = [
     c: "Se le informará de sus derechos, siempre que los delitos cometidos no sean de terrorismo.",
     d: "Todas las respuestas anteriores son correctas.",
     correcta: "d",
-  },,
+  },
   {
     id: 30,
     pregunta: "El procedimiento de 'habeas corpus' se regula por:",
@@ -270,7 +270,7 @@ export const constitucionQuestions: Question[] = [
     c: "Orden Ministerial.",
     d: "Real Decreto.",
     correcta: "a",
-  },,
+  },
   {
     id: 31,
     pregunta: "Las asociaciones:",
@@ -279,7 +279,7 @@ export const constitucionQuestions: Question[] = [
     c: "Solo pueden ser disueltas en virtud de resolución judicial motivada.",
     d: "Pueden ser suspendidas en virtud de resolución administrativa.",
     correcta: "c",
-  },,
+  },
   {
     id: 32,
     pregunta: "El derecho a entrar y salir libremente de España se realizará:",
@@ -288,7 +288,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sin ninguna limitación.",
     d: "Con las limitaciones establecidas por la Orden Ministerial de desarrollo.",
     correcta: "a",
-  },,
+  },
   {
     id: 33,
     pregunta: "En los términos constitucionales, ¿queda abolida la pena de muerte?",
@@ -297,7 +297,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sí, salvo lo que puedan disponer las leyes penales para tiempos de guerra.",
     d: "Sí, salvo lo que puedan disponer las leyes penales militares para tiempos de guerra.",
     correcta: "d",
-  },,
+  },
   {
     id: 34,
     pregunta: "¿Con cuál de los siguientes países puede concertar España tratados de doble nacionalidad?",
@@ -306,7 +306,7 @@ export const constitucionQuestions: Question[] = [
     c: "Con países con los que España haya tenido una particular vinculación.",
     d: "Todas las respuestas anteriores son correctas.",
     correcta: "d",
-  },,
+  },
   {
     id: 35,
     pregunta: "La libertad de expresión tiene como límites:",
@@ -315,7 +315,7 @@ export const constitucionQuestions: Question[] = [
     c: "El derecho a la propia imagen.",
     d: "Todas las respuestas anteriores son correctas.",
     correcta: "d",
-  },,
+  },
   {
     id: 36,
     pregunta: "Por razones de parentesco con las personas detenidas, ¿puede no ser obligatorio declarar sobre hechos presuntamente delictivos?",
@@ -324,7 +324,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sí, en los casos regulados por ley.",
     d: "Sí, en los casos que permita la autoridad judicial.",
     correcta: "c",
-  },,
+  },
   {
     id: 37,
     pregunta: "El domicilio de la persona es inviolable. Por ello, la entrada o registro en el mismo deberá hacerse:",
@@ -333,7 +333,7 @@ export const constitucionQuestions: Question[] = [
     c: "Por resolución administrativa o resolución judicial.",
     d: "Por resolución judicial y con consentimiento del titular.",
     correcta: "a",
-  },,
+  },
   {
     id: 38,
     pregunta: "Según la Constitución, el Estado es:",
@@ -342,7 +342,7 @@ export const constitucionQuestions: Question[] = [
     c: "De bienestar social.",
     d: "Federal.",
     correcta: "b",
-  },,
+  },
   {
     id: 39,
     pregunta: "Nuestra Constitución trata de los derechos y deberes fundamentales de los españoles en su Título I, denominado:",
@@ -351,7 +351,7 @@ export const constitucionQuestions: Question[] = [
     c: "De los derechos de los españoles.",
     d: "De los derechos y deberes principales de los españoles.",
     correcta: "a",
-  },,
+  },
   {
     id: 40,
     pregunta: "¿En qué artículos de nuestra CE se recogen los derechos fundamentales y las libertades públicas?",
@@ -360,7 +360,7 @@ export const constitucionQuestions: Question[] = [
     c: "En los artículos 31 a 45.",
     d: "En los artículos 15 a 29.",
     correcta: "d",
-  },,
+  },
   {
     id: 41,
     pregunta: "El proceso en el que se enjuicie a un presunto delincuente debe:",
@@ -369,7 +369,7 @@ export const constitucionQuestions: Question[] = [
     c: "Entorpecer los instrumentos probatorios.",
     d: "Nada de lo anterior es cierto.",
     correcta: "b",
-  },,
+  },
   {
     id: 42,
     pregunta: "Las Fundaciones son:",
@@ -378,7 +378,7 @@ export const constitucionQuestions: Question[] = [
     c: "Entidades privadas con fines de carácter también privado.",
     d: "Asociaciones de personas para conseguir fines de interés general.",
     correcta: "a",
-  },,
+  },
   {
     id: 43,
     pregunta: "El tipo de sufragio que consagra la Constitución es el:",
@@ -387,7 +387,7 @@ export const constitucionQuestions: Question[] = [
     c: "Censitario.",
     d: "Las respuestas a) y b) son correctas.",
     correcta: "b",
-  },,
+  },
   {
     id: 44,
     pregunta: "La fundación de una Internacional Sindical por un sindicato español:",
@@ -396,7 +396,7 @@ export const constitucionQuestions: Question[] = [
     c: "Debe plasmarse en un tratado Internacional.",
     d: "Nada de lo anterior es cierto.",
     correcta: "a",
-  },,
+  },
   {
     id: 45,
     pregunta: "Cuando, al conocerse la comisión de un delito por una persona, se acude a su domicilio para detenerla:",
@@ -405,7 +405,7 @@ export const constitucionQuestions: Question[] = [
     c: "Pese a que no dé su consentimiento, se puede entrar.",
     d: "Nada de lo anterior es correcto.",
     correcta: "b",
-  },,
+  },
   {
     id: 46,
     pregunta: "La autorización previa para celebrar una manifestación pública:",
@@ -414,7 +414,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sería inconstitucional.",
     d: "Se da cuando no se prevean alteraciones al orden público.",
     correcta: "c",
-  },,
+  },
   {
     id: 47,
     pregunta: "No es susceptible de recurso de amparo el derecho:",
@@ -423,7 +423,7 @@ export const constitucionQuestions: Question[] = [
     c: "De secreto de las comunicaciones.",
     d: "Lo son todos ellos.",
     correcta: "b",
-  },,
+  },
   {
     id: 48,
     pregunta: "No es susceptible de recurso de amparo el derecho:",
@@ -432,7 +432,7 @@ export const constitucionQuestions: Question[] = [
     c: "Manifestación.",
     d: "Huelga.",
     correcta: "b",
-  },,
+  },
   {
     id: 49,
     pregunta: "Es susceptible de recurso de amparo el derecho:",
@@ -441,7 +441,7 @@ export const constitucionQuestions: Question[] = [
     c: "De cláusula de conciencia.",
     d: "Lo están todos ellos.",
     correcta: "d",
-  },,
+  },
   {
     id: 50,
     pregunta: "La inmediata puesta a disposición judicial derivada del habeas corpus, se produce por:",
@@ -450,7 +450,7 @@ export const constitucionQuestions: Question[] = [
     c: "Prisión preventiva.",
     d: "Detención preventiva.",
     correcta: "a",
-  },,
+  },
   {
     id: 51,
     pregunta: "La libertad ideológica y religiosa, ¿tiene algún tipo de limitación en su forma de manifestarse?",
@@ -459,7 +459,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sí, la establecida por la ley de libertad religiosa.",
     d: "Sí, al ser necesaria autorización municipal.",
     correcta: "b",
-  },,
+  },
   {
     id: 52,
     pregunta: "¿Quién puede ser obligado a declarar sobre su ideología?",
@@ -468,7 +468,7 @@ export const constitucionQuestions: Question[] = [
     c: "Españoles y extranjeros residentes.",
     d: "Nadie.",
     correcta: "d",
-  },,
+  },
   {
     id: 53,
     pregunta: "Para ejercer el derecho de reunión en lugares de tránsito público, ¿se necesita algún requisito?",
@@ -477,7 +477,7 @@ export const constitucionQuestions: Question[] = [
     c: "Sí, solo en grandes concentraciones.",
     d: "Ninguna es correcta.",
     correcta: "b",
-  },,
+  },
   {
     id: 54,
     pregunta: "Una vez cumplido el plazo máximo de detención preventiva, el detenido:",
@@ -486,7 +486,7 @@ export const constitucionQuestions: Question[] = [
     c: "Quedará libre o a disposición judicial.",
     d: "Pasará a disposición judicial.",
     correcta: "c",
-  },,
+  },
   {
     id: 55,
     pregunta: "¿Qué asociaciones son consideradas ilegales?",
@@ -495,7 +495,7 @@ export const constitucionQuestions: Question[] = [
     c: "Las de carácter paramilitar.",
     d: "Todas las respuestas anteriores son correctas.",
     correcta: "d",
-  },,
+  },
   {
     id: 56,
     pregunta: "El secreto profesional, constitucionalmente, sirve para:",
@@ -504,7 +504,7 @@ export const constitucionQuestions: Question[] = [
     c: "No declarar sobre hechos presuntamente delictivos.",
     d: "Todo lo anterior.",
     correcta: "d",
-  },,
+  },
   {
     id: 57,
     pregunta: "El ejercicio del derecho de petición a través de una manifestación ciudadana:",
@@ -513,7 +513,7 @@ export const constitucionQuestions: Question[] = [
     c: "Se admite, salvo para los militares.",
     d: "Ni se admite ni se prohíbe.",
     correcta: "a",
-  },,
+  },
   {
     id: 58,
     pregunta: "Durante el estado de excepción, un detenido conserva el derecho:",
@@ -522,7 +522,7 @@ export const constitucionQuestions: Question[] = [
     c: "De asistencia de letrado.",
     d: "Ninguno de ellos.",
     correcta: "c",
-  },,
+  },
   {
     id: 59,
     pregunta: "Además de la no autoinculpación, la Constitución prevé que no se está obligado a declarar sobre un hecho presuntamente delictivo en caso de:",
@@ -531,7 +531,7 @@ export const constitucionQuestions: Question[] = [
     c: "Secreto profesional.",
     d: "Las respuestas a) y b) son correctas.",
     correcta: "d",
-  },,
+  },
   {
   id: 60,
   pregunta: "¿Dónde está recogido el derecho a participar en los asuntos públicos en la CE?",
@@ -540,7 +540,7 @@ export const constitucionQuestions: Question[] = [
   c: "22",
   d: "21",
   correcta: "b",
-},,
+},
   {
   id: 61,
   pregunta: "¿En qué artículo se encuentra recogida la presunción de inocencia?",
@@ -549,7 +549,7 @@ export const constitucionQuestions: Question[] = [
   c: "Artículo 53.",
   d: "Artículo 54.",
   correcta: "b",
-},,
+},
   {
   id: 62,
   pregunta: "¿Cuál es el fin de las penas según el precepto 25 de la CE?",
@@ -558,7 +558,7 @@ export const constitucionQuestions: Question[] = [
   c: "Evitar la reiteración.",
   d: "La a y la b son correctas.",
   correcta: "d",
-},,
+},
   {
   id: 63,
   pregunta: "Los condenados a prisión según el artículo 25 de la CE:",
@@ -567,7 +567,7 @@ export const constitucionQuestions: Question[] = [
   c: "No tienen derechos fundamentales.",
   d: "Ninguna respuesta es correcta.",
   correcta: "b",
-},,
+},
   {
   id: 64,
   pregunta: "La educación tiene por objeto:",
@@ -576,7 +576,7 @@ export const constitucionQuestions: Question[] = [
   c: "El respeto a los derechos fundamentales y libertades públicas.",
   d: "Todas las anteriores son correctas.",
   correcta: "d",
-},,
+},
   {
   id: 65,
   pregunta: "¿A quién se reconoce la libertad de creación de centros docentes?",
@@ -585,7 +585,7 @@ export const constitucionQuestions: Question[] = [
   c: "Personas físicas y jurídicas.",
   d: "Ninguna de las anteriores.",
   correcta: "c",
-},,
+},
   {
   id: 66,
   pregunta: "¿Quiénes tienen limitado el derecho a sindicarse?",
@@ -594,7 +594,7 @@ export const constitucionQuestions: Question[] = [
   c: "Militares.",
   d: "Todos los anteriores.",
   correcta: "a",
-},,
+},
   {
   id: 67,
   pregunta: "¿A quién vinculan los derechos y libertades públicas?",
@@ -603,7 +603,7 @@ export const constitucionQuestions: Question[] = [
   c: "A todos los poderes públicos.",
   d: "Todas son correctas.",
   correcta: "c",
-},,
+},
   {
   id: 68,
   pregunta: "¿Cómo se regulará la institución del defensor del pueblo?",
@@ -612,7 +612,7 @@ export const constitucionQuestions: Question[] = [
   c: "Reglamento.",
   d: "Real Decreto.",
   correcta: "b",
-},,
+},
   {
   id: 69,
   pregunta: "¿Qué funciones tiene encomendadas el defensor del pueblo?",
@@ -621,7 +621,7 @@ export const constitucionQuestions: Question[] = [
   c: "Defensa de la Constitución española.",
   d: "Defensa del ciudadano.",
   correcta: "b",
-},,
+},
   {
   id: 70,
   pregunta: "¿Cuánto podrá durar la prisión provisional?",
@@ -630,7 +630,7 @@ export const constitucionQuestions: Question[] = [
   c: "Como máximo 72 horas.",
   d: "72 horas.",
   correcta: "a",
-},,
+},
   {
   id: 71,
   pregunta: "La Comisión tiene en la actualidad los siguientes miembros:",
@@ -639,7 +639,7 @@ export const constitucionQuestions: Question[] = [
   c: "29.",
   d: "15.",
   correcta: "b",
-},,
+},
   {
   id: 72,
   pregunta: "La Comisión se designa para un periodo de:",
@@ -648,7 +648,7 @@ export const constitucionQuestions: Question[] = [
   c: "4 años.",
   d: "El que determine el Parlamento.",
   correcta: "a",
-},,
+},
   {
   id: 73,
   pregunta: "La sede de la Comisión está en:",
@@ -657,7 +657,7 @@ export const constitucionQuestions: Question[] = [
   c: "Luxemburgo.",
   d: "París.",
   correcta: "b",
-},,
+},
   {
   id: 74,
   pregunta: "El cargo de Presidente de la Comisión será propuesto:",
@@ -666,7 +666,7 @@ export const constitucionQuestions: Question[] = [
   c: "Por el Consejo de la Unión Europea al Parlamento.",
   d: "Conjuntamente por el Parlamento y el Consejo.",
   correcta: "a",
-},,
+},
   {
   id: 75,
   pregunta: "Los acuerdos de la Comisión se adoptarán:",
@@ -675,7 +675,7 @@ export const constitucionQuestions: Question[] = [
   c: "Por 2/3 partes.",
   d: "Por mayoría del número de miembros.",
   correcta: "d",
-},,
+},
   {
   id: 76,
   pregunta: "El Tribunal de Justicia de la Unión Europea tendrá su sede en:",
@@ -684,7 +684,7 @@ export const constitucionQuestions: Question[] = [
   c: "Frankfurt.",
   d: "La Haya.",
   correcta: "a",
-},,
+},
   {
   id: 77,
   pregunta: "El presidente de la Comisión:",
@@ -693,7 +693,7 @@ export const constitucionQuestions: Question[] = [
   c: "Nombrará Vicepresidentes, distintos del Alto Representante de la Unión para Asuntos Exteriores y Política de Seguridad, de entre los miembros de la Comisión.",
   d: "Todas las respuestas son verdaderas.",
   correcta: "d",
-},,
+},
   {
   id: 78,
   pregunta: "¿Cuál de las siguientes Instituciones establece las líneas generales de actuación y se reúne como mínimo dos veces al año?",
@@ -702,7 +702,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión de la Unión Europea.",
   d: "El Consejo Europeo.",
   correcta: "d",
-},,
+},
   {
   id: 79,
   pregunta: "El tratado de París es:",
@@ -711,7 +711,7 @@ export const constitucionQuestions: Question[] = [
   c: "El tratado de Maastricht.",
   d: "El Acta Única Europea.",
   correcta: "a",
-},,
+},
   {
   id: 80,
   pregunta: "Actualmente hay 28 países dentro de la Unión Europea. ¿Cuál fue el año en el que se produjeron más incorporaciones?",
@@ -720,7 +720,7 @@ export const constitucionQuestions: Question[] = [
   c: "2004.",
   d: "2007.",
   correcta: "c",
-},,
+},
   {
   id: 81,
   pregunta: "Sustituye a la CEE por la Unión Europea:",
@@ -729,7 +729,7 @@ export const constitucionQuestions: Question[] = [
   c: "El tratado de Maastricht.",
   d: "El Acta Única Europea.",
   correcta: "c",
-},,
+},
   {
   id: 82,
   pregunta: "Excepto cuando los tratados dispongan otra cosa, el consejo se pronunciará por:",
@@ -738,7 +738,7 @@ export const constitucionQuestions: Question[] = [
   c: "Mayoría cualificada.",
   d: "Mayoría simple y cualificada.",
   correcta: "c",
-},,
+},
   {
   id: 83,
   pregunta: "¿Cuál es el órgano ejecutivo de la Unión Europea?",
@@ -747,7 +747,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión.",
   d: "El Presidente de la Comisión.",
   correcta: "c",
-},,
+},
   {
   id: 84,
   pregunta: "El Tribunal de Cuentas de la Unión Europea en el ejercicio de la función de control de la ejecución del presupuesto, asiste:",
@@ -756,7 +756,7 @@ export const constitucionQuestions: Question[] = [
   c: "Al Parlamento Europeo y al Tribunal de Justicia.",
   d: "Al Parlamento Europeo.",
   correcta: "a",
-},,
+},
   {
   id: 85,
   pregunta: "La Unión Europea:",
@@ -765,7 +765,7 @@ export const constitucionQuestions: Question[] = [
   c: "De acuerdo con el TUE la Unión sustituirá y sucederá a la Comunidad Europea.",
   d: "Todas son verdaderas.",
   correcta: "d",
-},,
+},
   {
   id: 86,
   pregunta: "¿Qué dos órganos pasan a ser Institución a partir del Tratado de Lisboa?",
@@ -774,7 +774,7 @@ export const constitucionQuestions: Question[] = [
   c: "Banco Central y la Comisión.",
   d: "La Comisión y el Consejo.",
   correcta: "b",
-},,
+},
   {
   id: 87,
   pregunta: "Hasta la entrada en vigor del Tratado de Lisboa, el tercer pilar del TUE era:",
@@ -783,7 +783,7 @@ export const constitucionQuestions: Question[] = [
   c: "Cooperación y Política Exterior.",
   d: "Cooperación de Justicia y Asuntos de Interior.",
   correcta: "d",
-},,
+},
   {
   id: 88,
   pregunta: "El Tratado de Lisboa otorga al Parlamento un nuevo derecho. ¿Cuál es?",
@@ -792,7 +792,7 @@ export const constitucionQuestions: Question[] = [
   c: "El de la iniciativa legislativa.",
   d: "Todos ellos.",
   correcta: "a",
-},,
+},
   {
   id: 89,
   pregunta: "El Tratado de Lisboa entra en vigor:",
@@ -801,7 +801,7 @@ export const constitucionQuestions: Question[] = [
   c: "El 15 de diciembre de 2009.",
   d: "El 1 de diciembre de 2009.",
   correcta: "d",
-},,
+},
   {
   id: 90,
   pregunta: "Respecto del Consejo Europeo, señala la respuesta verdadera:",
@@ -810,7 +810,7 @@ export const constitucionQuestions: Question[] = [
   c: "Normalmente el Consejo Europeo se reúne en Estrasburgo.",
   d: "Sus votaciones se hacen por mayoría cualificada, salvo que se establezca lo contrario.",
   correcta: "b",
-},,
+},
   {
   id: 91,
   pregunta: "De acuerdo con el Tratado de la Unión Europea, cuando la situación lo exija, se convocará una reunión extraordinaria del Consejo Europeo por:",
@@ -819,7 +819,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Presidente de la Comisión.",
   d: "El Presidente del Consejo de la Unión Europea.",
   correcta: "a",
-},,
+},
   {
   id: 92,
   pregunta: "El Presidente del Consejo Europeo:",
@@ -828,7 +828,7 @@ export const constitucionQuestions: Question[] = [
   c: "Su mandato será renovable por una sola vez.",
   d: "Todas las respuestas son verdaderas.",
   correcta: "c",
-},,
+},
   {
   id: 93,
   pregunta: "Salvo que los tratados dispongan otra cosa, el Consejo Europeo se pronunciará por:",
@@ -837,7 +837,7 @@ export const constitucionQuestions: Question[] = [
   c: "Unanimidad.",
   d: "Mayoría simple.",
   correcta: "a",
-},,
+},
   {
   id: 94,
   pregunta: "Señala la respuesta verdadera:",
@@ -846,7 +846,7 @@ export const constitucionQuestions: Question[] = [
   c: "La creación del Consejo de Europa se produce en 1949.",
   d: "Todas son verdaderas.",
   correcta: "d",
-},,
+},
   {
   id: 95,
   pregunta: "La primera elección por sufragio universal y directo del Parlamento se produce en:",
@@ -855,7 +855,7 @@ export const constitucionQuestions: Question[] = [
   c: "1977.",
   d: "1987.",
   correcta: "a",
-},,
+},
   {
   id: 96,
   pregunta: "El punto de partida para la política Exterior y Seguridad Común fue establecido:",
@@ -864,7 +864,7 @@ export const constitucionQuestions: Question[] = [
   c: "En Niza.",
   d: "En el TUE.",
   correcta: "a",
-},,
+},
   {
   id: 97,
   pregunta: "Uno de los principios que se refuerzan en el Tratado de Ámsterdam será:",
@@ -873,7 +873,7 @@ export const constitucionQuestions: Question[] = [
   c: "El de cooperación.",
   d: "Se refuerzan todos ellos.",
   correcta: "d",
-},,
+},
   {
   id: 98,
   pregunta: "Establecía el Tratado de Niza que, cuando el Consejo deba adoptar un acuerdo por mayoría cualificada, el voto de España equivaldrá a:",
@@ -882,7 +882,7 @@ export const constitucionQuestions: Question[] = [
   c: "25.",
   d: "23.",
   correcta: "b",
-},,
+},
   {
   id: 99,
   pregunta: "¿En qué Tratado y respecto a la reforma de las Instituciones, la Asamblea pasa a denominarse Parlamento, se produce una presencia más coherente de la Comisión de las Instituciones, se establece una nueva delimitación de las funciones del Tribunal de Justicia, se prevé la creación del Tribunal de Primera Instancia y en el Consejo se amplían las materias que se deben adoptar por mayorías cualificadas?",
@@ -891,7 +891,7 @@ export const constitucionQuestions: Question[] = [
   c: "En el Tratado de Niza.",
   d: "En el Tratado de Lisboa.",
   correcta: "a",
-},,
+},
   {
   id: 100,
   pregunta: "El nombre del Diario Oficial cambia su denominación en:",
@@ -900,7 +900,7 @@ export const constitucionQuestions: Question[] = [
   c: "Ámsterdam.",
   d: "Con la Constitución Europea.",
   correcta: "a",
-},,
+},
   {
   id: 101,
   pregunta: "En el Tratado de Niza, para fomentar la cooperación en materia de protección social entre los Estados miembros y con la Comisión, se creará un:",
@@ -909,7 +909,7 @@ export const constitucionQuestions: Question[] = [
   c: "Comité consultivo de Protección Social y Familiar.",
   d: "No se regula.",
   correcta: "b",
-},,
+},
   {
   id: 102,
   pregunta: "De la Conferencia de Messina surgió:",
@@ -918,7 +918,7 @@ export const constitucionQuestions: Question[] = [
   c: "El TUE.",
   d: "El AUE.",
   correcta: "b",
-},,
+},
   {
   id: 103,
   pregunta: "En el proceso de construcción de la Unión Europea, ¿cuáles fueron los Tratados originarios firmados y el número de países fundadores?",
@@ -927,7 +927,7 @@ export const constitucionQuestions: Question[] = [
   c: "Tratados de la CECA, CEE y de la CEEA, firmados por los seis países fundadores.",
   d: "Tratados de la CECA, de la CEE y Acta Única Europea, firmados por los seis países fundadores.",
   correcta: "c",
-},,
+},
   {
   id: 104,
   pregunta: "Tras la desaparición de la CECA, su patrimonio:",
@@ -936,7 +936,7 @@ export const constitucionQuestions: Question[] = [
   c: "Se crea un órgano para la investigación en materia del carbón y del acero.",
   d: "Se transfiere a los estados miembros que la crearon.",
   correcta: "a",
-},,
+},
   {
   id: 105,
   pregunta: "De acuerdo con el Tratado de Bruselas de 8 de abril de 1965, que entró en vigor el 1 de julio de 1967, denominado tratado de fusión, se constituyó:",
@@ -945,7 +945,7 @@ export const constitucionQuestions: Question[] = [
   c: "Un único Tribunal de Justicia, Parlamento, Comisión y Consejo.",
   d: "Un Consejo y un Parlamento único.",
   correcta: "a",
-},,
+},
   {
   id: 106,
   pregunta: "El Acta Única es ratificada por España en:",
@@ -954,7 +954,7 @@ export const constitucionQuestions: Question[] = [
   c: "1988.",
   d: "1989.",
   correcta: "b",
-},,
+},
   {
   id: 107,
   pregunta: "Son objetivos del Acta Única:",
@@ -963,7 +963,7 @@ export const constitucionQuestions: Question[] = [
   c: "Cooperación en investigación y desarrollo.",
   d: "Todos son objetivos.",
   correcta: "d",
-},,
+},
   {
   id: 108,
   pregunta: "El Tratado de Lisboa:",
@@ -972,7 +972,7 @@ export const constitucionQuestions: Question[] = [
   c: "Entrará en vigor el 1 de diciembre de 2009.",
   d: "Las respuestas a) y b) son verdaderas.",
   correcta: "d",
-},,
+},
   {
   id: 109,
   pregunta: "De acuerdo con el Tratado de Lisboa, el funcionamiento de la UE se rige por los siguientes principios democráticos:",
@@ -981,7 +981,7 @@ export const constitucionQuestions: Question[] = [
   c: "Democracia participativa.",
   d: "Todas son verdaderas.",
   correcta: "d",
-},,
+},
   {
   id: 110,
   pregunta: "El Tratado de Niza entra en vigor:",
@@ -990,7 +990,7 @@ export const constitucionQuestions: Question[] = [
   c: "El 1 de febrero de 2002.",
   d: "El 28 de febrero de 2003.",
   correcta: "a",
-},,
+},
   {
   id: 111,
   pregunta: "Las responsabilidades que incumben a la Comisión:",
@@ -999,7 +999,7 @@ export const constitucionQuestions: Question[] = [
   c: "Serán estructuradas y repartidas entre sus miembros por el Presidente.",
   d: "Serán atribuidas de acuerdo con el reglamento interno de la Comisión.",
   correcta: "c",
-},,
+},
   {
   id: 112,
   pregunta: "Como regla general, la Institución que tiene la iniciativa legislativa es:",
@@ -1008,7 +1008,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Parlamento.",
   d: "Todos ellos.",
   correcta: "b",
-},,
+},
   {
   id: 113,
   pregunta: "El número mínimo y máximo, respectivamente, de parlamentarios por país es de:",
@@ -1017,7 +1017,7 @@ export const constitucionQuestions: Question[] = [
   c: "6 y 96.",
   d: "5 y 98.",
   correcta: "c",
-},,
+},
   {
   id: 114,
   pregunta: "En el Parlamento Europeo los parlamentarios que no pertenecen a ningún grupo se denominan:",
@@ -1026,7 +1026,7 @@ export const constitucionQuestions: Question[] = [
   c: "Grupo europeo.",
   d: "Todos deben pertenecer a un grupo parlamentario.",
   correcta: "a",
-},,
+},
   {
   id: 115,
   pregunta: "En el Parlamento Europeo en la actualidad existen los siguientes cuestores:",
@@ -1035,7 +1035,7 @@ export const constitucionQuestions: Question[] = [
   c: "6.",
   d: "7.",
   correcta: "b",
-},,
+},
   {
   id: 116,
   pregunta: "En el Parlamento existen o pueden existir:",
@@ -1044,7 +1044,7 @@ export const constitucionQuestions: Question[] = [
   c: "Comisiones de investigación.",
   d: "Todas ellas.",
   correcta: "d",
-},,
+},
   {
   id: 117,
   pregunta: "¿Cuál de las siguientes instituciones europeas representa los intereses de la Unión Europea?",
@@ -1053,7 +1053,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión de la Unión Europea.",
   d: "El Consejo Europeo.",
   correcta: "c",
-},,
+},
   {
   id: 118,
   pregunta: "¿Cuál de las siguientes instituciones europeas representa a los ciudadanos de la Unión Europea?",
@@ -1062,7 +1062,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión de la Unión Europea.",
   d: "El Consejo Europeo.",
   correcta: "a",
-},,
+},
   {
   id: 119,
   pregunta: "¿Cuál de las siguientes instituciones europeas representa a los intereses de cada Estado?",
@@ -1071,7 +1071,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión de la Unión Europea.",
   d: "El Consejo Europeo.",
   correcta: "b",
-},,
+},
   {
   id: 120,
   pregunta: "El Consejo se divide en:",
@@ -1080,7 +1080,7 @@ export const constitucionQuestions: Question[] = [
   c: "Ministerios.",
   d: "Secretarías Generales.",
   correcta: "a",
-},,
+},
   {
   id: 121,
   pregunta: "El Consejo se reunirá en público:",
@@ -1089,7 +1089,7 @@ export const constitucionQuestions: Question[] = [
   c: "Para asuntos de política exterior.",
   d: "En los asuntos que así lo acuerde el propio Consejo.",
   correcta: "b",
-},,
+},
   {
   id: 122,
   pregunta: "¿Quién se encargará de preparar los trabajos del Consejo?",
@@ -1098,7 +1098,7 @@ export const constitucionQuestions: Question[] = [
   c: "Un Consejo de Representantes Permanentes de los Gobiernos de los Estados miembros.",
   d: "Los embajadores de los Estados miembros.",
   correcta: "b",
-},,
+},
   {
   id: 123,
   pregunta: "¿Cuál es la única presidencia del Consejo que no se realiza de forma rotatoria por los Estados miembros?",
@@ -1107,7 +1107,7 @@ export const constitucionQuestions: Question[] = [
   c: "La de Asuntos Exteriores.",
   d: "La de Asuntos Económicos.",
   correcta: "c",
-},,
+},
   {
   id: 124,
   pregunta: "Los miembros de la Comisión serán elegidos:",
@@ -1116,7 +1116,7 @@ export const constitucionQuestions: Question[] = [
   c: "En razón de su competencia general y de su compromiso europeo, de entre personalidades que ofrezcan plenas garantías de independencia.",
   d: "En razón de su formación y compromiso europeo.",
   correcta: "c",
-},,
+},
   {
   id: 125,
   pregunta: "¿Qué Institución no tiene competencias legislativas?",
@@ -1125,7 +1125,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Consejo Europeo.",
   d: "La tienen todas ellas.",
   correcta: "c",
-},,
+},
   {
   id: 126,
   pregunta: "El Tribunal de Justicia de la Unión Europea comprenderá:",
@@ -1134,7 +1134,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Tribunal de Justicia, el Tribunal General, los tribunales especializados y el Tribunal de Primera Instancia.",
   d: "El Tribunal de Justicia y los tribunales especializados.",
   correcta: "b",
-},,
+},
   {
   id: 127,
   pregunta: "El Consejo está compuesto por:",
@@ -1143,7 +1143,7 @@ export const constitucionQuestions: Question[] = [
   c: "Los jefes de Estado o de Gobierno de los países miembros.",
   d: "Todas son falsas.",
   correcta: "a",
-},,
+},
   {
   id: 128,
   pregunta: "El Presidente del Tribunal General lo elige:",
@@ -1152,7 +1152,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Consejo de la Unión Europea.",
   d: "Los jueces del propio Tribunal.",
   correcta: "d",
-},,
+},
   {
   id: 129,
   pregunta: "Será miembro nato de la Comisión:",
@@ -1161,7 +1161,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Alto Representante de la Unión para Asunto Exteriores y Política de Seguridad.",
   d: "El Presidente del Parlamento Europeo.",
   correcta: "c",
-},,
+},
   {
   id: 130,
   pregunta: "¿Qué institución promoverá el interés general de la Unión y tomará las iniciativas adecuadas con este fin?",
@@ -1170,7 +1170,7 @@ export const constitucionQuestions: Question[] = [
   c: "Comisión.",
   d: "Parlamento.",
   correcta: "c",
-},,
+},
   {
   id: 131,
   pregunta: "¿Cuántos miembros tiene el Tribunal General de la Unión Europea?",
@@ -1179,7 +1179,7 @@ export const constitucionQuestions: Question[] = [
   c: "49.",
   d: "47.",
   correcta: "b",
-},,
+},
   {
   id: 132,
   pregunta: "El Consejo Europeo está compuesto por:",
@@ -1188,7 +1188,7 @@ export const constitucionQuestions: Question[] = [
   c: "Los Jefes de Estado o de Gobierno de los Estados miembros, y por el Presidente de la Comisión.",
   d: "Los Jefes de Estado o de Gobierno de los Estados miembros, así como por su Presidente y por el Presidente de la Comisión. También por el Alto Representante.",
   correcta: "b",
-},,
+},
   {
   id: 133,
   pregunta: "¿Cuál de los siguientes países no fue uno de los 6 países fundadores?",
@@ -1197,7 +1197,7 @@ export const constitucionQuestions: Question[] = [
   c: "Francia.",
   d: "Italia.",
   correcta: "b",
-},,
+},
   {
   id: 134,
   pregunta: "¿A partir de qué tratado se culmina la creación del mercado único con las cuatro libertades de circulación: mercancías, servicios, personas y capitales?",
@@ -1206,7 +1206,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Tratado de la Unión Europea.",
   d: "El Tratado de Amsterdam.",
   correcta: "c",
-},,
+},
   {
   id: 135,
   pregunta: "El Euro entra en circulación:",
@@ -1215,7 +1215,7 @@ export const constitucionQuestions: Question[] = [
   c: "El 1 de Enero del año 2002.",
   d: "El 1 de Enero del año 2003.",
   correcta: "c",
-},,
+},
   {
   id: 136,
   pregunta: "¿Junto con qué institución, el Parlamento aprueba la legislación de la Unión Europea?",
@@ -1224,7 +1224,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Consejo Europeo.",
   d: "La Comisión de la Unión Europea.",
   correcta: "b",
-},,
+},
   {
   id: 137,
   pregunta: "¿Cuál es la duración de los parlamentarios?",
@@ -1233,7 +1233,7 @@ export const constitucionQuestions: Question[] = [
   c: "La misma que el mandato de los Comisarios.",
   d: "La b) y la c) son correctas.",
   correcta: "d",
-},,
+},
   {
   id: 138,
   pregunta: "¿Quién gestiona el presupuesto de la Unión Europea y asigna fondos?",
@@ -1242,7 +1242,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión de la Unión Europea.",
   d: "El Consejo Europeo.",
   correcta: "c",
-},,
+},
   {
   id: 139,
   pregunta: "A partir del Tratado de Lisboa el Consejo pasa a tener más competencias compartidas con el Parlamento en materia:",
@@ -1251,7 +1251,7 @@ export const constitucionQuestions: Question[] = [
   c: "En aprobar el presupuesto de la UE.",
   d: "Las respuestas a) y c) son verdaderas.",
   correcta: "d",
-},,
+},
   {
   id: 140,
   pregunta: "El Parlamento Europeo tiene en la actualidad los siguientes Diputados, incluido al Presidente del Parlamento:",
@@ -1260,7 +1260,7 @@ export const constitucionQuestions: Question[] = [
   c: "750.",
   d: "712.",
   correcta: "a",
-},,
+},
   {
   id: 141,
   pregunta: "El Comité Ejecutivo del Banco Central Europeo estará compuesto:",
@@ -1269,7 +1269,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Presidente, el Vicepresidente y otros cuatro miembros.",
   d: "Ninguna de las respuestas es correcta.",
   correcta: "c",
-},,
+},
   {
   id: 142,
   pregunta: "El mandato del presidente del Banco Central Europeo tendrá una duración de:",
@@ -1278,7 +1278,7 @@ export const constitucionQuestions: Question[] = [
   c: "Siete años.",
   d: "Ocho años.",
   correcta: "d",
-},,
+},
   {
   id: 143,
   pregunta: "De acuerdo con el TUE, las Instituciones mantendrán entre sí:",
@@ -1287,7 +1287,7 @@ export const constitucionQuestions: Question[] = [
   c: "Una coordinación y cooperación leal.",
   d: "Una cooperación leal.",
   correcta: "b",
-},,
+},
   {
   id: 144,
   pregunta: "¿Cuál de las siguientes instituciones tiene como responsabilidad la política exterior y seguridad común?",
@@ -1296,7 +1296,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión de la Unión Europea.",
   d: "El Consejo Europeo.",
   correcta: "d",
-},,
+},
   {
   id: 145,
   pregunta: "¿Qué tribunal o tribunales se encuentra o encuentran en Luxemburgo?",
@@ -1305,7 +1305,7 @@ export const constitucionQuestions: Question[] = [
   c: "Ambos.",
   d: "Ninguno de los dos.",
   correcta: "c",
-},,
+},
   {
   id: 146,
   pregunta: "¿Cuál de las siguientes instituciones no es titular del Poder Legislativo?",
@@ -1314,7 +1314,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión de la Unión Europea.",
   d: "Todas estas instituciones son titulares del Poder Legislativo.",
   correcta: "c",
-},,
+},
   {
   id: 147,
   pregunta: "Respecto a las peticiones al Parlamento las pueden presentar:",
@@ -1323,7 +1323,7 @@ export const constitucionQuestions: Question[] = [
   c: "Cualquier ciudadano de la Unión, así como cualquier persona física o jurídica que resida o tenga su domicilio social en un Estado miembro, tendrá derecho a presentar al Parlamento Europeo, exclusivamente de forma individual una petición sobre un asunto propio de los ámbitos de actuación de la Unión que le afecte directamente.",
   d: "Cualquier Estado tendrá derecho a presentar al Parlamento Europeo una petición sobre un asunto propio de los ámbitos de actuación de la Unión que le afecte directamente.",
   correcta: "a",
-},,
+},
   {
   id: 148,
   pregunta: "Cuando el Consejo no actúe a propuesta de la Comisión o Alto Representante de la Unión para Asuntos Exteriores y Política de Seguridad, la mayoría cualificada se definirá con:",
@@ -1332,7 +1332,7 @@ export const constitucionQuestions: Question[] = [
   c: "Un mínimo del 65% de los miembros del Consejo.",
   d: "Todas las respuestas son falsas.",
   correcta: "a",
-},,
+},
   {
   id: 149,
   pregunta: "El Presidente, el Alto Representante de la Unión para Asuntos Exteriores y Política de Seguridad y los demás miembros de la Comisión se someterán colegiadamente al voto de aprobación de:",
@@ -1341,7 +1341,7 @@ export const constitucionQuestions: Question[] = [
   c: "Consejo.",
   d: "Tribunal de Justicia.",
   correcta: "a",
-},,
+},
   {
   id: 150,
   pregunta: "La Comisión:",
@@ -1350,7 +1350,7 @@ export const constitucionQuestions: Question[] = [
   c: "Será nombrada por el Consejo.",
   d: "Será nombrada por el Parlamento, por mayoría absoluta.",
   correcta: "a",
-},,
+},
   {
   id: 151,
   pregunta: "Señala la respuesta verdadera:",
@@ -1359,7 +1359,7 @@ export const constitucionQuestions: Question[] = [
   c: "El Parlamento Europeo, el Consejo, la Comisión y el Tribunal de Justicia estarán asistidos por un Comité Económico y Social y por un Comité de las Regiones que ejercerán funciones consultivas.",
   d: "Todas las respuestas son falsas.",
   correcta: "b",
-},,
+},
   {
   id: 152,
   pregunta: "El Parlamento Europeo:",
@@ -1368,7 +1368,7 @@ export const constitucionQuestions: Question[] = [
   c: "No se asignará a ningún Estado miembro más de noventa y seis escaños.",
   d: "Todas las respuestas son verdaderas.",
   correcta: "d",
-},,
+},
   {
   id: 153,
   pregunta: "El presupuesto anual de la UE es decidido (aprobado):",
@@ -1377,7 +1377,7 @@ export const constitucionQuestions: Question[] = [
   c: "Por la Comisión.",
   d: "Por la Comisión y el Parlamento, por un procedimiento ordinario.",
   correcta: "a",
-},,
+},
   {
   id: 154,
   pregunta: "El COREPER es:",
@@ -1386,7 +1386,7 @@ export const constitucionQuestions: Question[] = [
   c: "Un órgano del Parlamento.",
   d: "La reunión de los miembros de la Comisión.",
   correcta: "a",
-},,
+},
   {
   id: 155,
   pregunta: "¿Qué institución tiene una responsabilidad colegiada ante el Parlamento?",
@@ -1395,7 +1395,7 @@ export const constitucionQuestions: Question[] = [
   c: "La Comisión.",
   d: "Todas ellas.",
   correcta: "c",
-},,
+},
   {
   id: 156,
   pregunta: "¿Cuántas Vicepresidencias ejecutivas tiene la Comisión?:",
@@ -1404,7 +1404,7 @@ export const constitucionQuestions: Question[] = [
   c: "3.",
   d: "5.",
   correcta: "c",
-},,
+},
   {
   id: 157,
   pregunta: "El Tribunal de Cuentas estará compuesto por:",
@@ -1413,7 +1413,7 @@ export const constitucionQuestions: Question[] = [
   c: "Los miembros que determine el Consejo.",
   d: "Un Presidente y quince miembros.",
   correcta: "b",
-},,
+},
   {
   id: 158,
   pregunta: "¿Qué se entiende por 'reunión' a efectos de la Ley Orgánica reguladora del derecho de reunión?",
@@ -1422,7 +1422,7 @@ export const constitucionQuestions: Question[] = [
   c: "La concurrencia concertada y temporal de más de 20 personas, con finalidad determinada.",
   d: "Toda reunión con más de 50 personas, siempre que sea en espacio público.",
   correcta: "c",
-},,
+},
   {
   id: 159,
   pregunta: "¿Cuál de las siguientes reuniones NO está sujeta a las prescripciones de la Ley Orgánica?",
@@ -1431,7 +1431,7 @@ export const constitucionQuestions: Question[] = [
   c: "Las reuniones en domicilios privados por razones de amistad.",
   d: "Las reuniones en espacios públicos promovidas por partidos políticos.",
   correcta: "c",
-},,
+},
   {
   id: 160,
   pregunta: "¿Qué principio rige la convocatoria de reuniones según el artículo 3 de la Ley?",
@@ -1440,7 +1440,7 @@ export const constitucionQuestions: Question[] = [
   c: "La necesidad de autorización municipal.",
   d: "La no sujeción al régimen de previa autorización.",
   correcta: "d",
-},,
+},
   {
   id: 161,
   pregunta: "¿Quiénes pueden promover y convocar reuniones conforme a la Ley?",
@@ -1449,7 +1449,7 @@ export const constitucionQuestions: Question[] = [
   c: "Personas que se hallen en el pleno ejercicio de sus derechos civiles.",
   d: "Solo organizaciones legalmente reconocidas.",
   correcta: "c",
-},,
+},
   {
   id: 162,
   pregunta: "¿Quién responde subsidiariamente por los daños causados por los participantes en una reunión?",
@@ -1458,7 +1458,7 @@ export const constitucionQuestions: Question[] = [
   c: "Los organizadores o promotores, salvo que hayan puesto todos los medios razonables.",
   d: "Los asistentes no identificados.",
   correcta: "c",
-},,
+},
   {
   id: 163,
   pregunta: "¿En qué supuesto puede la autoridad gubernativa disolver una manifestación?",
@@ -1467,7 +1467,7 @@ export const constitucionQuestions: Question[] = [
   c: "Si no se lleva una pancarta identificativa.",
   d: "Si la manifestación dura más de 3 horas.",
   correcta: "b",
-},,
+},
   {
   id: 164,
   pregunta: "¿Qué pueden solicitar los organizadores de reuniones en lugares cerrados?",
@@ -1476,7 +1476,7 @@ export const constitucionQuestions: Question[] = [
   c: "Un permiso del Ministerio del Interior.",
   d: "La presencia de observadores judiciales.",
   correcta: "b",
-},,
+},
   {
   id: 165,
   pregunta: "¿Cuál es el plazo general de antelación con el que debe comunicarse una manifestación?",
@@ -1485,7 +1485,7 @@ export const constitucionQuestions: Question[] = [
   c: "Exactamente una semana antes.",
   d: "Siempre con al menos 72 horas de antelación.",
   correcta: "b",
-},,
+},
   {
   id: 166,
   pregunta: "¿Qué dato NO es necesario incluir en la comunicación de una manifestación?",
@@ -1494,7 +1494,7 @@ export const constitucionQuestions: Question[] = [
   c: "Autorización expresa del Ayuntamiento.",
   d: "Medidas de seguridad previstas por los organizadores.",
   correcta: "c",
-},,
+},
   {
   id: 167,
   pregunta: "¿Qué plazo tiene la autoridad para notificar la prohibición o modificación de una manifestación desde su comunicación?",
