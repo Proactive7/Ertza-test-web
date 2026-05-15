@@ -229,12 +229,8 @@ export default function Home() {
     const response = await fetch("/api/stripe/checkout", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${data.session.access_token}`,
       },
-      body: JSON.stringify({
-        userId: user.id,
-      }),
     });
 
     const checkoutData = await response.json();

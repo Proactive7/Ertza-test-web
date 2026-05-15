@@ -6,29 +6,48 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2026-04-22.dahlia",
 });
 
-const supabase = createClient(
+const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL as string,
   process.env.SUPABASE_SERVICE_ROLE_KEY as string
 );
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const authHeader = req.headers.get("authorization");
+    const token = authHeader?.replace("Bearer ", "");
 
-    const userId = body.userId;
-
-    if (!userId) {
+    if (!token) {
       return NextResponse.json(
         {
-          error: "Falta userId",
+          error: "Usuario no autenticado",
         },
         {
-          status: 400,
+          status: 401,
         }
       );
     }
 
-    const { data: profile, error: profileError } = await supabase
+    const {
+      data: { user },
+      error: userError,
+    } = await supabaseAdmin.auth.getUser(token);
+
+    if (userError || !user) {
+      console.error("Error validando usuario:", userError?.message);
+
+      return NextResponse.json(
+        {
+          error: "Sesión no válida",
+        },
+        {
+          status: 401,
+        }
+      );
+    }
+
+    const userId = user.id;
+
+    const { data: profile, error: profileError } = await supabaseAdmin
       .from("profiles")
       .select("trial_used")
       .eq("id", userId)
@@ -51,9 +70,7 @@ export async function POST(req: NextRequest) {
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
-
       billing_address_collection: "required",
-
       payment_method_types: ["card", "paypal", "sepa_debit"],
 
       line_items: [
@@ -78,7 +95,6 @@ export async function POST(req: NextRequest) {
       },
 
       success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/?premium=success`,
-
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/?premium=cancelled`,
     });
 
