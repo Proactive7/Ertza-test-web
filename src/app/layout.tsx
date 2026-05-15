@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SessionTimeout from "@/components/layout/SessionTimeout";
@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     "Prepárate la oposición de la Ertzaintza con tests, simulacros y estadísticas reales.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -24,7 +30,7 @@ export default function RootLayout({
       lang="es"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         {children}
 
         {/* ⏳ Control de sesión automática */}
