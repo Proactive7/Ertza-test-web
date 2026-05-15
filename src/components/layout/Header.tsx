@@ -54,6 +54,8 @@ export default function Header({
     if (onOpenPremium) {
       void onOpenPremium();
     }
+
+    setMobileMenuOpen(false);
   }
 
   function handlePremiumProtectedClick(action: () => void): void {
@@ -66,6 +68,8 @@ export default function Header({
       if (onOpenPremium) {
         void onOpenPremium();
       }
+
+      setMobileMenuOpen(false);
       return;
     }
 
@@ -81,15 +85,20 @@ export default function Header({
     setMobileMenuOpen(false);
   }
 
+  function handleGoHome(): void {
+    onGoHome();
+    setMobileMenuOpen(false);
+  }
+
   return (
-    <header className="border-b border-slate-100 bg-white">
-      <div className="flex items-center justify-between px-4 py-4 md:px-6">
+    <header className="relative z-50 border-b border-slate-100 bg-white shadow-sm">
+      <div className="flex items-center justify-between gap-3 px-4 py-3 md:px-6 md:py-4">
         {/* LOGO */}
-        <button onClick={onGoHome} className="flex items-center">
+        <button onClick={handleGoHome} className="flex min-w-0 items-center">
           <img
             src="/ErtzaTest.png"
             alt="ErtzaTest"
-            className="h-[42px] w-auto object-contain md:h-[48px]"
+            className="h-[38px] w-auto object-contain md:h-[48px]"
           />
         </button>
 
@@ -165,50 +174,53 @@ export default function Header({
 
         {/* BOTÓN MÓVIL */}
         <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="rounded-lg p-2 text-2xl md:hidden"
+          type="button"
+          onClick={() => setMobileMenuOpen((open) => !open)}
+          className="z-50 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 border-[#123b86] bg-white text-3xl font-black leading-none text-[#123b86] shadow-lg md:hidden"
+          aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={mobileMenuOpen}
         >
-          ☰
+          {mobileMenuOpen ? "×" : "☰"}
         </button>
       </div>
 
       {/* MENÚ MÓVIL */}
       {mobileMenuOpen && (
-        <div className="space-y-3 border-t border-slate-100 bg-white px-4 py-4 md:hidden">
+        <div className="absolute left-0 right-0 top-full z-40 space-y-3 border-t border-slate-100 bg-white px-4 py-4 shadow-xl md:hidden">
           <button
             onClick={() => {
               onOpenTopics();
               setMobileMenuOpen(false);
             }}
-            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold"
+            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold text-slate-800"
           >
             Temas
           </button>
 
           <button
             onClick={() => handlePremiumProtectedClick(onOpenMockExam)}
-            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold"
+            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold text-slate-800"
           >
             Simulacro {showLocks ? "🔒" : ""}
           </button>
 
           <button
             onClick={() => handlePremiumProtectedClick(onOpenPanel)}
-            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold"
+            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold text-slate-800"
           >
             Panel {showLocks ? "🔒" : ""}
           </button>
 
           <button
             onClick={() => handlePremiumProtectedClick(onOpenBadges)}
-            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold"
+            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold text-slate-800"
           >
             Insignias {showLocks ? "🔒" : ""}
           </button>
 
           <button
             onClick={() => handlePremiumProtectedClick(onOpenRanking)}
-            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold"
+            className="block w-full rounded-xl bg-slate-100 px-4 py-3 text-left font-semibold text-slate-800"
           >
             Ranking {showLocks ? "🔒" : ""}
           </button>
@@ -228,11 +240,16 @@ export default function Header({
                 onClick={handleProfileClick}
                 className="block w-full rounded-xl bg-[#123b86] px-4 py-3 font-bold text-white"
               >
-                Perfil ({username})
+                Perfil ({username || "Usuario"})
               </button>
 
               <button
-                onClick={onLogout}
+                onClick={() => {
+                  if (onLogout) {
+                    void onLogout();
+                  }
+                  setMobileMenuOpen(false);
+                }}
                 className="block w-full rounded-xl bg-slate-800 px-4 py-3 font-bold text-white"
               >
                 Cerrar sesión
@@ -242,6 +259,7 @@ export default function Header({
             <Link
               href="/login"
               className="block w-full rounded-xl bg-[#123b86] px-4 py-3 text-center font-bold text-white"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Acceder
             </Link>
