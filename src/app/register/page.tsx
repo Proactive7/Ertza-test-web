@@ -11,6 +11,7 @@ export default function RegisterPage() {
   const [repeatPassword, setRepeatPassword] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
   async function handleRegister(e: React.FormEvent) {
     e.preventDefault();
@@ -81,8 +82,7 @@ export default function RegisterPage() {
     setEmail("");
     setPassword("");
     setRepeatPassword("");
-
-    setMessage("Cuenta creada correctamente. Revisa tu correo para activarla.");
+    setRegistrationSuccess(true);
   }
 
   return (
@@ -98,76 +98,106 @@ export default function RegisterPage() {
           </Link>
         </div>
 
-        <h1 className="text-center text-[26px] font-extrabold text-[#123b86]">
-          Crear cuenta
-        </h1>
+        {!registrationSuccess ? (
+          <>
+            <h1 className="text-center text-[26px] font-extrabold text-[#123b86]">
+              Crear cuenta
+            </h1>
 
-        <p className="mt-1 text-center text-xs text-slate-500">
-          Empieza a preparar tu oposición
-        </p>
-
-        <form onSubmit={handleRegister} className="mt-4 space-y-3">
-          <input
-            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
-            type="text"
-            placeholder="Nombre de usuario"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-
-          <input
-            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
-            type="email"
-            placeholder="Correo electrónico"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <input
-            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-
-          <input
-            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
-            type="password"
-            placeholder="Repetir contraseña"
-            value={repeatPassword}
-            onChange={(e) => setRepeatPassword(e.target.value)}
-            required
-          />
-
-          <button
-            disabled={loading}
-            className="w-full rounded-xl bg-[#123b86] py-2.5 text-sm font-bold text-white shadow-[0_12px_24px_rgba(18,59,134,0.20)] transition hover:bg-[#0f3577] disabled:opacity-60"
-          >
-            {loading ? "Creando..." : "Crear cuenta"}
-          </button>
-
-          {message && (
-            <p className="rounded-lg bg-[#f8fbff] px-3 py-2 text-center text-xs font-semibold text-[#123b86]">
-              {message}
+            <p className="mt-1 text-center text-xs text-slate-500">
+              Empieza a preparar tu oposición
             </p>
-          )}
-        </form>
 
-        <div className="mt-4 text-center">
-          <p className="text-xs text-slate-600">
-            ¿Ya tienes cuenta?{" "}
+            <form onSubmit={handleRegister} className="mt-4 space-y-3">
+              <input
+                className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
+                type="text"
+                placeholder="Nombre de usuario"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+
+              <input
+                className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
+                type="email"
+                placeholder="Correo electrónico"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+
+              <input
+                className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
+                type="password"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+
+              <input
+                className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none transition focus:border-[#123b86] focus:ring-2 focus:ring-[#dbe7ff]"
+                type="password"
+                placeholder="Repetir contraseña"
+                value={repeatPassword}
+                onChange={(e) => setRepeatPassword(e.target.value)}
+                required
+              />
+
+              <button
+                disabled={loading}
+                className="w-full rounded-xl bg-[#123b86] py-2.5 text-sm font-bold text-white shadow-[0_12px_24px_rgba(18,59,134,0.20)] transition hover:bg-[#0f3577] disabled:opacity-60"
+              >
+                {loading ? "Creando..." : "Crear cuenta"}
+              </button>
+
+              {message && (
+                <p className="rounded-lg bg-[#fff5f5] px-3 py-2 text-center text-xs font-semibold text-red-600">
+                  {message}
+                </p>
+              )}
+            </form>
+
+            <div className="mt-4 text-center">
+              <p className="text-xs text-slate-600">
+                ¿Ya tienes cuenta?{" "}
+                <Link
+                  href="/login"
+                  className="font-bold text-[#123b86] hover:underline"
+                >
+                  Inicia sesión
+                </Link>
+              </p>
+            </div>
+          </>
+        ) : (
+          <div className="py-4 text-center">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+              <span className="text-3xl">✅</span>
+            </div>
+
+            <h1 className="mt-5 text-[26px] font-extrabold text-[#123b86]">
+              Cuenta creada correctamente
+            </h1>
+
+            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              Te hemos enviado un correo de confirmación.
+            </p>
+
+            <p className="mt-1 text-sm leading-relaxed text-slate-600">
+              Revisa tu bandeja de entrada y pulsa el enlace para activar tu
+              cuenta.
+            </p>
+
             <Link
               href="/login"
-              className="font-bold text-[#123b86] hover:underline"
+              className="mt-6 inline-flex rounded-xl bg-[#123b86] px-5 py-3 text-sm font-bold text-white shadow-[0_12px_24px_rgba(18,59,134,0.20)] transition hover:bg-[#0f3577]"
             >
-              Inicia sesión
+              Ir a iniciar sesión
             </Link>
-          </p>
-        </div>
+          </div>
+        )}
       </div>
     </main>
   );
