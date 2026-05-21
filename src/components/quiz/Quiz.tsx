@@ -112,6 +112,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
 
   const pointsAwardedRef = useRef<boolean>(false);
   const timeoutFinishedRef = useRef<boolean>(false);
+  const questionCardRef = useRef<HTMLDivElement | null>(null);
 
   const topicName = useMemo(() => {
     if (tema === "simulacro") return "Simulacro oficial";
@@ -574,9 +575,18 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
+  function scrollToQuestion(): void {
+    window.setTimeout(() => {
+      questionCardRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 80);
+  }
+
   function getAnswerClass(option: OptionKey): string {
     const base =
-      "rounded-[16px] border px-4 py-3 text-left text-[15px] leading-snug transition-all duration-200";
+      "rounded-[15px] border px-3 py-3 text-left text-[14px] leading-snug transition-all duration-200 md:rounded-[16px] md:px-4 md:text-[15px]";
 
     if (!showResult) {
       return `${base} border-[#d7e5ff] bg-[#f8fbff] text-slate-700 shadow-sm hover:border-[#9ec5ff] hover:bg-[#eef5ff] hover:shadow-md`;
@@ -600,7 +610,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
       setIndex((prev) => prev + 1);
       setSelectedOption(null);
       setShowResult(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollToQuestion();
     }
   }
 
@@ -653,9 +663,65 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#eff6ff_0%,_#e8f0ff_35%,_#edf2f7_100%)] px-3 py-3 md:px-4 md:py-4">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#eff6ff_0%,_#e8f0ff_35%,_#edf2f7_100%)] px-2 py-2 md:px-4 md:py-4">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-3 rounded-[20px] border border-[#d7e5ff] bg-[linear-gradient(135deg,_rgba(255,255,255,0.97)_0%,_rgba(239,246,255,0.93)_100%)] px-3 py-3 shadow-[0_14px_40px_rgba(37,99,235,0.08)] backdrop-blur-sm md:px-4 md:py-3.5">
+        <div className="sticky top-0 z-30 mb-2 rounded-[18px] border border-[#d7e5ff] bg-white/95 px-3 py-2 shadow-[0_12px_30px_rgba(37,99,235,0.12)] backdrop-blur-md md:hidden">
+          <div className="flex items-center justify-between gap-2">
+            <button
+              onClick={() => requestExit(onHome)}
+              aria-label="Volver al inicio"
+              className="flex shrink-0 items-center transition hover:opacity-80"
+            >
+              <Image
+                src="/ErtzaTest.png"
+                alt="ErtzaTest"
+                width={160}
+                height={48}
+                className="h-9 w-auto object-contain"
+                priority
+              />
+            </button>
+
+            <div className="min-w-0 flex-1 text-center">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#5f76a0]">
+                Pregunta {index + 1} / {questions.length}
+              </p>
+              <p className="mt-0.5 text-[20px] font-extrabold leading-none text-[#17305c]">
+                {minutes}:{seconds.toString().padStart(2, "0")}
+              </p>
+            </div>
+
+            <button
+              onClick={() => requestExit(onExit)}
+              className="shrink-0 rounded-lg border border-[#cfdcf3] bg-white px-3 py-1.5 text-xs font-bold text-slate-700 shadow-sm transition hover:bg-[#f8fbff]"
+            >
+              Volver
+            </button>
+          </div>
+
+          <div className="mt-2 flex items-center justify-between gap-2 rounded-xl border border-[#d7e5ff] bg-[#f8fbff] px-3 py-2">
+            <div className="min-w-0 text-[11px] font-bold leading-snug text-[#17305c]">
+              <span>Aciertos {correctas}</span>
+              <span className="mx-1 text-slate-300">·</span>
+              <span>Fallos {falladas}</span>
+              <span className="mx-1 text-slate-300">·</span>
+              <span>Blancas {enBlanco}</span>
+            </div>
+
+            <div className="flex shrink-0 items-center gap-2">
+              <span className="rounded-full bg-[#123b86] px-2.5 py-1 text-[11px] font-extrabold text-white">
+                {visibleScore.toFixed(1)}
+              </span>
+              <img
+                src={currentBadgeConfig.icon}
+                alt={currentBadgeKey}
+                className="h-7 w-7 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-3 hidden rounded-[20px] border border-[#d7e5ff] bg-[linear-gradient(135deg,_rgba(255,255,255,0.97)_0%,_rgba(239,246,255,0.93)_100%)] px-3 py-3 shadow-[0_14px_40px_rgba(37,99,235,0.08)] backdrop-blur-sm md:block md:px-4 md:py-3.5">
           <div className="grid items-center gap-3 md:grid-cols-[120px_minmax(215px,1fr)_120px_minmax(215px,1fr)_120px]">
             <div className="flex items-center justify-center md:justify-start">
               <button
@@ -722,7 +788,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
           </div>
         </div>
 
-        <div className="mb-3 grid gap-2.5 md:grid-cols-3">
+        <div className="mb-3 hidden gap-2.5 md:grid md:grid-cols-3">
           <InfoBox label="Tema" value={topicName} />
           <InfoBox
             label="Aciertos / Fallos / Blancas"
@@ -735,12 +801,15 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
           />
         </div>
 
-        <div className="rounded-[24px] border border-[#d7e5ff] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(244,249,255,0.98)_100%)] p-4 shadow-[0_22px_70px_rgba(37,99,235,0.10)] md:p-5">
+        <div
+          ref={questionCardRef}
+          className="scroll-mt-[112px] rounded-[22px] border border-[#d7e5ff] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(244,249,255,0.98)_100%)] p-3 shadow-[0_18px_55px_rgba(37,99,235,0.10)] md:scroll-mt-6 md:rounded-[24px] md:p-5 md:shadow-[0_22px_70px_rgba(37,99,235,0.10)]"
+        >
           <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#6a7a99]">
             Cuestionario en curso
           </p>
 
-          <h2 className="mb-4 text-xl font-extrabold leading-tight text-[#17305c] md:text-2xl">
+          <h2 className="mb-3 text-lg font-extrabold leading-tight text-[#17305c] md:mb-4 md:text-2xl">
             {q.pregunta}
           </h2>
 
@@ -760,7 +829,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
             ))}
           </div>
 
-          <div className="mt-4 rounded-[18px] border border-[#d7e5ff] bg-[#f8fbff] px-4 py-4">
+          <div className="mt-3 rounded-[18px] border border-[#d7e5ff] bg-[#f8fbff] px-3 py-3 md:mt-4 md:px-4 md:py-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-xs text-slate-500">
                 Si no quieres responder, puedes dejarla en blanco y continuar.
