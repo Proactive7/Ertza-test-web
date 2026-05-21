@@ -29,16 +29,13 @@ export async function saveTestResult(
     return;
   }
 
-  const { error } = await supabase.from("test_results").insert({
-    user_id: user.id,
-    topic_key: result.topicKey,
-    topic_name: result.topicName,
-    score: result.score,
-    correct_answers: result.correct,
-    wrong_answers: result.incorrect,
-    blank_answers: result.blank,
-    passed: result.score >= 20,
-    points_earned: result.pointsEarned,
+  const { error } = await supabase.rpc("submit_test_result", {
+    p_topic_key: result.topicKey,
+    p_topic_name: result.topicName,
+    p_score: result.score,
+    p_correct_answers: result.correct,
+    p_wrong_answers: result.incorrect,
+    p_blank_answers: result.blank,
   });
 
   if (error) {
