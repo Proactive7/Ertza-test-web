@@ -103,9 +103,8 @@ export default function Header({
   }
 
   return (
-    <header className="sticky top-0 z-[999] border-b border-slate-100 bg-white shadow-sm">
+    <header className="fixed left-0 right-0 top-0 z-[999] border-b border-slate-100 bg-white shadow-sm">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-6 md:py-4">
-        {/* LOGO */}
         <button
           type="button"
           onClick={handleGoHome}
@@ -119,7 +118,6 @@ export default function Header({
           />
         </button>
 
-        {/* MENÚ DESKTOP */}
         <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-700 md:flex">
           <button type="button" onClick={onOpenTopics}>
             Temas
@@ -154,7 +152,6 @@ export default function Header({
           </button>
         </nav>
 
-        {/* DERECHA DESKTOP */}
         <div className="hidden items-center gap-3 md:flex">
           {isLoggedIn && hasActiveSubscription ? (
             <span className="rounded-xl border border-green-200 bg-green-50 px-4 py-2 text-sm font-bold text-green-700">
@@ -178,9 +175,7 @@ export default function Header({
                 className="flex-col rounded-xl px-2 py-1 text-right transition hover:bg-[#f8fbff] md:flex"
                 title="Abrir perfil"
               >
-                <span className="text-xs text-slate-500">
-                  Conectado como
-                </span>
+                <span className="text-xs text-slate-500">Conectado como</span>
 
                 <span className="text-sm font-bold text-[#123b86] underline-offset-4 hover:underline">
                   {username || "Usuario"}
@@ -206,7 +201,6 @@ export default function Header({
           )}
         </div>
 
-        {/* BOTÓN MÓVIL */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen((open) => !open)}
@@ -218,9 +212,8 @@ export default function Header({
         </button>
       </div>
 
-      {/* OVERLAY MÓVIL */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[998] bg-black/35 md:hidden">
+        <div className="fixed inset-0 z-[1000] bg-black/35 md:hidden">
           <div className="absolute right-0 top-0 h-full w-[86%] max-w-[360px] overflow-y-auto bg-white px-5 py-5 shadow-2xl">
             <div className="mb-5 flex items-center justify-between gap-3">
               <img

@@ -62,7 +62,7 @@ export default function LandingPage({
     "Usuario";
 
   return (
-    <main className="min-h-screen bg-[#d8dde4] px-4 py-6 md:px-8">
+    <main className="min-h-screen bg-[#d8dde4] px-4 pb-6 pt-[82px] md:px-8 md:pb-8 md:pt-[96px]">
       <div className="mx-auto max-w-[1180px] rounded-[24px] border border-white/60 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
         <Header
           onGoHome={onGoHome}
