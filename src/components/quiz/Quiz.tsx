@@ -20,6 +20,7 @@ type QuizProps = {
   tema: TopicKey;
   onExit: () => void;
   onHome: () => void;
+  onPanel?: () => void;
 };
 
 type AnswerRecord = {
@@ -83,7 +84,7 @@ const BADGE_CONFIG: Record<DisplayBadgeKey, BadgeConfig> = {
   },
 };
 
-export default function Quiz({ tema, onExit, onHome }: QuizProps) {
+export default function Quiz({ tema, onExit, onHome, onPanel }: QuizProps) {
   const { user } = useUser();
 
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -282,6 +283,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
         pointsEarned: earnedPoints,
         timeRemainingSeconds: time,
         timeSpentSeconds: 40 * 60 - time,
+        answers: answerHistory,
       });
 
       const nextPoints = previousPoints + earnedPoints;
@@ -311,6 +313,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
     questions.length,
     time,
     user?.id,
+    answerHistory,
   ]);
 
   if (!questions.length) {
@@ -338,7 +341,7 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
                   Corrección del examen
                 </p>
                 <h1 className="text-[24px] font-extrabold text-[#17305c] md:text-[30px]">
-                  Preguntas falladas
+                  Corrección de fallos
                 </h1>
               </div>
 
@@ -434,6 +437,15 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
               >
                 Ir al inicio
               </button>
+
+              {onPanel ? (
+                <button
+                  onClick={onPanel}
+                  className="rounded-xl bg-[#123b86] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0f3577]"
+                >
+                  Ir al panel
+                </button>
+              ) : null}
             </div>
           </div>
         </div>
@@ -516,17 +528,26 @@ export default function Quiz({ tema, onExit, onHome }: QuizProps) {
                 Ir al inicio
               </button>
 
+              {onPanel ? (
+                <button
+                  onClick={onPanel}
+                  className="rounded-xl bg-[#123b86] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0f3577]"
+                >
+                  Ir al panel
+                </button>
+              ) : null}
+
               <button
                 onClick={() => setReviewMode(true)}
                 className="rounded-xl border border-[#f5b4b4] bg-[#ef4444] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#dc2626]"
               >
-                Corrección · Premium
+                Ver corrección
               </button>
             </div>
 
             <p className="mt-3 text-xs font-medium leading-snug text-[#dc2626] md:text-sm">
-              La corrección muestra tus preguntas falladas, la opción elegida y
-              la respuesta correcta.
+              La corrección muestra tus preguntas falladas, tu respuesta y
+              la opción correcta.
             </p>
           </div>
         </div>

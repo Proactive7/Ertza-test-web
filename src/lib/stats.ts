@@ -1,4 +1,12 @@
 import { supabase } from "@/lib/supabaseClient";
+import { OptionKey, Question } from "@/types/quiz";
+
+export type StoredAnswerRecord = {
+  question: Question;
+  selectedOption: OptionKey | null;
+  correctOption: OptionKey;
+  isCorrect: boolean;
+};
 
 export type StoredTestResult = {
   id: string;
@@ -14,6 +22,7 @@ export type StoredTestResult = {
   pointsEarned: number;
   timeRemainingSeconds: number;
   timeSpentSeconds: number;
+  answers?: StoredAnswerRecord[];
 };
 
 export async function saveTestResult(
@@ -40,6 +49,68 @@ export async function saveTestResult(
 
   if (error) {
     console.error("Error guardando resultado en Supabase:", error.message);
+    return;
+  }
+
+  if (!result.answers?.length) {
+    return;
+  }
+
+  const { data: attempt, error: attemptError } = await supabase
+    .from("test_attempts")
+    .insert({
+      user_id: user.id,
+      topic_key: result.topicKey,
+      topic_name: result.topicName,
+      score: result.score,
+      correct_answers: result.correct,
+      wrong_answers: result.incorrect,
+      blank_answers: result.blank,
+      total_questions: result.totalQuestions,
+      passed: result.score >= 20,
+      points_earned: result.pointsEarned,
+      time_spent_seconds: result.timeSpentSeconds,
+      time_remaining_seconds: result.timeRemainingSeconds,
+      created_at: result.dateISO,
+    })
+    .select("id")
+    .single();
+
+  if (attemptError || !attempt?.id) {
+    console.error(
+      "Error guardando intento detallado:",
+      attemptError?.message || "No se pudo crear el intento."
+    );
+    return;
+  }
+
+  const answerRows = result.answers.map((answer) => ({
+    attempt_id: attempt.id,
+    user_id: user.id,
+    question_id: String(answer.question.id),
+    topic_key: result.topicKey,
+    topic_name: result.topicName,
+    question_text: answer.question.pregunta,
+    option_a: answer.question.a,
+    option_b: answer.question.b,
+    option_c: answer.question.c,
+    option_d: answer.question.d,
+    selected_option: answer.selectedOption,
+    correct_option: answer.correctOption,
+    is_correct: answer.isCorrect,
+    is_blank: answer.selectedOption === null,
+    created_at: result.dateISO,
+  }));
+
+  const { error: answersError } = await supabase
+    .from("test_attempt_answers")
+    .insert(answerRows);
+
+  if (answersError) {
+    console.error(
+      "Error guardando respuestas detalladas:",
+      answersError.message
+    );
   }
 }
 

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 
 import LandingPage from "@/components/landing/LandingPage";
 import PanelPage from "@/components/panel/PanelPage";
+import TestReviewPage from "@/components/panel/TestReviewPage";
+import WrongAnswersReviewPage from "@/components/panel/WrongAnswersReviewPage";
 import ProfilePage from "@/components/profile/ProfilePage";
 import RankingPage from "@/components/ranking/RankingPage";
 import BadgesPage from "@/components/badges/BadgesPage";
@@ -20,7 +22,7 @@ import { useUser } from "@/hooks/useUser";
 import { supabase } from "@/lib/supabaseClient";
 import { TopicKey, ViewMode } from "@/types/quiz";
 
-type AppViewMode = ViewMode | "ranking" | "profile";
+type AppViewMode = ViewMode | "ranking" | "profile" | "test_review" | "wrong_answers_review";
 
 type RankingRow = {
   user_id: string;
@@ -106,6 +108,7 @@ export default function Home() {
 
   const [view, setView] = useState<AppViewMode>("home");
   const [tema, setTema] = useState<TopicKey | null>(null);
+  const [selectedAttemptId, setSelectedAttemptId] = useState<string | null>(null);
   const [hasActiveSubscription, setHasActiveSubscription] = useState(false);
   const [trialUsed, setTrialUsed] = useState(false);
   const [badgePoints, setBadgePoints] = useState<number>(0);
@@ -255,6 +258,7 @@ export default function Home() {
   function goHome(): void {
     setView("home");
     setTema(null);
+    setSelectedAttemptId(null);
     scrollTop();
   }
 
@@ -263,6 +267,7 @@ export default function Home() {
 
     setView("topics");
     setTema(null);
+    setSelectedAttemptId(null);
     scrollTop();
   }
 
@@ -287,7 +292,34 @@ export default function Home() {
       return;
     }
 
+    setSelectedAttemptId(null);
     setView("panel");
+    scrollTop();
+  }
+
+  function openTestReview(attemptId: string): void {
+    if (!requireLogin()) return;
+
+    if (!hasActiveSubscription) {
+      void goToCheckout();
+      return;
+    }
+
+    setSelectedAttemptId(attemptId);
+    setView("test_review");
+    scrollTop();
+  }
+
+  function openWrongAnswersReview(): void {
+    if (!requireLogin()) return;
+
+    if (!hasActiveSubscription) {
+      void goToCheckout();
+      return;
+    }
+
+    setSelectedAttemptId(null);
+    setView("wrong_answers_review");
     scrollTop();
   }
 
@@ -391,7 +423,12 @@ export default function Home() {
   if (view === "quiz" && tema) {
     return (
       <AppShell isLoggedIn={isLoggedIn}>
-        <Quiz tema={tema} onExit={openTopics} onHome={goHome} />
+        <Quiz
+          tema={tema}
+          onExit={openTopics}
+          onHome={goHome}
+          onPanel={openPanel}
+        />
       </AppShell>
     );
   }
@@ -399,7 +436,27 @@ export default function Home() {
   if (view === "panel") {
     return (
       <AppShell isLoggedIn={isLoggedIn}>
-        <PanelPage onBack={goHome} />
+        <PanelPage
+          onBack={goHome}
+          onOpenAttempt={openTestReview}
+          onOpenWrongAnswers={openWrongAnswersReview}
+        />
+      </AppShell>
+    );
+  }
+
+  if (view === "test_review" && selectedAttemptId) {
+    return (
+      <AppShell isLoggedIn={isLoggedIn}>
+        <TestReviewPage attemptId={selectedAttemptId} onBack={openPanel} />
+      </AppShell>
+    );
+  }
+
+  if (view === "wrong_answers_review") {
+    return (
+      <AppShell isLoggedIn={isLoggedIn}>
+        <WrongAnswersReviewPage onBack={openPanel} />
       </AppShell>
     );
   }

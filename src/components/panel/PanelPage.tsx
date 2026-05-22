@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import PanelTimelineItem from "@/components/ui/PanelTimelineItem";
-import PremiumFeature from "@/components/ui/PremiumFeature";
 import { getBadgeByPoints } from "@/lib/badges";
 import { supabase } from "@/lib/supabaseClient";
 import { useUser } from "@/hooks/useUser";
 
 type PanelPageProps = {
   onBack: () => void;
+  onOpenAttempt?: (attemptId: string) => void;
+  onOpenWrongAnswers?: () => void;
 };
 
 type StatCardProps = {
@@ -31,6 +31,23 @@ type DbTestResult = {
   created_at: string;
 };
 
+type DbTestAttempt = {
+  id: string;
+  user_id: string;
+  topic_key: string;
+  topic_name: string;
+  score: number;
+  correct_answers: number;
+  wrong_answers: number;
+  blank_answers: number;
+  total_questions: number;
+  passed: boolean;
+  points_earned: number;
+  time_spent_seconds: number | null;
+  time_remaining_seconds: number | null;
+  created_at: string;
+};
+
 type RankingRow = {
   user_id: string;
   username: string;
@@ -44,6 +61,34 @@ function formatScore(score: number): string {
   return Number.isInteger(numericScore)
     ? String(numericScore)
     : numericScore.toFixed(1);
+}
+
+function getResultCardClass(score: number): string {
+  const numericScore = Number(score);
+
+  if (numericScore < 20) {
+    return "border-red-100 bg-red-50/70 hover:border-red-200 hover:bg-red-50";
+  }
+
+  if (numericScore < 30) {
+    return "border-emerald-100 bg-emerald-50/70 hover:border-emerald-200 hover:bg-emerald-50";
+  }
+
+  return "border-violet-100 bg-violet-50/70 hover:border-violet-200 hover:bg-violet-50";
+}
+
+function getResultBadgeClass(score: number): string {
+  const numericScore = Number(score);
+
+  if (numericScore < 20) {
+    return "bg-red-100 text-red-700";
+  }
+
+  if (numericScore < 30) {
+    return "bg-emerald-100 text-emerald-700";
+  }
+
+  return "bg-violet-100 text-violet-700";
 }
 
 function StatCard({ title, value, subtitle }: StatCardProps) {
@@ -64,10 +109,11 @@ function StatCard({ title, value, subtitle }: StatCardProps) {
   );
 }
 
-export default function PanelPage({ onBack }: PanelPageProps) {
+export default function PanelPage({ onBack, onOpenAttempt, onOpenWrongAnswers }: PanelPageProps) {
   const { user, loading: userLoading } = useUser();
 
   const [results, setResults] = useState<DbTestResult[]>([]);
+  const [attempts, setAttempts] = useState<DbTestAttempt[]>([]);
   const [ranking, setRanking] = useState<RankingRow[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -77,6 +123,7 @@ export default function PanelPage({ onBack }: PanelPageProps) {
 
       if (!user?.id) {
         setResults([]);
+        setAttempts([]);
         setRanking([]);
         setLoading(false);
         return;
@@ -95,6 +142,20 @@ export default function PanelPage({ onBack }: PanelPageProps) {
         setResults([]);
       } else {
         setResults((resultsData || []) as DbTestResult[]);
+      }
+
+      const { data: attemptsData, error: attemptsError } = await supabase
+        .from("test_attempts")
+        .select("*")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false })
+        .limit(6);
+
+      if (attemptsError) {
+        console.error("Error cargando intentos:", attemptsError.message);
+        setAttempts([]);
+      } else {
+        setAttempts((attemptsData || []) as DbTestAttempt[]);
       }
 
       const { data: rankingData, error: rankingError } = await supabase
@@ -138,8 +199,15 @@ export default function PanelPage({ onBack }: PanelPageProps) {
     );
   }, [results]);
 
-  const recentResults = useMemo(() => {
-    return results.slice(0, 7);
+  const recentAttempts = useMemo(() => {
+    return attempts.slice(0, 6);
+  }, [attempts]);
+
+  const totalWrongAnswers = useMemo(() => {
+    return results.reduce(
+      (sum, result) => sum + Number(result.wrong_answers || 0),
+      0
+    );
   }, [results]);
 
   const mostPlayedTopic = useMemo(() => {
@@ -237,6 +305,11 @@ export default function PanelPage({ onBack }: PanelPageProps) {
           <h1 className="text-[24px] font-extrabold md:text-[30px]">
             Panel del opositor
           </h1>
+
+          <p className="mt-2 max-w-[720px] text-sm leading-relaxed text-blue-100">
+            Consulta tu evolución, revisa tu actividad reciente y prepara tus
+            próximos repasos desde un único panel.
+          </p>
         </section>
 
         <section className="px-4 py-6 md:px-6">
@@ -298,33 +371,70 @@ export default function PanelPage({ onBack }: PanelPageProps) {
             />
           </div>
 
-          <div className="mt-5 grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
-            <div className="rounded-[18px] border border-slate-200 bg-white p-4 shadow-sm">
-              <h2 className="mb-4 text-[18px] font-extrabold text-[#1f3762]">
-                Actividad reciente
-              </h2>
+          <div className="mt-5 grid items-stretch gap-4 lg:grid-cols-[1.08fr_0.92fr]">
+            <div className="flex h-full flex-col rounded-[18px] border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <h2 className="text-[18px] font-extrabold text-[#1f3762]">
+                  Actividad reciente
+                </h2>
+
+                <span className="rounded-full bg-[#eef5ff] px-3 py-1 text-xs font-bold text-[#123b86]">
+                  {attempts.length || results.length} tests
+                </span>
+              </div>
 
               {loading ? (
                 <p className="text-sm text-slate-500">Cargando actividad...</p>
-              ) : recentResults.length === 0 ? (
-                <p className="text-sm text-slate-500">
-                  Aún no has completado ningún test.
-                </p>
+              ) : recentAttempts.length === 0 ? (
+                <div className="flex flex-1 items-center rounded-xl border border-dashed border-slate-200 bg-[#f8fbff] p-4">
+                  <p className="text-sm text-slate-500">
+                    Aún no has completado ningún test.
+                  </p>
+                </div>
               ) : (
-                <div className="space-y-1">
-                  {recentResults.map((result) => (
-                    <PanelTimelineItem
-                      key={result.id}
-                      title={result.topic_name}
-                      detail="Último test realizado"
-                      result={`${formatScore(Number(result.score))} / 40`}
-                    />
-                  ))}
+                <div className="flex flex-1 flex-col">
+                  <div className="space-y-2.5">
+                    {recentAttempts.map((result) => (
+                      <button
+                        key={result.id}
+                        type="button"
+                        onClick={() => onOpenAttempt?.(result.id)}
+                        className={`block w-full rounded-xl border px-4 py-3 text-left transition ${getResultCardClass(
+                          Number(result.score)
+                        )}`}
+                        title="Abrir corrección completa"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <p className="truncate text-sm font-extrabold text-[#1f3762]">
+                              {result.topic_name}
+                            </p>
+
+                            <p className="mt-1 text-xs font-semibold text-slate-500">
+                              {result.correct_answers} aciertos ·{" "}
+                              {result.wrong_answers} fallos ·{" "}
+                              {result.blank_answers} blancas
+                            </p>
+                          </div>
+
+                          <span
+                            className={`shrink-0 rounded-full px-3 py-1 text-xs font-black ${getResultBadgeClass(
+                              Number(result.score)
+                            )}`}
+                          >
+                            {formatScore(Number(result.score))} / 40
+                          </span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="flex-1" />
                 </div>
               )}
             </div>
 
-            <div className="space-y-4">
+            <div className="flex h-full flex-col gap-4">
               <div className="rounded-[18px] border border-slate-200 bg-white p-4 shadow-sm">
                 <h2 className="mb-4 text-[18px] font-extrabold text-[#1f3762]">
                   Resumen de rendimiento
@@ -363,21 +473,39 @@ export default function PanelPage({ onBack }: PanelPageProps) {
                 </div>
               </div>
 
-              <div className="rounded-[18px] border border-slate-200 bg-[#f8fbff] p-4 shadow-sm">
-                <h2 className="mb-4 text-[18px] font-extrabold text-[#1f3762]">
-                  Funciones premium
-                </h2>
+              <div className="flex-1 rounded-[18px] border border-[#dbe7ff] bg-[#0f3577] p-4 text-white shadow-sm">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <h2 className="text-[18px] font-extrabold">
+                    Repaso inteligente
+                  </h2>
 
-                <div className="space-y-2.5 text-sm text-slate-700">
-                  <PremiumFeature text="Simulacros de examen completos" />
-                  <PremiumFeature text="Corrección inteligente de errores" />
-                  <PremiumFeature text="Ranking de opositores" />
-                  <PremiumFeature text="Estadísticas avanzadas por tema" />
-                  <PremiumFeature text="Rachas de tests aprobados" />
-                  <PremiumFeature text="Media de resultados" />
-                  <PremiumFeature text="Historial de actividad" />
-                  <PremiumFeature text="Sistema de insignias" />
+                  <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-blue-50">
+                    Premium
+                  </span>
                 </div>
+
+                <div className="grid gap-2.5 text-sm text-blue-50">
+                  <div className="rounded-xl bg-white/10 px-3 py-2">
+                    ✔ {totalWrongAnswers} preguntas falladas detectadas
+                  </div>
+
+                  <div className="rounded-xl bg-white/10 px-3 py-2">
+                    ✔ Repetición inteligente de errores
+                  </div>
+
+                  <div className="rounded-xl bg-white/10 px-3 py-2">
+                    ✔ Refuerzo de temas débiles
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={onOpenWrongAnswers}
+                  className="mt-4 w-full rounded-xl bg-white px-4 py-3 text-sm font-extrabold text-[#123b86] transition hover:bg-blue-50"
+                  title="Repasar preguntas falladas"
+                >
+                  Repasar fallos
+                </button>
               </div>
             </div>
           </div>
