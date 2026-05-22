@@ -1,4 +1,5 @@
 import type { User } from "@supabase/supabase-js";
+import { useMemo, useState } from "react";
 import { getBadgeByPoints } from "@/lib/badges";
 
 type RankingRow = {
@@ -52,11 +53,9 @@ function CrownRank({
         >
           <path d="M25 62 C14 56 9 45 10 35" />
           <path d="M65 62 C76 56 81 45 80 35" />
-
           <path d="M18 55 C12 55 9 52 7 48" />
           <path d="M16 48 C10 47 8 43 7 39" />
           <path d="M17 41 C12 38 12 34 13 30" />
-
           <path d="M72 55 C78 55 81 52 83 48" />
           <path d="M74 48 C80 47 82 43 83 39" />
           <path d="M73 41 C78 38 78 34 77 30" />
@@ -70,30 +69,9 @@ function CrownRank({
           strokeLinejoin="round"
         />
 
-        <circle
-          cx="22"
-          cy="27"
-          r="4"
-          fill={color}
-          stroke={stroke}
-          strokeWidth="2.5"
-        />
-        <circle
-          cx="45"
-          cy="14"
-          r="4"
-          fill={color}
-          stroke={stroke}
-          strokeWidth="2.5"
-        />
-        <circle
-          cx="68"
-          cy="27"
-          r="4"
-          fill={color}
-          stroke={stroke}
-          strokeWidth="2.5"
-        />
+        <circle cx="22" cy="27" r="4" fill={color} stroke={stroke} strokeWidth="2.5" />
+        <circle cx="45" cy="14" r="4" fill={color} stroke={stroke} strokeWidth="2.5" />
+        <circle cx="68" cy="27" r="4" fill={color} stroke={stroke} strokeWidth="2.5" />
 
         <path
           d="M29 53 H61 V60 H29 Z"
@@ -152,6 +130,23 @@ export default function RankingPage({
   rankingLoading,
   onBack,
 }: RankingPageProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(ranking.length / itemsPerPage);
+
+  const paginatedRanking = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    return ranking.slice(start, end);
+  }, [ranking, currentPage]);
+
+  function goToPage(page: number): void {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <main className="min-h-screen bg-[#d8dde4] px-3 py-4 md:px-4 md:py-5">
       <div className="mx-auto max-w-[1050px] overflow-hidden rounded-[20px] border border-white/60 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
@@ -251,8 +246,8 @@ export default function RankingPage({
               </div>
             ) : (
               <div className="divide-y divide-slate-100">
-                {ranking.map((row, index) => {
-                  const rank = index + 1;
+                {paginatedRanking.map((row, index) => {
+                  const rank = (currentPage - 1) * itemsPerPage + index + 1;
                   const isCurrentUser = user?.id === row.user_id;
                   const badge = getBadgeByPoints(Number(row.badge_points || 0));
 
@@ -323,6 +318,45 @@ export default function RankingPage({
               </div>
             )}
           </div>
+
+          {totalPages > 1 && !rankingLoading && (
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+              <button
+                type="button"
+                onClick={() => goToPage(Math.max(currentPage - 1, 1))}
+                disabled={currentPage === 1}
+                className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                ← Anterior
+              </button>
+
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    type="button"
+                    onClick={() => goToPage(page)}
+                    className={`h-10 w-10 rounded-xl text-sm font-extrabold transition ${
+                      currentPage === page
+                        ? "bg-[#123b86] text-white shadow-lg"
+                        : "border border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
+
+              <button
+                type="button"
+                onClick={() => goToPage(Math.min(currentPage + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Siguiente →
+              </button>
+            </div>
+          )}
         </section>
       </div>
     </main>

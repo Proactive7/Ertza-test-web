@@ -15,6 +15,7 @@ import TermsContent from "@/components/legal/TermsContent";
 import Quiz from "@/components/quiz/Quiz";
 import TopicsPage from "@/components/topics/TopicsPage";
 import IdleSessionGuard from "@/components/idlesessionguard/IdleSessionGuard";
+import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 import { useUser } from "@/hooks/useUser";
 import { supabase } from "@/lib/supabaseClient";
 import { TopicKey, ViewMode } from "@/types/quiz";
@@ -95,6 +96,7 @@ function AppShell({
     <InteractiveEffects>
       {isLoggedIn ? <IdleSessionGuard /> : null}
       {children}
+      <ScrollToTopButton />
     </InteractiveEffects>
   );
 }

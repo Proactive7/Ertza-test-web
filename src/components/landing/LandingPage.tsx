@@ -63,7 +63,7 @@ export default function LandingPage({
 
   return (
     <main className="min-h-screen bg-[#d8dde4] px-4 py-6 md:px-8">
-      <div className="mx-auto max-w-[1180px] overflow-hidden rounded-[24px] border border-white/60 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+      <div className="mx-auto max-w-[1180px] rounded-[24px] border border-white/60 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
         <Header
           onGoHome={onGoHome}
           onOpenTopics={onOpenTopics}
