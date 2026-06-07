@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import { useUser } from "@/hooks/useUser";
 import { OptionKey, TopicKey } from "@/types/quiz";
 
 type WrongAnswersReviewPageProps = {
@@ -66,17 +67,29 @@ function getOptionClass(answer: WrongAnswerSummary, option: OptionKey): string {
 export default function WrongAnswersReviewPage({
   onBack,
 }: WrongAnswersReviewPageProps) {
+  const { user, loading: userLoading } = useUser();
+
   const [wrongAnswers, setWrongAnswers] = useState<WrongAnswerSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function fetchWrongAnswers() {
+      if (userLoading) return;
+
+      if (!user?.id) {
+        setWrongAnswers([]);
+        setPage(1);
+        setLoading(false);
+        return;
+      }
+
       setLoading(true);
 
       const { data, error } = await supabase
         .from("wrong_answers_summary")
         .select("*")
+        .eq("user_id", user.id)
         .order("times_wrong", { ascending: false })
         .order("last_wrong_at", { ascending: false });
 
@@ -87,11 +100,12 @@ export default function WrongAnswersReviewPage({
         setWrongAnswers((data || []) as WrongAnswerSummary[]);
       }
 
+      setPage(1);
       setLoading(false);
     }
 
     void fetchWrongAnswers();
-  }, []);
+  }, [user?.id, userLoading]);
 
   const totalPages = Math.max(1, Math.ceil(wrongAnswers.length / PAGE_SIZE));
 
@@ -123,7 +137,7 @@ export default function WrongAnswersReviewPage({
     }
   }
 
-  if (loading) {
+  if (loading || userLoading) {
     return (
       <main className="min-h-screen bg-[#d8dde4] px-3 py-4 md:px-4 md:py-5">
         <div className="mx-auto max-w-[950px] rounded-[20px] border border-white/60 bg-white p-6 text-center shadow-[0_20px_50px_rgba(15,23,42,0.10)]">

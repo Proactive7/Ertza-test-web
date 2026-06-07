@@ -750,7 +750,7 @@ export const igualdadQuestions: Question[] = [
 },
 {
   id: 84,
-  pregunta: "La presente ley orgánica es de aplicación a:",
+  pregunta: "Ley 10/2022, de 6 de septiembre es de aplicación a:",
   a: "Las mujeres y niñas que hayan sido víctimas de violencias sexuales, con independencia de su nacionalidad y de su situación administrativa.",
   b: "Las mujeres, niñas y niños que hayan sido víctimas de violencias sexuales con independencia de su nacionalidad y situación administrativa.",
   c: "Las mujeres, niñas y niños que hayan sido víctimas de violencias sexuales en España, con independencia de su nacionalidad y de su situación administrativa.",
@@ -831,7 +831,7 @@ export const igualdadQuestions: Question[] = [
 },
 {
   id: 93,
-  pregunta: "Esta ley será de aplicación a:",
+  pregunta: "la Ley 10/2022, las medidas de protección a las víctimas será de aplicación a:",
   a: "Todas las personas con residencia efectiva en cualquiera de los municipios del territorio nacional que tengan la condición de transexuales, transgénero o intersexuales.",
   b: "Todas las personas con residencia efectiva en cualquiera de los municipios de la Comunidad Autónoma de Euskadi que tengan la condición de homosexuales, transexuales, transgénero o intersexuales.",
   c: "Todas las personas con residencia efectiva en cualquiera de los municipios de la Comunidad Autónoma de Euskadi que tengan la condición de transexuales, transgénero o intersexuales.",
@@ -912,15 +912,6 @@ export const igualdadQuestions: Question[] = [
 },
 {
   id: 102,
-  pregunta: "¿A quién de los siguientes se aplica la presente Ley?",
-  a: "El Gobierno Vasco.",
-  b: "El Parlamento Vasco.",
-  c: "Las diputaciones forales y los ayuntamientos.",
-  d: "Todas las anteriores son correctas.",
-  correcta: "d",
-},
-{
-  id: 103,
   pregunta: "¿Cuál es el requisito fundamental para solicitar el cambio de sexo en el Registro Civil?",
   a: "Diagnóstico médico de disforia de género.",
   b: "Informe psicológico favorable.",
@@ -929,7 +920,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 104,
+  id: 103,
   pregunta: "¿Cuántas comparecencias ante el Registro Civil son necesarias?",
   a: "Una única comparecencia presencial.",
   b: "Dos comparecencias, con tres meses de diferencia.",
@@ -938,7 +929,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 105,
+  id: 104,
   pregunta: "¿Se exige tratamiento hormonal o cirugía para el cambio registral?",
   a: "Sí, en todos los casos.",
   b: "Solo si el solicitante es mayor de 25 años.",
@@ -947,7 +938,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 106,
+  id: 105,
   pregunta: "¿A partir de qué edad puede solicitarse directamente el cambio de sexo registral sin asistencia legal ni de tutor?",
   a: "14 años.",
   b: "16 años.",
@@ -956,7 +947,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 107,
+  id: 106,
   pregunta: "¿Qué ocurre si la persona tiene entre 14 y 16 años?",
   a: "No puede solicitarlo.",
   b: "Puede solicitarlo con asistencia de sus representantes legales.",
@@ -965,7 +956,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 108,
+  id: 107,
   pregunta: "¿Qué órgano es competente para resolver la solicitud?",
   a: "El Ministerio de Igualdad.",
   b: "El Juzgado de Familia.",
@@ -974,7 +965,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 109,
+  id: 108,
   pregunta: "¿Pueden los menores de 14 años cambiar la mención registral del sexo?",
   a: "No, en ningún caso.",
   b: "Sí, mediante autorización judicial previa.",
@@ -983,7 +974,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 110,
+  id: 109,
   pregunta: "¿Cuándo produce efectos el cambio registral de sexo?",
   a: "A los 30 días de la solicitud.",
   b: "Desde la presentación de la segunda comparecencia.",
@@ -992,7 +983,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 111,
+  id: 110,
   pregunta: "¿Puede revertirse el cambio de sexo registral?",
   a: "No, es irreversible.",
   b: "Sí, mediante sentencia firme.",
@@ -1001,7 +992,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 112,
+  id: 111,
   pregunta: "¿Qué se entiende por identidad de género?",
   a: "Preferencia por comportamientos asociados a un género.",
   b: "Sentimiento de atracción afectiva o sexual hacia otras personas.",
@@ -1010,7 +1001,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 113,
+  id: 112,
   pregunta: "¿Qué define la expresión de género?",
   a: "La manera en que cada persona interpreta su cuerpo.",
   b: "La manifestación de la identidad de género a través de la apariencia o el comportamiento.",
@@ -1019,7 +1010,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 114,
+  id: 113,
   pregunta: "¿Qué se entiende por personas trans?",
   a: "Personas con orientación sexual fluida.",
   b: "Aquellas cuya identidad de género no se corresponde con el sexo asignado al nacer.",
@@ -1028,7 +1019,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 115,
+  id: 114,
   pregunta: "¿Qué es la intersexualidad?",
   a: "La situación de aquellas personas nacidas con características sexuales que no se corresponden con las nociones típicas de cuerpos masculinos o femeninos.",
   b: "La orientación sexual hacia más de un género.",
@@ -1037,7 +1028,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 116,
+  id: 115,
   pregunta: "¿Qué se entiende por orientación sexual?",
   a: "La manifestación de atracción hacia personas de diferente sexo.",
   b: "La atracción emocional, afectiva o sexual hacia personas del mismo género, de otro o de más de un género.",
@@ -1046,7 +1037,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 117,
+  id: 116,
   pregunta: "¿Qué es la discriminación por error?",
   a: "Aquella basada en una apreciación incorrecta sobre la orientación o identidad de género de una persona.",
   b: "La omisión de medidas preventivas.",
@@ -1055,7 +1046,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 118,
+  id: 117,
   pregunta: "¿Qué implica la discriminación por asociación?",
   a: "Que se discrimina a una asociación en su conjunto.",
   b: "La que recae sobre una persona por su relación con una persona LGTBI.",
@@ -1064,7 +1055,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 119,
+  id: 118,
   pregunta: "¿Qué se entiende por discriminación múltiple?",
   a: "Exclusión por identidad y nombre.",
   b: "Aquella que se basa en dos o más causas de discriminación.",
@@ -1073,7 +1064,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 120,
+  id: 119,
   pregunta: "¿Qué es la LGTBIfobia?",
   a: "El rechazo hacia cualquier colectivo que no sea heterosexual.",
   b: "Toda conducta o comportamiento de rechazo, menosprecio o discriminación por razón de orientación sexual, identidad de género, expresión de género o características sexuales.",
@@ -1082,7 +1073,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 121,
+  id: 120,
   pregunta: "¿Qué tipo de infracción es la denegación de acceso a bienes o servicios a una persona por razón de su orientación o identidad de género?",
   a: "Infracción leve.",
   b: "Infracción muy grave.",
@@ -1091,16 +1082,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 122,
-  pregunta: "¿Cuál es la cuantía máxima de las sanciones por infracciones muy graves?",
-  a: "150.000 euros.",
-  b: "60.000 euros.",
-  c: "30.000 euros.",
-  d: "90.000 euros.",
-  correcta: "a",
-},
-{
-  id: 123,
+  id: 121,
   pregunta: "¿Qué sanción podrá imponerse adicionalmente por la comisión de una infracción muy grave?",
   a: "Exclusión del sistema sanitario.",
   b: "Clausura del establecimiento por un plazo máximo de tres años.",
@@ -1109,7 +1091,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 124,
+  id: 122,
   pregunta: "¿Qué tipo de infracción es realizar terapias de conversión, aversión o contracondicionamiento?",
   a: "Infracción leve.",
   b: "Infracción grave.",
@@ -1118,7 +1100,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 125,
+  id: 123,
   pregunta: "¿Qué infracción comete un centro educativo que no atiende una denuncia por acoso escolar por razón de identidad de género?",
   a: "Infracción leve.",
   b: "Infracción grave.",
@@ -1127,16 +1109,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 126,
-  pregunta: "¿Cuál es la cuantía máxima de una infracción leve?",
-  a: "Hasta 2.000 euros.",
-  b: "Hasta 6.000 euros.",
-  c: "Desde 500 euros.",
-  d: "No tienen cuantía.",
-  correcta: "a",
-},
-{
-  id: 127,
+  id: 124,
   pregunta: "¿Qué infracción se comete si se divulgan datos de una persona trans sin su consentimiento expreso?",
   a: "Infracción leve.",
   b: "Infracción grave.",
@@ -1145,7 +1118,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 128,
+  id: 125,
   pregunta: "¿Cuál es el plazo de prescripción de las infracciones muy graves según la Ley 4/2023?",
   a: "1 año.",
   b: "3 años.",
@@ -1154,7 +1127,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 129,
+  id: 126,
   pregunta: "La resolución referente a la rectificación registral referente al sexo será recurrible en los términos previstos en la normativa reguladora del Registro Civil, mediante:",
   a: "La interposición de recurso de alzada ante la Dirección General de Seguridad Jurídica y Fe Pública.",
   b: "La interposición de recurso de reposición ante la Dirección General de Seguridad Jurídica y Fe Pública.",
@@ -1163,7 +1136,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 130,
+  id: 127,
   pregunta: "Esta Ley tiene por finalidad garantizar y promover:",
   a: "El derecho a la igualdad real y efectiva de las personas lesbianas, trans, bisexuales e intersexuales.",
   b: "El derecho a la igualdad real de las personas lesbianas, gais, trans, bisexuales e intersexuales, así como de sus familias.",
@@ -1172,7 +1145,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 131,
+  id: 128,
   pregunta: "Discriminación directa:",
   a: "Situación en que se encuentra una persona o grupo en que se integra que sea, haya sido o pudiera ser tratada de manera menos favorable que otras en situación análoga o comparable por razón de orientación sexual e identidad sexual, expresión de género o características sexuales.",
   b: "Se produce cuando una disposición, criterio o práctica aparentemente neutros ocasiona o puede ocasionar una desventaja particular.",
@@ -1181,7 +1154,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 132,
+  id: 129,
   pregunta: "¿Quiénes están legitimados para iniciar el proceso de rectificación registral de la mención relativa al sexo?",
   a: "Toda persona con independencia de su nacionalidad mayor de dieciséis años.",
   b: "Toda persona de nacionalidad española mayor de dieciséis años podrá solicitar por sí misma ante el Registro Civil la rectificación de la mención registral relativa al sexo.",
@@ -1190,7 +1163,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 133,
+  id: 130,
   pregunta: "La rectificación de la mención registral relativa al sexo y, en su caso, el cambio de nombre:",
   a: "No alterarán el régimen jurídico que, con anterioridad a la inscripción del cambio registral, fuera aplicable a la persona a los efectos de la Ley Orgánica 1/2004.",
   b: "Alterarán el régimen jurídico que, con anterioridad a la inscripción del cambio registral, fuera aplicable a la persona a los efectos de la Ley Orgánica 1/2004.",
@@ -1199,7 +1172,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 134,
+  id: 131,
   pregunta: "Las personas trans menores de edad, hayan iniciado o no el procedimiento de rectificación de la mención relativa al sexo:",
   a: "No tienen derecho a obtener la inscripción registral del cambio de nombre por razones de orientación sexual.",
   b: "Tienen derecho a obtener la inscripción registral del cambio de nombre por razones de orientación sexual.",
@@ -1208,7 +1181,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 135,
+  id: 132,
   pregunta: "Tras la rectificación o anotación registral, las autoridades:",
   a: "Procederán a la expedición de un nuevo documento nacional de identidad y, en su caso, un nuevo pasaporte ajustado a la inscripción registral rectificada.",
   b: "Podrán proceder a la expedición de un nuevo documento nacional de identidad y, en su caso, un nuevo pasaporte.",
@@ -1217,7 +1190,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 136,
+  id: 133,
   pregunta: "Las infracciones graves prescribirán:",
   a: "A los tres años.",
   b: "A los dos años.",
@@ -1226,7 +1199,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 137,
+  id: 134,
   pregunta: "Las sanciones leves prescribirán:",
   a: "A los nueve meses.",
   b: "A los seis meses.",
@@ -1235,7 +1208,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 138,
+  id: 135,
   pregunta: "En el ámbito de la Administración General del Estado, el procedimiento se iniciará siempre:",
   a: "De oficio.",
   b: "A instancia de parte.",
@@ -1244,7 +1217,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 139,
+  id: 136,
   pregunta: "El órgano competente para instruir en el ámbito de la Administración General del Estado, será:",
   a: "Ministerio de Igualdad.",
   b: "Dirección General de Diversidad Sexual y Derechos LGTBI.",
@@ -1253,7 +1226,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 140,
+  id: 137,
   pregunta: "Cuando se trate de infracciones muy graves y el importe de la sanción propuesta exceda los 100.000 euros, será competente:",
   a: "Consejo de Ministros.",
   b: "Ministerio de Igualdad.",
@@ -1262,7 +1235,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 141,
+  id: 138,
   pregunta: "¿Quién aprueba las normas o directrices para la evaluación del impacto normativo sobre la infancia y la adolescencia, según el artículo 3.3?",
   a: "El Gobierno Vasco, a propuesta del departamento competente.",
   b: "Las diputaciones forales.",
@@ -1271,7 +1244,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 142,
+  id: 139,
   pregunta: "¿Qué deben garantizar las administraciones públicas vascas en relación con los presupuestos destinados a la infancia y la adolescencia?",
   a: "Que sean suficientes, sostenidos en el tiempo y claramente identificados.",
   b: "Que se distribuyan de manera equitativa entre todos los sectores sociales.",
@@ -1280,7 +1253,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 143,
+  id: 140,
   pregunta: "¿Qué sistema deben establecer las administraciones públicas vascas para supervisar los recursos asignados a la infancia y la adolescencia?",
   a: "Un sistema de control técnico.",
   b: "Un sistema informático de control financiero.",
@@ -1289,7 +1262,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 144,
+  id: 141,
   pregunta: "¿Quiénes tienen el deber de corresponsabilidad en las actuaciones de promoción, prevención, atención y protección de la infancia y la adolescencia según el artículo 5.1?",
   a: "Solo los poderes públicos vascos.",
   b: "Solo las administraciones públicas vascas, las familias y la sociedad en su conjunto.",
@@ -1298,7 +1271,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 145,
+  id: 142,
   pregunta: "Según el artículo 5.5, ¿qué debe garantizarse en la colaboración entre las administraciones públicas y entidades privadas?",
   a: "La independencia en la toma de decisiones.",
   b: "La eficacia de la articulación en políticas de infancia y adolescencia.",
@@ -1307,7 +1280,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 146,
+  id: 143,
   pregunta: "Según el artículo 8, ¿qué se entiende por promoción en el marco de la ley?",
   a: "Políticas y estrategias orientadas a fomentar el respeto por los derechos de los menores.",
   b: "Solo la atención a la salud de los menores.",
@@ -1316,7 +1289,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 147,
+  id: 144,
   pregunta: "En relación con las actuaciones preventivas descritas en el artículo 9, ¿qué tipo de estrategias deben desarrollarse?",
   a: "Solo estrategias orientadas a mejorar la calidad educativa.",
   b: "Estrategias orientadas a controlar los factores de riesgo y de protección.",
@@ -1325,7 +1298,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 148,
+  id: 145,
   pregunta: "Según el artículo 10, ¿qué tipo de actuaciones se consideran dentro de la atención a las personas menores de edad?",
   a: "Actuaciones orientadas a la prevención de desescolarización.",
   b: "Actuaciones destinadas a la protección ante acoso escolar.",
@@ -1334,7 +1307,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 149,
+  id: 146,
   pregunta: "Según el artículo 11, ¿qué se entiende por protección contra la violencia en el contexto de la ley?",
   a: "Solamente las políticas para prevenir la violencia escolar.",
   b: "Conjunto de políticas, procedimientos y actuaciones para proteger a los menores frente a cualquier forma de violencia, independientemente del ámbito.",
@@ -1343,7 +1316,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 150,
+  id: 147,
   pregunta: "A los efectos de la presente ley, se entiende por violencia:",
   a: "Toda acción, omisión o trato negligente, realizado por una persona adulta o por otra persona menor de edad, que priva a las personas menores de edad de sus derechos y bienestar y que amenaza o interfiere su ordenado desarrollo físico, psíquico o social.",
   b: "Toda acción o trato negligente, realizado por una persona adulta o por otra persona menor de edad.",
@@ -1352,7 +1325,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 151,
+  id: 148,
   pregunta: "En el caso de la Policía local, cuando el número de efectivos que integran el cuerpo no sea adecuado y suficiente para permitir la creación de unidades especializadas en la investigación y prevención, detección y actuación ante situaciones de violencia sobre la infancia y la adolescencia:",
   a: "Se deberá contar con la presencia del cuerpo de la Ertzaintza en todas las actuaciones.",
   b: "Se deberá garantizar que cuenten con un equipo de profesionales en el ámbito psicosocial.",
@@ -1361,7 +1334,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 152,
+  id: 149,
   pregunta: "La actuación de la Ertzaintza y de la Policía local ante situaciones de violencia ejercida sobre la infancia y la adolescencia se regirá por:",
   a: "El respeto a los derechos de las personas menores.",
   b: "La consideración de su interés superior.",
@@ -1370,7 +1343,7 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 153,
+  id: 150,
   pregunta: "Criterios de actuación policial en el ámbito de la infancia y la adolescencia. En todo caso, procederán conforme a los siguientes criterios:",
   a: "Solo se practicarán diligencias con intervención de la persona menor que sean estrictamente necesarias.",
   b: "Se practicarán sin dilación todas las diligencias imprescindibles.",
@@ -1379,8 +1352,8 @@ export const igualdadQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 154,
-  pregunta: "Respecto a la pregunta inmediatamente anterior, indique la respuesta incorrecta:",
+  id: 151,
+  pregunta: "Criterios de actuación policial en el ámbito de la infancia y la adolescencia. Indique la respuesta incorrecta:",
   a: "Se procurará que la persona menor se encuentre, en todo momento, en compañía de una persona de su confianza.",
   b: "Se dispensará un buen trato a la persona menor, con adaptación del lenguaje y las formas a su edad y madurez.",
   c: "Se permitirá a la persona menor que así lo solicite formular denuncia por sí misma debiendo de estar acompañada de una persona adulta.",

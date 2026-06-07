@@ -12,15 +12,6 @@ export const historiaQuestions: Question[] = [
   },
 {
   id: 2,
-  pregunta: "El Parlamento Europeo comparte el poder legislativo con:",
-  a: "La Comisión.",
-  b: "El Tribunal de Justicia.",
-  c: "El Consejo.",
-  d: "Ninguna de las anteriores es correcta.",
-  correcta: "c",
-},
-{
-  id: 3,
   pregunta: "¿Qué indica que hay que efectuar en la valoración primaria, la secuencia (ABCDE) en su sigla B?",
   a: "Comprobar la calidad de la respiración y suministrar oxígeno.",
   b: "Comprobar la permeabilidad de la vía aérea.",
@@ -29,7 +20,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 4,
+  id: 3,
   pregunta: "¿En qué localidades se encuentra el corte geomorfológico denominado Flysch?",
   a: "Deba y Zumaia.",
   b: "Getaria y Deba.",
@@ -38,7 +29,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 5,
+  id: 4,
   pregunta: "En abril de 1835, entre el jefe carlista Tomás de Zumalacárregui y el isabelino Jerónimo Valdés, se firmó:",
   a: "Abrazo de Vergara.",
   b: "El convenio de Elliot.",
@@ -47,7 +38,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 6,
+  id: 5,
   pregunta: "El 7 de octubre de 1936 José Antonio Aguirre tomó posesión como Lehendakari instaurando el primer Gobierno Vasco. Señale la afirmación incorrecta:",
   a: "La cooficialidad del Euskera.",
   b: "La implantación de la ikurriña.",
@@ -56,7 +47,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 7,
+  id: 6,
   pregunta: "El clima oceánico vasco corresponde a un clima mesotérmico. Esto es:",
   a: "Moderado en cuanto a temperaturas, muy lluvioso, sin ningún mes seco y con el máximo de lluvias en otoño e invierno.",
   b: "Típicamente mediterráneo.",
@@ -65,7 +56,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 8,
+  id: 7,
   pregunta: "El COREPER es:",
   a: "El órgano responsable de la política europea.",
   b: "El nombre que recibe la reunión de presidentes de la U.E.",
@@ -74,7 +65,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 9,
+  id: 8,
   pregunta: "En 1968, ETA planifica su primer atentado al jefe de la Brigada Social de Gipuzkoa. La respuesta fue una represión indiscriminada que provocó:",
   a: "Que 9 etarras fueran condenados a muerte, cuyas condenas fueran posteriormente conmutadas.",
   b: "Que las HOAC se disolvieran.",
@@ -83,7 +74,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 10,
+  id: 9,
   pregunta: "Es correcto señalar que los ríos de la vertiente atlántica:",
   a: "Son ríos que nacen en el este de los Pirineos y desembocan en el Mediterráneo.",
   b: "Son ríos de curso largo ya que nacen al norte de los Pirineos y llegan a desembocar en el Atlántico.",
@@ -92,7 +83,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 11,
+  id: 10,
   pregunta: "¿Cuál es la institución europea que ejerce la función ejecutiva?",
   a: "El Consejo Europeo.",
   b: "El Parlamento Vasco.",
@@ -101,7 +92,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 12,
+  id: 11,
   pregunta: "¿En qué fecha se celebraron las primeras elecciones democráticas tras la muerte de Franco?",
   a: "15 de junio de 1977.",
   b: "15 de abril de 1976.",
@@ -110,7 +101,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 13,
+  id: 12,
   pregunta: "¿Cómo se comprueba la respiración de un accidentado?",
   a: "Abriendo la vía aérea.",
   b: "Retirando objetos extraños.",
@@ -119,7 +110,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 14,
+  id: 13,
   pregunta: "¿Qué documentos son generados por la Administración para comunicarse con otra Administración, organismo público o incluso departamentos de la misma Administración?",
   a: "Certificado-oficio-denuncia.",
   b: "Nota-informe-oficio.",
@@ -128,7 +119,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 15,
+  id: 14,
   pregunta: "¿Quién estaba en el Gobierno de José Antonio Aguirre en 1936, al mando de la Consejería de Gobernación?",
   a: "Telesforo Monzón.",
   b: "Santiago Aznar.",
@@ -137,7 +128,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 16,
+  id: 15,
   pregunta: "Tras la muerte de Fernando VII, ocupa la regencia hasta la mayoría de edad de Isabel II:",
   a: "El infante D. Carlos María Isidro.",
   b: "María Cristina de Borbón Dos Sicilias.",
@@ -146,7 +137,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 17,
+  id: 16,
   pregunta: "Las tropas francesas de Napoleón empiezan su invasión de la Península Ibérica, cruzando el Bidasoa tras la firma de:",
   a: "El motín de Aranjuez, en marzo de 1808.",
   b: "El Tratado de Fontainebleau, en octubre de 1807.",
@@ -155,7 +146,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 18,
+  id: 17,
   pregunta: "Durante la Primera Guerra Carlista, las diferencias entre los carlistas se centran en:",
   a: "Bando moderado y progresista.",
   b: "Grupo monárquico y republicano.",
@@ -164,7 +155,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 19,
+  id: 18,
   pregunta: "“Altos Hornos de Vizcaya” se constituyó tras la fusión de “Sociedad de Altos Hornos y Fábricas de Hierro y Acero” con la sociedad:",
   a: "Hermanos Ybarra.",
   b: "Banco Hispano Colonial.",
@@ -173,7 +164,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 20,
+  id: 19,
   pregunta: "La Academia de la Lengua Vasca fue reconocida como Real Academia en:",
   a: "1936.",
   b: "1907.",
@@ -182,7 +173,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 21,
+  id: 20,
   pregunta: "El ejército vasco formado por el Gobierno Vasco a comienzos de la Guerra Civil llegó a alcanzar:",
   a: "75.000 hombres.",
   b: "30.000 hombres.",
@@ -191,7 +182,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 22,
+  id: 21,
   pregunta: "El proyecto del ferrocarril de “La Robla” se debe al ingeniero:",
   a: "Mariano Zuaznabar.",
   b: "Pablo Alzola.",
@@ -200,7 +191,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 23,
+  id: 22,
   pregunta: "Pocos meses después de la creación de la “Agrupación Socialista de Bilbao”, Facundo Perezagua impulsa la agrupación de:",
   a: "Somorrostro.",
   b: "Hondarribia.",
@@ -209,7 +200,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 24,
+  id: 23,
   pregunta: "¿En qué fecha se aprobó la Ley de Modificación de los Fueros?",
   a: "1841.",
   b: "1876.",
@@ -218,7 +209,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 25,
+  id: 24,
   pregunta: "La policía solicita autorización judicial para requerir determinada actuación. Indique la fórmula correcta de dirigirse al juzgado con objeto de no realizar un uso sexista del lenguaje:",
   a: "Al Juzgado de Instrucción.",
   b: "Sr. Juez o Jueza del Juzgado.",
@@ -227,7 +218,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 26,
+  id: 25,
   pregunta: "¿Qué sierra está situada más al este de la CAV?",
   a: "Sierra de Aizgorri.",
   b: "Sierra de Anboto.",
@@ -236,7 +227,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 27,
+  id: 26,
   pregunta: "¿Cuál de los siguientes municipios no se encuentra en el trayecto del río Deba?",
   a: "Eskoriatza.",
   b: "Aretxabaleta.",
@@ -245,7 +236,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 28,
+  id: 27,
   pregunta: "¿Cuál es la comunidad autónoma que más emigrantes recibe del País Vasco?",
   a: "Andalucía.",
   b: "Madrid.",
@@ -254,7 +245,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 29,
+  id: 28,
   pregunta: "¿Con qué tipo de lenguaje han de comunicarse las administraciones públicas con los ciudadanos?",
   a: "Evitando el uso de tecnicismos utilizando palabras más conocidas.",
   b: "Utilizando múltiples tecnicismos le dan consistencia al mensaje.",
@@ -263,7 +254,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 30,
+  id: 29,
   pregunta: "Cuando un paciente está sufriendo un shock hipovolémico, ¿cuál es uno de sus síntomas?",
   a: "Mucho calor corporal.",
   b: "Ausencia de sed.",
@@ -272,34 +263,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 31,
-  pregunta: "El Acta Única Europea (1986), en su artículo 8, define muy claramente el objetivo del Acta, que es establecer progresivamente en el mercado interior en el transcurso de un periodo que concluye en:",
-  a: "31 de diciembre de 1999.",
-  b: "31 de diciembre de 1995.",
-  c: "31 de diciembre de 1992.",
-  d: "31 de diciembre de 1980.",
-  correcta: "c",
-},
-{
-  id: 32,
-  pregunta: "El encargado de velar por el cumplimiento del derecho en la UE:",
-  a: "Tribunal de Justicia de la UE con sede en Estrasburgo.",
-  b: "Tribunal de Justicia de la UE con sede en Luxemburgo.",
-  c: "Tribunal de Justicia de la UE con sede en Bruselas.",
-  d: "Tribunal de Cuentas de la UE con sede en La Haya.",
-  correcta: "b",
-},
-{
-  id: 33,
-  pregunta: "El artículo 4 de la Carta Internacional de Derechos Humanos indica que:",
-  a: "Nadie estará sometido a esclavitud, ni a servidumbre; la esclavitud y la trata de esclavos están prohibidas en todas sus formas.",
-  b: "Nadie estará sometido a esclavitud, ni a servidumbre; estas están prohibidas salvo en caso de guerra.",
-  c: "Nadie estará sometido a esclavitud ni servidumbre; estas están prohibidas salvo en caso de guerra.",
-  d: "Nadie estará sometido a esclavitud ni servidumbre; la esclavitud y la servidumbre están prohibidas en todas sus formas.",
-  correcta: "a",
-},
-{
-  id: 34,
+  id: 30,
   pregunta: "¿En qué año la revolución destronó a Isabel II?",
   a: "1840.",
   b: "1848.",
@@ -308,7 +272,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 35,
+  id: 31,
   pregunta: "¿Cuál de los siguientes montes pertenece al territorio histórico de Gipuzkoa?",
   a: "Iturrieta y Altzkorri.",
   b: "Oiz e Izarraitz.",
@@ -317,7 +281,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 36,
+  id: 32,
   pregunta: "En el caso de que tengamos en un miembro inferior una hemorragia externa, actuaremos primero:",
   a: "Mediante la compresión directa, efectuando presión con un apósito limpio en el lugar de la herida.",
   b: "Mediante compresión del vaso arterial.",
@@ -326,25 +290,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 37,
-  pregunta: "Es correcto señalar sobre el Consejo Europeo que:",
-  a: "Decide sobre la orientación y las prioridades políticas generales de la UE, legislando las mismas.",
-  b: "Se reúne en cumbres por lo menos tres veces cada semestre.",
-  c: "Se ocupa de cuestiones complejas y sensibles que no pueden resolverse en instancias inferiores de la cooperación intergubernamental.",
-  d: "Tiene su sede principal en la ciudad de Estrasburgo en Bélgica.",
-  correcta: "c",
-},
-{
-  id: 38,
-  pregunta: "Señale la alternativa incorrecta:",
-  a: "El Parlamento Europeo representa a los ciudadanos de la UE y sus miembros son elegidos por ellos.",
-  b: "El Consejo de la UE representa a los estados miembros individuales.",
-  c: "La Comisión europea representa los intereses de la Unión en su conjunto.",
-  d: "El Tribunal de Justicia garantiza que la legislación de la UE se interprete y aplique igual en todos los países, pero no resuelve conflictos entre los estados miembros, instituciones de la UE y empresas particulares.",
-  correcta: "d",
-},
-{
-  id: 39,
+  id: 33,
   pregunta: "Dentro de la zona climática media del País Vasco, tenemos clima submediterráneo en:",
   a: "Montaña alavesa y Treviño.",
   b: "Treviño y Llanada alavesa.",
@@ -353,7 +299,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 40,
+  id: 34,
   pregunta: "¿Cuál no pertenece al valle guipuzcoano que tuvo su origen en el nacionalismo en el País Vasco?",
   a: "La fuerte crisis del sector agrario.",
   b: "La abolición de los fueros vascos.",
@@ -362,7 +308,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 41,
+  id: 35,
   pregunta: "La Declaración Universal de los Derechos Humanos se aprobó en París el:",
   a: "10 de diciembre de 1945.",
   b: "10 de diciembre de 1946.",
@@ -371,7 +317,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 42,
+  id: 36,
   pregunta: "Una vez derrotado el bando carlista se produjo la caída de Estella, España quedó al mando de:",
   a: "Amadeo de Saboya.",
   b: "El General Prim.",
@@ -380,7 +326,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 43,
+  id: 37,
   pregunta: "Respecto a la técnica del masaje cardiaco indique la alternativa incorrecta:",
   a: "Se efectuará únicamente en el caso de que no tenga pulso.",
   b: "Para conseguir una compresión efectiva colocamos al accidentado boca arriba sobre una superficie plana y dura.",
@@ -389,7 +335,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 44,
+  id: 38,
   pregunta: "Las características fundamentales de los Derechos Humanos proclamados en la Declaración Universal de Derechos Humanos son las siguientes:",
   a: "Universales, inalienables, irrenunciables, permanentes o imprescriptibles e indivisibles.",
   b: "Universales, alienables, irrenunciables, permanentes o imprescriptibles y divisibles.",
@@ -398,7 +344,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 45,
+  id: 39,
   pregunta: "¿Cuál de estos ríos destaca por tener una cuenca como parte principal de la reserva de la biosfera de Urdaibai, considerado espacio protegido por la UNESCO desde 1984?",
   a: "Ibaizabal.",
   b: "Oka.",
@@ -407,16 +353,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 46,
-  pregunta: "Es correcto señalar sobre el Tribunal de Cuentas europeo que:",
-  a: "Tiene su sede central en Bélgica.",
-  b: "Es el encargado de la fiscalización y control de las cuentas de la UE.",
-  c: "Está compuesto por jueces generales.",
-  d: "Tiene su sede central en Bruselas.",
-  correcta: "b",
-},
-{
-  id: 47,
+  id: 40,
   pregunta: "Los primeros años de la dictadura franquista se caracterizaron por:",
   a: "El Concordato con la Santa Sede.",
   b: "El primer atentado de ETA.",
@@ -425,7 +362,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 48,
+  id: 41,
   pregunta: "La Ertzaña Isabel II fue derrotada y exiliada a Francia por:",
   a: "La Primera República.",
   b: "Un golpe de estado carlista.",
@@ -434,16 +371,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 49,
-  pregunta: "La institución que representa y defiende los intereses de la Unión Europea en su conjunto corresponde a:",
-  a: "Parlamento europeo.",
-  b: "Defensor del pueblo europeo.",
-  c: "Banco europeo de inversión.",
-  d: "La Comisión Europea.",
-  correcta: "d",
-},
-{
-  id: 50,
+  id: 42,
   pregunta: "¿En qué fecha histórica es tratado el euskera por primera vez como lengua oficial del País Vasco?",
   a: "En 1939 con el fin de la Guerra Civil.",
   b: "En 1937 mediante un Real decreto.",
@@ -452,16 +380,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 51,
-  pregunta: "En el ámbito del Consejo de Europa, dos son los instrumentos legales fundamentales para la protección de los Derechos Humanos:",
-  a: "El Convenio Europeo de Derechos Humanos y la Carta de Derechos Fundamentales.",
-  b: "El Convenio europeo para la protección de Derechos Humanos y la Carta Social Europea.",
-  c: "El Pacto Internacional de Derechos Humanos y el Pacto Internacional de Derechos Económicos.",
-  d: "Ninguna de las anteriores.",
-  correcta: "b",
-},
-{
-  id: 52,
+  id: 43,
   pregunta: "En 1923 se produjo el golpe militar del General Primo de Rivera que procedió a la suspensión de:",
   a: "La Constitución de 1808.",
   b: "La Constitución de 1876.",
@@ -470,7 +389,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 53,
+  id: 44,
   pregunta: "El histórico Abrazo de Bergara no fue suscrito por:",
   a: "Carlistas vizcaínos y navarros.",
   b: "Maroto y Espartero.",
@@ -479,16 +398,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 54,
-  pregunta: "El poder legislativo en la UE es ejercido por:",
-  a: "El Parlamento europeo, exclusivamente.",
-  b: "El Parlamento europeo y el Consejo de la UE.",
-  c: "La Comisión europea.",
-  d: "El Consejo de la UE.",
-  correcta: "b",
-},
-{
-  id: 55,
+  id: 45,
   pregunta: "Es correcto señalar respecto a la obstrucción incompleta traqueal que:",
   a: "El paciente no emitirá ruidos extraños.",
   b: "El paciente podrá sus mecanismos de defensa a funcionar, tosiendo.",
@@ -497,7 +407,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 56,
+  id: 46,
   pregunta: "Señala cuál de las siguientes hemorragias se considera la más grave:",
   a: "Hemorragia arterial.",
   b: "Hemorragia capilar.",
@@ -506,7 +416,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 57,
+  id: 47,
   pregunta: "¿Qué sierra se sitúa más al este del País Vasco?",
   a: "Sierra de Altzania.",
   b: "Sierra de Anboto.",
@@ -515,16 +425,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 58,
-  pregunta: "El Tribunal Europeo de Derechos Humanos tiene su sede actual en:",
-  a: "La Haya.",
-  b: "Estrasburgo.",
-  c: "Francia.",
-  d: "Bruselas.",
-  correcta: "b",
-},
-{
-  id: 59,
+  id: 48,
   pregunta: "Tras el Convenio de Vergara, se pone fin a la primera guerra carlista y se aprueba:",
   a: "El Decreto de Valencia, de 4 de mayo de 1814.",
   b: "El Estatuto Real de 1834.",
@@ -533,7 +434,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 60,
+  id: 49,
   pregunta: "El Tratado de Basilea entre España y Francia se firma en fecha:",
   a: "Octubre de 1797.",
   b: "Enero de 1795.",
@@ -542,7 +443,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 61,
+  id: 50,
   pregunta: "La proclama de José Antonio Muñagorri bajo el lema Paz y Fueros se produce en la localidad de:",
   a: "Oñati.",
   b: "Irun.",
@@ -551,7 +452,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 62,
+  id: 51,
   pregunta: "¿En qué año se promulgó la Constitución de Bayona?",
   a: "1802.",
   b: "1808.",
@@ -560,7 +461,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 63,
+  id: 52,
   pregunta: "En el País Vasco, ¿quién apoyaba las ideas de la Revolución Francesa que trajo Napoleón cuando invadió España?",
   a: "El clero rural.",
   b: "El pueblo dirigido por el clero rural.",
@@ -569,7 +470,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 64,
+  id: 53,
   pregunta: "El histórico Díez Secos de Bilbao fue fundado por:",
   a: "La familia de Pío Baroja.",
   b: "La familia de Sabino Arana.",
@@ -578,7 +479,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 65,
+  id: 54,
   pregunta: "El nombre original del pretendiente carlista Carlos IV era:",
   a: "Conde-Duque de Olivares.",
   b: "Gaspar Melchor de Jovellanos.",
@@ -587,7 +488,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 66,
+  id: 55,
   pregunta: "La Carta Otorgada por Napoleón a los españoles el 7 de julio de 1808 se llamó:",
   a: "Estatuto de Bayona.",
   b: "Carta de Bayona.",
@@ -596,7 +497,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 67,
+  id: 56,
   pregunta: "La legión auxiliar británica que apoyó al ejército isabelino en la primera guerra carlista estaba al mando de:",
   a: "Duque de Wellington.",
   b: "General George Lacy Evans.",
@@ -605,7 +506,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 68,
+  id: 57,
   pregunta: "Tras la revolución conocida como la “Gloriosa” en 1868 y la marcha al exilio de Isabel II, ocupa el trono:",
   a: "Su madre, la regente María Cristina.",
   b: "El general Prim.",
@@ -614,7 +515,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 69,
+  id: 58,
   pregunta: "El rey Carlos IV de España fue, a su vez:",
   a: "Carlos III de Navarra.",
   b: "Carlos II de Navarra.",
@@ -623,7 +524,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 70,
+  id: 59,
   pregunta: "El pretendiente al trono en la Primera Guerra Carlista fue:",
   a: "María Cristina de Borbón.",
   b: "El infante D. Carlos María Isidro de Borbón.",
@@ -632,7 +533,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 71,
+  id: 60,
   pregunta: "En 1835, Simón Bernardo de Zamacola propuso, por oposición a Bilbao, la creación de un nuevo puerto en:",
   a: "Hondarribia.",
   b: "Bilbao.",
@@ -641,7 +542,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 72,
+  id: 61,
   pregunta: "El punto máximo de tensión por la invasión napoleónica en el País Vasco se produce con:",
   a: "La toma de la Ciudadela de Pamplona.",
   b: "La Batalla de Vitoria.",
@@ -650,7 +551,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 73,
+  id: 62,
   pregunta: "Fray Tomás de Zumalacárregui fue:",
   a: "Militar navarro.",
   b: "Militar liberal.",
@@ -659,7 +560,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 74,
+  id: 63,
   pregunta: "Fernando VII restaura la Ley Sálica mediante:",
   a: "El Estatuto Real de 1834.",
   b: "La Constitución de 1812.",
@@ -668,7 +569,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 75,
+  id: 64,
   pregunta: "En el último tercio del XIX, la principal actividad de Ybarra Hnos. y Cía. se centraba en:",
   a: "Exportación del carbón de coque de Bilbao.",
   b: "Importación de piezas metálicas.",
@@ -677,7 +578,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 76,
+  id: 65,
   pregunta: "¿Cuál de los siguientes periodos es correcto?",
   a: "El reinado de Amadeo I de Saboya (1868-1870).",
   b: "La Primera República (1871-1873).",
@@ -686,7 +587,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 77,
+  id: 66,
   pregunta: "¿Quién compuso el Gernikako Arbola?",
   a: "Iparraguirre.",
   b: "José María de Iparraguirre.",
@@ -695,7 +596,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 78,
+  id: 67,
   pregunta: "La máquina que “revolucionó” la producción textil en la Inglaterra de fines del siglo XVIII fue:",
   a: "La hiladora Jenny.",
   b: "La máquina de vapor de James Watt.",
@@ -704,7 +605,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 79,
+  id: 68,
   pregunta: "El puente colgante entre Portugalete y Getxo fue financiado por:",
   a: "Banco Hispano Americano.",
   b: "El Banco de Vizcaya y Santos López de Letona.",
@@ -713,7 +614,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 80,
+  id: 69,
   pregunta: "El monarca impuesto por Napoleón tras conseguir la abdicación de Carlos IV tomó el nombre de:",
   a: "Fernando VII.",
   b: "José I Bonaparte.",
@@ -722,7 +623,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 81,
+  id: 70,
   pregunta: "El carlismo tiene el apoyo social de:",
   a: "La burguesía de las ciudades y los obreros industriales.",
   b: "El campesinado, artesanos y medianos campesinos.",
@@ -731,7 +632,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 82,
+  id: 71,
   pregunta: "¿Quiénes sellaron en Bergara el histórico acuerdo denominado “Abrazo de Bergara”?",
   a: "El general guipuzcoano Tomás de Zumalacárregui por el bando carlista y las Cortes españolas.",
   b: "El general guipuzcoano Tomás de Zumalacárregui por el bando carlista y el general Espartero por el bando liberal o isabelino.",
@@ -740,7 +641,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 83,
+  id: 72,
   pregunta: "La Constitución de Cádiz de 1812:",
   a: "Reacciona ideológicamente frente a las posiciones absolutistas del Antiguo Régimen.",
   b: "Afirma las tradiciones forales dando mayor poder a las instituciones vascas.",
@@ -749,7 +650,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 84,
+  id: 73,
   pregunta: "El origen de la primera guerra carlista fue:",
   a: "La muerte del rey Fernando VII que suprimió la Ley Sálica para que gobernase su hija Isabel.",
   b: "El enfrentamiento entre dos modelos políticos (absolutismo-liberalismo), que se inicia a la muerte del jefe del Estado.",
@@ -758,7 +659,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 85,
+  id: 74,
   pregunta: "La primera guerra carlista fue entre los años:",
   a: "1813-1815.",
   b: "1833-1840.",
@@ -767,7 +668,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 86,
+  id: 75,
   pregunta: "El escritor Pío Baroja nació en:",
   a: "Bilbao.",
   b: "San Sebastián.",
@@ -776,7 +677,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 87,
+  id: 76,
   pregunta: "Tras la renuncia al trono de España de Amadeo I en 1873, le sucede:",
   a: "Alfonso XII.",
   b: "Isabel II.",
@@ -785,7 +686,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 88,
+  id: 77,
   pregunta: "La Ley Sálica que establece la prevalencia del varón sobre la mujer en la sucesión al trono fue instaurada en España por:",
   a: "Godoy, rey de los franceses.",
   b: "Napoleón Bonaparte.",
@@ -794,7 +695,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 89,
+  id: 78,
   pregunta: "La publicación aparecida en 1893, fue fundada por:",
   a: "Ramón de la Sota.",
   b: "Luis Arana.",
@@ -803,7 +704,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 90,
+  id: 79,
   pregunta: "En el término “jaunko” hace referencia a:",
   a: "Apareceros.",
   b: "Milicias carlistas.",
@@ -812,7 +713,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 91,
+  id: 80,
   pregunta: "El marco de la Segunda Guerra Carlista se sitúa en:",
   a: "El Maestrazgo.",
   b: "Madrid.",
@@ -821,7 +722,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 92,
+  id: 81,
   pregunta: "La industria armamentística en el País Vasco radica desde el siglo XIX especialmente en:",
   a: "Eibar.",
   b: "Bilbao.",
@@ -830,7 +731,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 93,
+  id: 82,
   pregunta: "El conjunto del relieve del País Vasco está dividido en:",
   a: "Dos grandes unidades: la depresión del Ebro y el litoral marino.",
   b: "Tres grandes unidades: zona central, litoral marino y conjunto pirenaico.",
@@ -839,16 +740,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 94,
-  pregunta: "La Carta Internacional de Derechos Humanos indica que:",
-  a: "Nadie estará sometido a esclavitud, ni a servidumbre; la esclavitud y la trata de esclavos están prohibidas en todas sus formas.",
-  b: "Nadie estará sometido a esclavitud, ni a servidumbre; estas prácticas solo están prohibidas en estado de sitio.",
-  c: "Nadie estará sometido a esclavitud, ni a servidumbre; estas prácticas están permitidas en caso de guerra.",
-  d: "La esclavitud y la servidumbre están permitidas en determinadas circunstancias.",
-  correcta: "a",
-},
-{
-  id: 95,
+  id: 83,
   pregunta: "El despegue industrial del siglo XIX en el País Vasco se debió a la importancia de sus:",
   a: "Grandes marinos.",
   b: "Minas de cobre.",
@@ -857,7 +749,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 96,
+  id: 84,
   pregunta: "La primera Sociedad Anónima moderna se funda en Bizkaia en 1840 con el nombre:",
   a: "Santa Ana de Bolueta.",
   b: "Altos Hornos de Vizcaya.",
@@ -866,7 +758,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 97,
+  id: 85,
   pregunta: "Sabino Arana presentó por primera vez en público sus ideas en el llamado:",
   a: "Discurso de Larrazabal.",
   b: "Discurso de Abando.",
@@ -875,7 +767,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 98,
+  id: 86,
   pregunta: "Las primeras plantas siderúrgicas en el País Vasco se establecieron en:",
   a: "La ría del Nervión.",
   b: "La desembocadura del Bidasoa.",
@@ -884,7 +776,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 99,
+  id: 87,
   pregunta: "Al pretendiente carlista Carlos María Isidro de Borbón le sucede:",
   a: "Su sobrino, Francisco Asís de Borbón.",
   b: "Su descendiente, Jaime de Borbón.",
@@ -893,7 +785,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 100,
+  id: 88,
   pregunta: "El Partido Católico Nacional, fundado en 1888 como escisión carlista, fue liderado por:",
   a: "Cándido Nocedal.",
   b: "Práxedes Mateo Sagasta.",
@@ -902,7 +794,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 101,
+  id: 89,
   pregunta: "El general Tomás de Zumalacárregui murió en:",
   a: "La batalla de Oriamendi.",
   b: "La toma de Pamplona.",
@@ -911,7 +803,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 102,
+  id: 90,
   pregunta: "Durante la Tercera Guerra Carlista, los carlistas proyectaron en el País Vasco la creación de una universidad en:",
   a: "Bilbao.",
   b: "Gernika.",
@@ -920,7 +812,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 103,
+  id: 91,
   pregunta: "Tras el final de la Primera Guerra Carlista, los fueros navarros se restauran mediante la promulgación de:",
   a: "La Ley Sálica.",
   b: "La Constitución de 1845.",
@@ -929,7 +821,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 104,
+  id: 92,
   pregunta: "Las batallas de Somorrostro, en 1874, han quedado retratadas por Unamuno en su obra:",
   a: "Paz en la guerra.",
   b: "San Manuel Bueno, mártir.",
@@ -938,7 +830,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 105,
+  id: 93,
   pregunta: "La Guerra de la Independencia frente a Napoleón acabó en territorio vasco tras la batalla de:",
   a: "Waterloo.",
   b: "Vitoria.",
@@ -947,7 +839,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 106,
+  id: 94,
   pregunta: "La Segunda guerra carlista se desarrolló durante los años:",
   a: "1836 - 1837.",
   b: "1866 - 1870.",
@@ -956,7 +848,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 107,
+  id: 95,
   pregunta: "El Abrazo de Vergara, convenio que puso fin a la Primera Guerra Carlista, se firmó entre:",
   a: "Castaños y Wellington.",
   b: "Maroto y Espartero.",
@@ -965,7 +857,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 108,
+  id: 96,
   pregunta: "El Tratado de Basilea, tras la Guerra de la Convención, supuso la vuelta de la alianza con:",
   a: "Inglaterra.",
   b: "Los Países Bajos.",
@@ -974,7 +866,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 109,
+  id: 97,
   pregunta: "La tercera guerra carlista tuvo lugar entre:",
   a: "1868 - 1871.",
   b: "1848 - 1868.",
@@ -983,7 +875,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 110,
+  id: 98,
   pregunta: "El Partido Nacionalista Vasco se fundó en el año:",
   a: "1907.",
   b: "1895.",
@@ -992,7 +884,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 111,
+  id: 99,
   pregunta: "El panfleto “Fuera de la Desgracia” se debe a:",
   a: "General Espartero.",
   b: "Diputado Mateo Benigno Moraza.",
@@ -1001,7 +893,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 112,
+  id: 100,
   pregunta: "La ciudad considerada por los carlistas como su capital era:",
   a: "Bilbao.",
   b: "Pamplona.",
@@ -1010,7 +902,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 113,
+  id: 101,
   pregunta: "El pintor Ignacio Zuloaga nació en la localidad de:",
   a: "Deba.",
   b: "Tolosa.",
@@ -1019,7 +911,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 114,
+  id: 102,
   pregunta: "El fundador de la sociedad La Vizcaya, fusionada más tarde con Altos Hornos fue:",
   a: "El ingeniero Alejandro Goicoechea.",
   b: "El empresario José Martínez Rivas.",
@@ -1028,7 +920,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 115,
+  id: 103,
   pregunta: "La muerte de Carlos VII en 1909 puso al frente de la causa carlista a:",
   a: "Su hermano, Carlos Hugo de Borbón-Parma.",
   b: "No tuvo sucesor.",
@@ -1037,7 +929,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 116,
+  id: 104,
   pregunta: "La Agrupación Socialista de Bilbao fue fundada en 1886 por:",
   a: "Indalecio Prieto.",
   b: "Ramón Rubial.",
@@ -1046,7 +938,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 117,
+  id: 105,
   pregunta: "La compañía ferroviaria Bilbao River & Cantabria Railway Co. Ltd. era también conocida como:",
   a: "Expreso de La Robla.",
   b: "Transcantábrico.",
@@ -1055,7 +947,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 118,
+  id: 106,
   pregunta: "Tras el cierre de la publicación Bizkaitarra, en 1897 Sabino Arana funda el periódico:",
   a: "Baserritarra.",
   b: "Euzkadi.",
@@ -1064,7 +956,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 119,
+  id: 107,
   pregunta: "El Presidente del Gobierno Vasco en su X Legislatura fue:",
   a: "Juan José Ibarretxe.",
   b: "Íñigo Urkullu.",
@@ -1073,7 +965,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 120,
+  id: 108,
   pregunta: "El artículo de Largo Caballero arengando a la huelga general revolucionaria de 1917, se publicó en:",
   a: "El Socialista.",
   b: "El Sol.",
@@ -1082,7 +974,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 121,
+  id: 109,
   pregunta: "Tras separarse del carlismo del pretendiente D. Jaime, Víctor Pradera y Vázquez de Mella fundaron:",
   a: "El Partido Católico Tradicionalista.",
   b: "El Partido Apostólico.",
@@ -1091,7 +983,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 122,
+  id: 110,
   pregunta: "El Pacto de San Sebastián, que agrupaba a toda la oposición antidinástica frente a la monarquía representada por Alfonso XIII, se firmó en:",
   a: "Julio de 1931.",
   b: "Octubre de 1923.",
@@ -1100,7 +992,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 123,
+  id: 111,
   pregunta: "Acabada la II Guerra Mundial, los representantes políticos vascos en el exilio firmaron en 1945:",
   a: "El Contubernio de Múnich.",
   b: "El Pacto de Bayona.",
@@ -1109,7 +1001,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 124,
+  id: 112,
   pregunta: "El Consejo General Vasco fue creado en fecha:",
   a: "6 de diciembre de 1978.",
   b: "22 de noviembre de 1975.",
@@ -1118,7 +1010,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 125,
+  id: 113,
   pregunta: "El bombardeo de Gernika alcanzó repercusión en la prensa internacional tras los reportajes de:",
   a: "George Steer.",
   b: "Ernest Hemingway.",
@@ -1127,7 +1019,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 126,
+  id: 114,
   pregunta: "El cuerpo de la policía foral de las provincias vascas era conocido como:",
   a: "No existía.",
   b: "Gudaris.",
@@ -1136,7 +1028,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 127,
+  id: 115,
   pregunta: "La empresa Hidroeléctrica Ibérica fue fundada en 1901 por:",
   a: "La filial española de Babcock & Wilcox.",
   b: "El empresario Juan Urrutia Zulueta.",
@@ -1145,7 +1037,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 128,
+  id: 116,
   pregunta: "La empresa Astilleros del Nervión fue fundada en el año:",
   a: "1975.",
   b: "1888.",
@@ -1154,7 +1046,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 129,
+  id: 117,
   pregunta: "Gregorio Ibarreche, del PNV, fue elegido en 1907 alcalde de:",
   a: "Donostia.",
   b: "Irún.",
@@ -1163,7 +1055,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 130,
+  id: 118,
   pregunta: "El libro De Gernika a Nueva York pasando por Bilbao, publicado por primera vez en 1943, recoge las memorias de:",
   a: "Indalecio Prieto.",
   b: "Ramón Rubial.",
@@ -1172,7 +1064,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 131,
+  id: 119,
   pregunta: "El Museo Memorial del Cinturón de Hierro está ubicado en la localidad de:",
   a: "Berango.",
   b: "Amurrio.",
@@ -1181,7 +1073,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 132,
+  id: 120,
   pregunta: "El segundo presidente del Consejo General Vasco fue:",
   a: "José Antonio Ardanza.",
   b: "Carlos Garaikoetxea.",
@@ -1190,7 +1082,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 133,
+  id: 121,
   pregunta: "El máximo órgano de decisión del Partido Nacionalista Vasco recibe el nombre de:",
   a: "Euskadi Buru Batzar.",
   b: "Lehendakaritza.",
@@ -1199,7 +1091,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 134,
+  id: 122,
   pregunta: "La Sociedad de Estudios Vascos fue creada en el año:",
   a: "1898.",
   b: "1925.",
@@ -1208,7 +1100,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 135,
+  id: 123,
   pregunta: "El cargo de portavoz del Gobierno Vasco en su XII legislatura lo ostentó:",
   a: "Íñigo Urkullu Rentería.",
   b: "Jon Darpon Sierra.",
@@ -1217,7 +1109,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 136,
+  id: 124,
   pregunta: "La empresa Altos Hornos de Vizcaya nació el año:",
   a: "1902.",
   b: "1896.",
@@ -1226,7 +1118,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 137,
+  id: 125,
   pregunta: "Tras su giro conservador, el PNV se presentó a las elecciones generales en 1913, con la denominación de:",
   a: "Comunión Nacionalista Vasca.",
   b: "Consejo General Vasco.",
@@ -1235,7 +1127,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 138,
+  id: 126,
   pregunta: "Aprobado el Estatuto de Autonomía en 1936, el primer lehendakari fue:",
   a: "Indalecio Prieto, histórico socialista.",
   b: "Juan Vázquez de Mella, político tradicionalista.",
@@ -1244,7 +1136,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 139,
+  id: 127,
   pregunta: "La Academia de la Lengua Vasca, o Euskaltzaindia, fue fundada en el año:",
   a: "1918.",
   b: "1968.",
@@ -1253,7 +1145,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 140,
+  id: 128,
   pregunta: "El primer lehendakari elegido tras la aprobación en 1979 del Estatuto de Autonomía fue:",
   a: "Carlos Garaikoetxea.",
   b: "José Antonio Aguirre.",
@@ -1262,7 +1154,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 141,
+  id: 129,
   pregunta: "El ejército vasco creado por el Gobierno Vasco tras el inicio de la Guerra Civil es conocido como:",
   a: "Aberri.",
   b: "Eusko Gudarostea.",
@@ -1271,7 +1163,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 142,
+  id: 130,
   pregunta: "Constitución de 1931:",
   a: "Se establecía un sistema bicameral, el Congreso de los Diputados y el Senado como cámara de representación de las regiones autónomas.",
   b: "Se reconoce la libertad de conciencia y el derecho a practicar cualquier religión.",
@@ -1280,7 +1172,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 143,
+  id: 131,
   pregunta: "El primer presidente del Consejo General Vasco, máximo órgano preautonómico de Euskadi, fue:",
   a: "Patxi López.",
   b: "Ramón Rubial.",
@@ -1289,7 +1181,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 144,
+  id: 132,
   pregunta: "El Banco de Vizcaya fue fundado el año:",
   a: "1876.",
   b: "1901.",
@@ -1298,7 +1190,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 145,
+  id: 133,
   pregunta: "Proclamada la República, la redacción del proyecto de autonomía para Euskal Herria se encargó:",
   a: "A la Sociedad de Estudios Vascos.",
   b: "A la Real Sociedad Económica de Amigos del País.",
@@ -1307,7 +1199,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 146,
+  id: 134,
   pregunta: "La primera empresa eléctrica fundada en Vizcaya fue:",
   a: "Hidroeléctrica Española.",
   b: "Eléctrica del Cantábrico.",
@@ -1316,7 +1208,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 147,
+  id: 135,
   pregunta: "Tras el estallido de la Guerra Civil, el primer Estatuto de Autonomía de Euskadi fue redactado por:",
   a: "Sabino Arana.",
   b: "Juan de Ajuriaguerra.",
@@ -1325,7 +1217,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 148,
+  id: 136,
   pregunta: "El famoso cuadro “Guernica” de Picasso, le fue encargado por el Gobierno Republicano para:",
   a: "El Ayuntamiento de Bilbao.",
   b: "La Sala de Juntas de Gernica.",
@@ -1334,7 +1226,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 149,
+  id: 137,
   pregunta: "La población española hacia 1900 se cifraba en torno a:",
   a: "19 millones de personas.",
   b: "23 millones de habitantes.",
@@ -1343,7 +1235,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 150,
+  id: 138,
   pregunta: "La Iberia, fábrica de hojalata que producía para La Vizcaya, tenía sede en:",
   a: "Portugale.",
   b: "Vitoria.",
@@ -1352,7 +1244,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 151,
+  id: 139,
   pregunta: "El Banco de Bilbao tuvo una importante participación en la compañía de seguros:",
   a: "Unión y el Fénix.",
   b: "Surne.",
@@ -1361,7 +1253,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 152,
+  id: 140,
   pregunta: "Tras la aprobación del Estatuto de Autonomía de Euskadi en 1936, el primer lehendakari fue:",
   a: "Gernika.",
   b: "Donostia.",
@@ -1370,7 +1262,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 153,
+  id: 141,
   pregunta: "El Partido Carlista, liderado por Vázquez de Mella, alcanzó 9 diputados en las elecciones de:",
   a: "1915.",
   b: "1921.",
@@ -1379,7 +1271,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 154,
+  id: 142,
   pregunta: "El bombardeo de Gernika se produjo en:",
   a: "Abril de 1937.",
   b: "Mayo de 1937.",
@@ -1388,7 +1280,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 155,
+  id: 143,
   pregunta: "Eibar recibió el título de “Muy Ejemplar Ciudad” por:",
   a: "El alzamiento contra la invasión napoleónica.",
   b: "La industria armera.",
@@ -1397,7 +1289,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 156,
+  id: 144,
   pregunta: "El Altos Hornos del Nervión se dedicaba a:",
   a: "Producción hidroeléctrica.",
   b: "Exportación de carbón.",
@@ -1406,7 +1298,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 157,
+  id: 145,
   pregunta: "El Estatuto de Egeta fue aprobado por las Cortes de la Segunda República en fecha:",
   a: "16 de Junio de 1936.",
   b: "16 de Abril de 1939.",
@@ -1415,7 +1307,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 158,
+  id: 146,
   pregunta: "¿Cuando se creó el primer gobierno vasco en 1936, quién estuvo al frente de la dirección política de la Ertzaintza?",
   a: "José Mª Leizaola",
   b: "Luis Retolaza",
@@ -1424,7 +1316,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 159,
+  id: 147,
   pregunta: "Los antecedentes de la actual policía autónoma los podemos encontrar en:",
   a: "Milicias municipales",
   b: "Cuerpo armado de la benemérita",
@@ -1433,7 +1325,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 160,
+  id: 148,
   pregunta: "El palacio de Ibaigane durante la Guerra Civil de 1936, fue la sede de:",
   a: "Gobierno Vasco",
   b: "Ministerio del Interior",
@@ -1442,7 +1334,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 161,
+  id: 149,
   pregunta: "¿Cuándo se disuelven los Miñones y Mikeletes de Bizkaia y Gipuzkoa?",
   a: "1938",
   b: "1937",
@@ -1451,7 +1343,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 162,
+  id: 150,
   pregunta: "¿Quién estuvo dirigiendo la ertzaña desde noviembre de 1936 hasta junio de 1937?",
   a: "Juan Ibarrola",
   b: "Telesforo Monzón",
@@ -1460,7 +1352,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 163,
+  id: 151,
   pregunta: "¿Cómo se llaman las policías forales dependientes de las diputaciones?",
   a: "Forales en Gipuzkoa, Miñones en Álava y Mikeletes en Bizkaia",
   b: "Forales en Bizkaia, Miñones en Álava y Mikeletes en Gipuzkoa",
@@ -1469,7 +1361,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 164,
+  id: 152,
   pregunta: "¿Qué consejero de Interior del primer Gobierno Vasco de la etapa democrática, tras la muerte de Franco, diseñó la actual Ertzaintza?",
   a: "Javier Egiguren",
   b: "Telesforo Monzón",
@@ -1478,7 +1370,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 165,
+  id: 153,
   pregunta: "¿Qué artículos del Estatuto de autonomía están dedicados a la Ertzaintza?",
   a: "El 17 exclusivamente",
   b: "El 17 y el 20",
@@ -1487,7 +1379,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 166,
+  id: 154,
   pregunta: "Dentro de la estructura orgánica de la Ertzaintza, en Gipuzkoa hay una sección de:",
   a: "Forales",
   b: "Mikeletes",
@@ -1496,7 +1388,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 167,
+  id: 155,
   pregunta: "¿Cómo se llamó el precursor de la Ertzaintza de 1936, que antes había sido jefe de la Policía Internacional?",
   a: "Luis de Ortúzar",
   b: "Ricardo Icíar",
@@ -1505,7 +1397,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 168,
+  id: 156,
   pregunta: "¿Qué nombre recibieron hacia 1793 las policías forales alavesas?",
   a: "Cuadrilleros",
   b: "Mikeletes",
@@ -1514,7 +1406,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 169,
+  id: 157,
   pregunta: "Los Cuadrilleros son un antecedente de las policías forales, creados a partir de la primera guerra carlista. ¿En qué territorio desempeñan su labor?",
   a: "Bizkaia",
   b: "Álava",
@@ -1523,7 +1415,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 170,
+  id: 158,
   pregunta: "La Ertzaintza creada en 1936 estaba compuesta por:",
   a: "500 agentes aprox. de una única sección a pie",
   b: "3000 agentes aprox. repartidos en tres secciones de a pie, motorizada y a caballo",
@@ -1532,7 +1424,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 171,
+  id: 159,
   pregunta: "¿Cuándo surgen los Cuerpos de Policía Forales (Araba, Gipuzkoa y Bizkaia)?",
   a: "Durante la tercera guerra carlista",
   b: "En 1936, en virtud del Estatuto Vasco de Autonomía",
@@ -1541,7 +1433,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 172,
+  id: 160,
   pregunta: "¿Dónde estaba instalada la sede de la Policía Internacional de 1936?",
   a: "Las Arenas",
   b: "Algorta",
@@ -1550,7 +1442,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 173,
+  id: 161,
   pregunta: "¿Quién estuvo al mando de la sección motorizada de la Ertzaintza?",
   a: "Saturnino Bengoa",
   b: "José María Pikaza",
@@ -1559,7 +1451,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 174,
+  id: 162,
   pregunta: "Según el Estatuto de autonomía, el mando supremo de la Policía autónoma del País Vasco corresponde a:",
   a: "La viceconsejera del Interior",
   b: "Gobierno Vasco",
@@ -1568,7 +1460,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 175,
+  id: 163,
   pregunta: "¿Quién inventó el nombre de la Ertzaintza?",
   a: "Kirikiño",
   b: "Lauaxeta",
@@ -1577,7 +1469,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 176,
+  id: 164,
   pregunta: "¿En qué fecha salió a la calle la Primera Promoción de la Ertzaintza?",
   a: "Junio 1982",
   b: "Septiembre 1982",
@@ -1586,7 +1478,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 177,
+  id: 165,
   pregunta: "¿En cuál de estas promociones las mujeres optaron a ser ertzainas?",
   a: "3",
   b: "1",
@@ -1595,7 +1487,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 178,
+  id: 166,
   pregunta: "La Baja Navarra se sitúa en:",
   a: "La vertiente cantábrica.",
   b: "Los Pirineos Atlánticos.",
@@ -1604,7 +1496,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 179,
+  id: 167,
   pregunta: "La provincia más extensa dentro de la Comunidad Autónoma Vasca es:",
   a: "Bizkaia.",
   b: "Llanada Alavesa.",
@@ -1613,7 +1505,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 180,
+  id: 168,
   pregunta: "La villa de Plentzia basó históricamente su economía en:",
   a: "La pesca de ballenas.",
   b: "La minería de hierro.",
@@ -1622,7 +1514,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 181,
+  id: 169,
   pregunta: "El área marismal del País Vasco reconocida como Reserva de la Biosfera es:",
   a: "La ría del Deba.",
   b: "La ría del Nervión.",
@@ -1631,7 +1523,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 182,
+  id: 170,
   pregunta: "La cota máxima del País Vasco se encuentra en:",
   a: "Los Montes de Vitoria.",
   b: "Aitxuri.",
@@ -1640,7 +1532,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 183,
+  id: 171,
   pregunta: "La comarca de la Barranca/Sakana se encuentra dentro de:",
   a: "Las cuencas prepirenaicas.",
   b: "La Depresión del Ebro.",
@@ -1649,7 +1541,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 184,
+  id: 172,
   pregunta: "La vegetación en Euskadi es esencialmente de tipo:",
   a: "Mediterráneo.",
   b: "Tundra ártica.",
@@ -1658,7 +1550,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 185,
+  id: 173,
   pregunta: "Las Encartaciones pertenecen al territorio histórico de:",
   a: "Gipuzkoa.",
   b: "Navarra.",
@@ -1667,7 +1559,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 186,
+  id: 174,
   pregunta: "Las aguas del Golfo de Bizkaia presentan en agosto una temperatura superior a:",
   a: "5 grados centígrados.",
   b: "10 grados centígrados.",
@@ -1676,7 +1568,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 187,
+  id: 175,
   pregunta: "Los Montes de Triano se encuentran en la clasificación de la Red Vasca de Espacios Naturales protegidos en el grupo de:",
   a: "Biotopos protegidos.",
   b: "Humedales.",
@@ -1685,7 +1577,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 188,
+  id: 176,
   pregunta: "El río que pasa por Donostia-San Sebastián es el:",
   a: "Nervión.",
   b: "Urumea.",
@@ -1694,7 +1586,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 189,
+  id: 177,
   pregunta: "El parque Natural de Pagoeta pertenece a:",
   a: "Parque de Aizkorri-Aratz.",
   b: "Montes de Vitoria.",
@@ -1703,7 +1595,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 190,
+  id: 178,
   pregunta: "El cabo Higer se localiza cerca de:",
   a: "Portugalete.",
   b: "Hondarribia.",
@@ -1712,7 +1604,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 191,
+  id: 179,
   pregunta: "La ley de Conservación de la Naturaleza del País Vasco cataloga como pez amenazado de extinción:",
   a: "El atún.",
   b: "La angula.",
@@ -1721,7 +1613,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 192,
+  id: 180,
   pregunta: "El clima oceánico de transición, en el País Vasco, lo encontramos en:",
   a: "La Rioja Alavesa.",
   b: "La comarca del Duranguesado.",
@@ -1730,7 +1622,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 193,
+  id: 181,
   pregunta: "El texto refundido de la ley de Conservación de la Naturaleza del País Vasco se recoge en:",
   a: "Convención de Ramsar.",
   b: "Decreto Legislativo 1/2014 de 15 de Abril.",
@@ -1739,7 +1631,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 194,
+  id: 182,
   pregunta: "Los ríos cantábricos pertenecen al régimen pluvial:",
   a: "Cantábrico.",
   b: "Oceánico.",
@@ -1748,7 +1640,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 195,
+  id: 183,
   pregunta: "El Catálogo de Cimas de Euskal Herria está editado por:",
   a: "La Consejería de Medio Ambiente, Planificación Territorial y Vivienda.",
   b: "La Agencia Vasca del Agua.",
@@ -1757,7 +1649,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 196,
+  id: 184,
   pregunta: "El río Bidasoa desemboca en el Cantábrico, cerca de:",
   a: "Hondarribia.",
   b: "Pasaia.",
@@ -1766,7 +1658,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 197,
+  id: 185,
   pregunta: "La Sierra de Urbasa se encuadra en:",
   a: "Las montañas de la divisoria.",
   b: "Las alineaciones montañosas del sur de Álava.",
@@ -1775,7 +1667,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 198,
+  id: 186,
   pregunta: "El río más largo del País Vasco es:",
   a: "El Nervión.",
   b: "El Deba.",
@@ -1784,7 +1676,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 199,
+  id: 187,
   pregunta: "La comarca de Markina-Ondarroa pertenece al territorio histórico de:",
   a: "Bizkaia.",
   b: "Gipuzkoa.",
@@ -1793,7 +1685,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 200,
+  id: 188,
   pregunta: "El clima mediterráneo continental afecta sobre todo a:",
   a: "La comarca de la Barranca.",
   b: "Las Cinco Villas.",
@@ -1802,7 +1694,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 201,
+  id: 189,
   pregunta: "El litoral vasco tiene una extensión de:",
   a: "192 km.",
   b: "218 km.",
@@ -1811,7 +1703,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 202,
+  id: 190,
   pregunta: "La cima más elevada de los Montes de Vitoria se sitúa en:",
   a: "Arrigorrieta.",
   b: "Peña Gorbea.",
@@ -1820,7 +1712,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 203,
+  id: 191,
   pregunta: "El río vizcaíno que desemboca en el estuario del Urdaibai es:",
   a: "Nervión.",
   b: "Lea.",
@@ -1829,7 +1721,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 204,
+  id: 192,
   pregunta: "La comarca Estribaciones de Gorbea pertenece al territorio histórico de:",
   a: "Bizkaia.",
   b: "Álava.",
@@ -1838,7 +1730,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 205,
+  id: 193,
   pregunta: "Los principales ríos guipuzcoanos son:",
   a: "Extremadamente cortos.",
   b: "Muy largos.",
@@ -1847,7 +1739,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 206,
+  id: 194,
   pregunta: "Las temperaturas medias invernales más frías se registran en:",
   a: "La Rioja Alavesa.",
   b: "Condado de Treviño.",
@@ -1856,7 +1748,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 207,
+  id: 195,
   pregunta: "De los trabajos de conservación y recuperación de las praderas marinas del País Vasco se encarga:",
   a: "La Consejería de Interior.",
   b: "La Agencia Vasca del Agua.",
@@ -1865,7 +1757,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 208,
+  id: 196,
   pregunta: "La mayor parte de la superficie de Euskadi está cubierta por suelos:",
   a: "Silíceos.",
   b: "Graníticos.",
@@ -1874,7 +1766,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 209,
+  id: 197,
   pregunta: "Aitxuri y Aketegi, los picos más elevados del País Vasco, se localizan en la provincia de:",
   a: "Álava.",
   b: "Gipuzkoa.",
@@ -1883,7 +1775,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 210,
+  id: 198,
   pregunta: "El cabo Matxitxako se encuentra en el término de:",
   a: "Bilbao.",
   b: "Getxo.",
@@ -1892,7 +1784,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 211,
+  id: 199,
   pregunta: "El río Urumea vierte sus aguas junto a la playa de:",
   a: "Ondarreta.",
   b: "El Arenal.",
@@ -1901,7 +1793,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 212,
+  id: 200,
   pregunta: "La playa de La Arena, lugar de desembocadura del río Somorrostro o Barbadún, se encuentra en:",
   a: "Muskiz.",
   b: "Mundaka.",
@@ -1910,7 +1802,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 213,
+  id: 201,
   pregunta: "El río Nervión atraviesa Bilbao y desemboca en:",
   a: "Pasaia.",
   b: "Santurtzi.",
@@ -1919,7 +1811,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 214,
+  id: 202,
   pregunta: "La localidad del País Vasco donde se registran mayores precipitaciones anuales es:",
   a: "Tolosa.",
   b: "Vitoria.",
@@ -1928,7 +1820,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 215,
+  id: 203,
   pregunta: "La formación montañosa del País Vasco que separa los Pirineos de la Cordillera Cantábrica recibe el nombre de:",
   a: "Peña Gorbea.",
   b: "Sistema Ibérico.",
@@ -1937,7 +1829,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 216,
+  id: 204,
   pregunta: "El humedal conocido como Trampales de Urkiola se encuentra ubicado en:",
   a: "El parque natural de Izki.",
   b: "Las zonas húmedas de Salburua.",
@@ -1946,7 +1838,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 217,
+  id: 205,
   pregunta: "El Gorbea nace en la sierra de:",
   a: "Aizkorri.",
   b: "Orduna.",
@@ -1955,7 +1847,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 218,
+  id: 206,
   pregunta: "La Rioja Alavesa se enmarca en:",
   a: "La vertiente cantábrica.",
   b: "La depresión del Ebro.",
@@ -1964,7 +1856,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 219,
+  id: 207,
   pregunta: "Los ríos Ezkurra y Ezpelura son afluentes de:",
   a: "El Nervión.",
   b: "El Urumea.",
@@ -1973,7 +1865,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 220,
+  id: 208,
   pregunta: "La sierra de Salvada pertenece a:",
   a: "Las montañas de la divisoria.",
   b: "Las montañas vascas.",
@@ -1982,7 +1874,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 221,
+  id: 209,
   pregunta: "La Agencia Vasca del Agua fue creada en:",
   a: "1975",
   b: "1991",
@@ -1991,7 +1883,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 222,
+  id: 210,
   pregunta: "El río Deba era navegable antiguamente hasta la localidad de:",
   a: "Eibar.",
   b: "Ergobia.",
@@ -2000,7 +1892,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 223,
+  id: 211,
   pregunta: "La reciente iniciativa del Gobierno Vasco para guiar la conservación del espacio natural de Euskadi en los próximos años, se recoge en el documento:",
   a: "Estudio sobre el Medio Ambiente.",
   b: "Informes de la Consejería de Medio Ambiente.",
@@ -2009,7 +1901,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 224,
+  id: 212,
   pregunta: "El río Urola nace en:",
   a: "La sierra de Ubieta.",
   b: "La falda del monte Aizgorri.",
@@ -2018,7 +1910,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 225,
+  id: 213,
   pregunta: "El tipo de clima de la fachada norte de Euskadi pertenece al:",
   a: "Mediterráneo continental.",
   b: "Oceánico de transición.",
@@ -2027,7 +1919,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 226,
+  id: 214,
   pregunta: "La Red de Espacios Naturales Protegidos del País Vasco está recogida en:",
   a: "La Ley 02/2013, de 10 de Octubre.",
   b: "La Ley 13/1997, de 28 de Octubre.",
@@ -2036,7 +1928,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 227,
+  id: 215,
   pregunta: "El Panorama demográfico de la Comunidad Autónoma de Euskadi es elaborado por:",
   a: "Euskaltzaindia.",
   b: "Emakunde.",
@@ -2045,7 +1937,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 228,
+  id: 216,
   pregunta: "El último Panorama demográfico de la Comunidad Autónoma de Euskadi es de:",
   a: "2017.",
   b: "2018.",
@@ -2054,7 +1946,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 229,
+  id: 217,
   pregunta: "A 1 de Enero de 2021, la población total residente en la Comunidad Autónoma de Euskadi se contabilizaba en:",
   a: "Algo más de 2.193.000 habitantes.",
   b: "Menos de 2.140.000 habitantes.",
@@ -2063,7 +1955,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 230,
+  id: 218,
   pregunta: "A 1 de Enero de 2021, ¿cuántos municipios componen la Comunidad Autónoma de Euskadi?:",
   a: "250.",
   b: "251.",
@@ -2072,7 +1964,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 231,
+  id: 219,
   pregunta: "A 1 de Enero de 2021, ¿qué porcentaje de la población total residente en la Comunidad Autónoma de Euskadi corresponde a Bizkaia?:",
   a: "Más del 55%.",
   b: "Cerca del 70%.",
@@ -2081,7 +1973,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 232,
+  id: 220,
   pregunta: "En 2021, ¿qué porcentaje de la población total de la Comunidad Autónoma de Euskadi concentra la comarca del Gran Bilbao?:",
   a: "50%.",
   b: "44%.",
@@ -2090,7 +1982,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 233,
+  id: 221,
   pregunta: "En el conjunto de la Comunidad Autónoma de Euskadi el número de defunciones se ha incrementado desde 1980 hasta 2020 en más de:",
   a: "42%.",
   b: "70%.",
@@ -2099,7 +1991,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 234,
+  id: 222,
   pregunta: "Según el Panorama demográfico 2022 de la Comunidad Autónoma de Euskadi, las capitales de los tres territorios históricos concentran:",
   a: "Algo más del 35% del total de la población de la Comunidad.",
   b: "Algo más del 40% del total de la población de la Comunidad.",
@@ -2108,7 +2000,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 235,
+  id: 223,
   pregunta: "Según el Panorama demográfico 2022, desde 1981, la población de Bilbao:",
   a: "Aumenta en alrededor de 12.800 residentes.",
   b: "Aumenta en más de 58.000 residentes.",
@@ -2117,7 +2009,7 @@ export const historiaQuestions: Question[] = [
   correcta: "d",
 },
 {
-  id: 236,
+  id: 224,
   pregunta: "A 1 de Enero de 2021, se sitúa entre 40.001 y 100.000 habitantes la población de:",
   a: "Barakaldo.",
   b: "Galdakao.",
@@ -2126,7 +2018,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 237,
+  id: 225,
   pregunta: "Según el Panorama demográfico 2022 de la Comunidad Autónoma de Euskadi, ¿cuántos municipios tienen una población entre 10.000 y 20.000 habitantes?:",
   a: "6.",
   b: "10.",
@@ -2135,7 +2027,7 @@ export const historiaQuestions: Question[] = [
   correcta: "c",
 },
 {
-  id: 238,
+  id: 226,
   pregunta: "¿Qué porcentaje de la población vasca realizó algún cambio de residencia durante 2020?:",
   a: "El 9,3%.",
   b: "El 30,7%.",
@@ -2144,7 +2036,7 @@ export const historiaQuestions: Question[] = [
   correcta: "a",
 },
 {
-  id: 239,
+  id: 227,
   pregunta: "¿Cómo se denominan aquellas migraciones originadas en un municipio de la C.A. de Euskadi y cuyo destino es otro municipio distinto también de la Comunidad Autónoma de Euskadi?:",
   a: "Migraciones externas.",
   b: "Migraciones internas.",
@@ -2153,7 +2045,7 @@ export const historiaQuestions: Question[] = [
   correcta: "b",
 },
 {
-  id: 240,
+  id: 228,
   pregunta: "En 2020, la tasa de migración neta de la Comunidad Autónoma de Euskadi se estima en:",
   a: "El 33‰.",
   b: "El 15,8‰.",

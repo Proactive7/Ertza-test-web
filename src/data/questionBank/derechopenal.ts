@@ -471,15 +471,6 @@ export const derechoPenalQuestions: Question[] = [
   },
   {
     id: 53,
-    pregunta: "Las Cortes Generales pueden mediante ley orgánica:",
-    a: "Sustituir iniciativa parlamentaria art. 143.",
-    b: "Sustituir iniciativa corporaciones locales art. 143.",
-    c: "Sustituir iniciativa del Gobierno.",
-    d: "Sustituir iniciativa art. 151.",
-    correcta: "b",
-  },
-  {
-    id: 54,
     pregunta: "Un acuerdo de cooperación entre CCAA requiere:",
     a: "Autorización de Cortes Generales.",
     b: "Comunicación a Cortes Generales.",
@@ -488,7 +479,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 55,
+    id: 54,
     pregunta: "Sistema electoral de las asambleas autonómicas:",
     a: "Mayoritario.",
     b: "Doble vuelta.",
@@ -497,7 +488,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 56,
+    id: 55,
     pregunta: "Artículo que regula competencias de las CCAA:",
     a: "148.",
     b: "149.",
@@ -506,7 +497,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 57,
+    id: 56,
     pregunta: "El Estado se organiza territorialmente en:",
     a: "CCAA.",
     b: "CCAA y provincias.",
@@ -515,7 +506,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 58,
+    id: 57,
     pregunta: "Las ferias interiores son competencia:",
     a: "De las CCAA.",
     b: "Del Estado.",
@@ -524,7 +515,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 59,
+    id: 58,
     pregunta: "¿Quién elabora el proyecto de estatuto art. 151?",
     a: "Diputados y senadores del territorio.",
     b: "Solo diputados.",
@@ -533,7 +524,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 60,
+    id: 59,
     pregunta: "El Fondo de Compensación Interterritorial se distribuye por:",
     a: "Gobierno.",
     b: "Cortes Generales.",
@@ -542,7 +533,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 61,
+    id: 60,
     pregunta: "La asistencia social es competencia:",
     a: "De las CCAA.",
     b: "Del Estado.",
@@ -551,7 +542,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 62,
+    id: 61,
     pregunta: "Las leyes de transferencias y armonización:",
     a: "Son orgánicas.",
     b: "Son ordinarias.",
@@ -560,7 +551,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 63,
+    id: 62,
     pregunta: "La Comunidad Autónoma del País Vasco puede establecer acuerdos de cooperación con otras Comunidades Autónomas:",
     a: "Previa comunicación a las Cortes Generales.",
     b: "Previa autorización de las Cortes Generales.",
@@ -569,7 +560,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 64,
+    id: 63,
     pregunta: "La designación de la sede de las instituciones comunes de la Comunidad Autónoma del País Vasco se hizo mediante:",
     a: "Decreto del Gobierno Vasco.",
     b: "Ley del Parlamento Vasco.",
@@ -578,7 +569,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 65,
+    id: 64,
     pregunta: "Ostenta la más alta representación del País Vasco:",
     a: "El Presidente del Parlamento Vasco.",
     b: "El Presidente del Gobierno Vasco.",
@@ -587,7 +578,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 66,
+    id: 65,
     pregunta: "El euskera es:",
     a: "La lengua propia del País Vasco junto con el castellano.",
     b: "La única lengua oficial del País Vasco.",
@@ -596,7 +587,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 67,
+    id: 66,
     pregunta: "Los residentes en el extranjero, si así lo solicitan, gozarán de idénticos derechos políticos que los residentes en el País Vasco, si:",
     a: "Han tenido su última vecindad administrativa en Euskadi, aunque no conserven la nacionalidad española.",
     b: "Han tenido su última vecindad administrativa en Euskadi, siempre que conserven la nacionalidad española.",
@@ -605,7 +596,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 68,
+    id: 67,
     pregunta: "Conforme al artículo 2 del Estatuto de Gernika, el territorio de la Comunidad Autónoma del País Vasco está integrado actualmente por:",
     a: "3 Territorios Históricos.",
     b: "4 Territorios Históricos.",
@@ -614,7 +605,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 69,
+    id: 68,
     pregunta: "El Gobierno Vasco es el órgano colegiado que ostenta las siguientes funciones del País Vasco:",
     a: "Legislativas y ejecutivas.",
     b: "Ejecutivas y administrativas.",
@@ -623,7 +614,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 70,
+    id: 69,
     pregunta: "Los Consejeros del Gobierno Vasco son designados por:",
     a: "El Parlamento Vasco.",
     b: "El pueblo en las elecciones vascas.",
@@ -632,7 +623,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 71,
+    id: 70,
     pregunta: "El Pueblo Vasco o Euskal-Herria, como expresión de su nacionalidad, se constituye en:",
     a: "Territorio Histórico dentro del Estado Español.",
     b: "Comunidad Foral dentro del Estado Español.",
@@ -641,7 +632,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 72,
+    id: 71,
     pregunta: "El Estatuto de Autonomía para el País Vasco dispone en su artículo 26 que la circunscripción electoral es:",
     a: "El Territorio Histórico.",
     b: "La Comunidad Autónoma.",
@@ -650,7 +641,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 73,
+    id: 72,
     pregunta: "El Presidente del Gobierno Vasco es nombrado por:",
     a: "El Parlamento Vasco.",
     b: "El pueblo en las elecciones vascas.",
@@ -659,7 +650,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 74,
+    id: 73,
     pregunta: "Euskaltzaindia es, en lo referente al euskera:",
     a: "Institución consultiva oficial.",
     b: "Institución normativa y consultiva oficial.",
@@ -668,7 +659,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 75,
+    id: 74,
     pregunta: "Para la agregación a la Comunidad Autónoma del País Vasco de otros territorios o municipios, se requiere:",
     a: "Que lo solicite uno de los Ayuntamientos interesados, en el caso de que sean varios.",
     b: "Que los territorios o municipios estén enclavados en su totalidad dentro del territorio de la Comunidad Autónoma.",
@@ -677,7 +668,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 76,
+    id: 75,
     pregunta: "El artículo 6 del Estatuto de Autonomía para el País Vasco considera el euskera como lengua propia de:",
     a: "El Pueblo Vasco.",
     b: "Euskadi.",
@@ -686,7 +677,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 77,
+    id: 76,
     pregunta: "A los efectos del Estatuto de Autonomía para el País Vasco, quienes tienen la vecindad administrativa en cualquiera de los municipios integrados en el territorio de la Comunidad Autónoma, ostentan:",
     a: "La condición civil foral vasca.",
     b: "La condición política de vascos.",
@@ -695,7 +686,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 78,
+    id: 77,
     pregunta: "El Título II del Estatuto de Autonomía para el País Vasco se denomina:",
     a: "De los poderes del País Vasco.",
     b: "Parlamento Vasco.",
@@ -704,7 +695,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 79,
+    id: 78,
     pregunta: "Entre los requisitos para la agregación a la Comunidad Autónoma del País Vasco de otros territorios y municipios que estuvieran enclavados en su totalidad dentro de su territorio está:",
     a: "La aprobación por el Gobierno del País Vasco.",
     b: "La aprobación por la Comunidad o provincia a la que pertenezcan los territorios o municipios a agregar.",
@@ -713,7 +704,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 80,
+    id: 79,
     pregunta: "¿Qué institución puede celebrar tratados o convenios para el establecimiento de relaciones culturales entre la Comunidad Autónoma del País Vasco y los Estados donde se integran o residen territorios o comunidades que tienen como patrimonio el euskera?",
     a: "El Gobierno vasco.",
     b: "El Gobierno español.",
@@ -722,7 +713,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 81,
+    id: 80,
     pregunta: "Los miembros del Parlamento Vasco, por los actos delictivos cometidos durante su mandato en el ámbito territorial de la comunidad Autónoma:",
     a: "Pueden ser detenidos y retenidos en todo caso.",
     b: "Pueden ser retenidos, pero no detenidos.",
@@ -731,7 +722,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 82,
+    id: 81,
     pregunta: "El conocido como \"Estatuto de Gernika\" fue aprobado por:",
     a: "Ley del Parlamento Vasco 3/1979, de 6 de Diciembre.",
     b: "Ley ordinaria 9/1979, de 6 de Diciembre.",
@@ -740,7 +731,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 83,
+    id: 82,
     pregunta: "Corresponde a las instituciones del País Vasco el régimen de la Policía Autónoma para:",
     a: "Los servicios policiales de carácter extracomunitario.",
     b: "La protección de las personas y bienes dentro del territorio autónomo.",
@@ -749,7 +740,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 84,
+    id: 83,
     pregunta: "El Derecho emanado del País Vasco en las materias de su competencia exclusiva es el aplicable:",
     a: "En defecto del Derecho del Estado.",
     b: "De forma alternativa al Derecho del Estado.",
@@ -758,7 +749,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 85,
+    id: 84,
     pregunta: "La Comunidad Autónoma del País Vasco, para la organización de sus instituciones de autogobierno, y dentro de las normas del Estatuto de Autonomía, tiene competencia:",
     a: "Meramente de ejecución.",
     b: "Exclusiva.",
@@ -767,7 +758,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 86,
+    id: 85,
     pregunta: "En materia de sanidad interior, corresponde al País Vasco:",
     a: "La legislación básica.",
     b: "La competencia exclusiva.",
@@ -776,7 +767,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 87,
+    id: 86,
     pregunta: "La sede actual de las instituciones comunes de la Comunidad Autónoma del País Vasco es:",
     a: "Bilbao.",
     b: "Vitoria.",
@@ -785,7 +776,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 88,
+    id: 87,
     pregunta: "El Ararteko:",
     a: "Es un órgano similar al Defensor del Pueblo español.",
     b: "Es un órgano que, en coordinación con Defensor del Pueblo español, ejerce la defensa de los derechos comprendidos en el título I de la Constitución.",
@@ -794,7 +785,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 89,
+    id: 88,
     pregunta: "La norma institucional básica del País Vasco es:",
     a: "La Ley de elecciones al Parlamento Vasco.",
     b: "La Ley del Gobierno Vasco.",
@@ -803,7 +794,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 90,
+    id: 89,
     pregunta: "La Administración Civil del Estado en territorio vasco es dirigida por un Delegado nombrado por:",
     a: "El Gobierno vasco.",
     b: "El Parlamento vasco.",
@@ -812,7 +803,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 91,
+    id: 90,
     pregunta: "Según el Estatuto de Autonomía, tiene carácter de lengua oficial en Euskadi:",
     a: "El Euskera únicamente.",
     b: "El Euskera al igual que el castellano.",
@@ -821,7 +812,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 92,
+    id: 91,
     pregunta: "El mando supremo de la Ertzaintza corresponde:",
     a: "Al Parlamento Vasco.",
     b: "Al Gobierno del País Vasco, en todo caso.",
@@ -830,7 +821,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 93,
+    id: 92,
     pregunta: "Los derechos y deberes fundamentales de los ciudadanos del País Vasco son los establecidos en:",
     a: "El Título I del Estatuto de Autonomía para el País Vasco.",
     b: "El Título I de la Constitución.",
@@ -839,7 +830,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 94,
+    id: 93,
     pregunta: "El Presidente del Gobierno Vasco es:",
     a: "Designado por los ciudadanos en las elecciones autonómicas.",
     b: "Designado y nombrado por el Parlamento Vasco.",
@@ -848,7 +839,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 95,
+    id: 94,
     pregunta: "La designación autonómica de los Senadores que han de representar al País Vasco, corresponde a:",
     a: "El Gobierno Vasco.",
     b: "El Parlamento Vasco.",
@@ -857,7 +848,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 96,
+    id: 95,
     pregunta: "El Parlamento Vasco es elegido por un periodo:",
     a: "De 4 años.",
     b: "De 5 años.",
@@ -866,7 +857,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 97,
+    id: 96,
     pregunta: "Son Instituciones Comunes de la Comunidad Autónoma del País Vasco:",
     a: "El Parlamento Vasco, el Gobierno Vasco y las Juntas Generales.",
     b: "El Parlamento Vasco y las Juntas Generales.",
@@ -875,7 +866,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 98,
+    id: 97,
     pregunta: "La competencia de los órganos jurisdiccionales en el País Vasco se extiende en el orden contencioso-administrativo a:",
     a: "Todas las instancias y grados cuando se trate de actos dictados por la Administración de País Vasco en las materias cuya legislación exclusiva corresponde a la Comunidad Autónoma.",
     b: "En primera instancia, cuando se trate de actos dictados por la Administración del Estado.",
@@ -884,7 +875,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 99,
+    id: 98,
     pregunta: "El artículo 9 del Estatuto de Autonomía para el País Vasco es el relativo a:",
     a: "La sede de las instituciones comunes de la Comunidad Autónoma.",
     b: "El euskera.",
@@ -893,7 +884,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 100,
+    id: 99,
     pregunta: "Los poderes del País Vasco se ejercen a través de:",
     a: "El Parlamento, el Gobierno y el Presidente del Parlamento.",
     b: "El Parlamento, el Gobierno y el Lehendakari.",
@@ -902,7 +893,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 101,
+    id: 100,
     pregunta: "De acuerdo con el artículo 1 del Estatuto de Gernika, la Comunidad Autónoma vasca se denomina:",
     a: "Pueblo Vasco.",
     b: "Euskal-Herria.",
@@ -911,7 +902,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 102,
+    id: 101,
     pregunta: "Para ser vecino de un Municipio:",
     a: "Hay que estar empadronado como tal en él.",
     b: "Basta con la residencia habitual en el mismo.",
@@ -920,7 +911,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 103,
+    id: 102,
     pregunta: "En el Padrón no debe constar respecto de un vecino su:",
     a: "Sexo.",
     b: "Domicilio habitual.",
@@ -929,7 +920,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 104,
+    id: 103,
     pregunta: "La destitución del Presidente de una Corporación Local se efectúa a través de la:",
     a: "Renuncia.",
     b: "Cuestión de confianza.",
@@ -938,7 +929,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 105,
+    id: 104,
     pregunta: "Las directrices e instrucciones técnicas para la formación, mantenimiento y rectificación del Padrón corresponde emanarlas al/a la:",
     a: "Propio Ayuntamiento Pleno.",
     b: "Administración General del Estado.",
@@ -947,7 +938,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 106,
+    id: 105,
     pregunta: "La elección de un Alcalde, tras unas elecciones locales, se efectúa:",
     a: "Directamente en las elecciones locales.",
     b: "En sesión extraordinaria al efecto.",
@@ -956,7 +947,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 107,
+    id: 106,
     pregunta: "El Consejo de Empadronamiento está adscrito al/a la:",
     a: "Presidencia del Gobierno de la Nación.",
     b: "Ministerio del Interior.",
@@ -965,7 +956,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 108,
+    id: 107,
     pregunta: "La delegación de competencias de un Alcalde:",
     a: "Se efectúa por acuerdo de Pleno.",
     b: "Se reviste formalmente en forma de Decreto de dicho Pleno.",
@@ -974,7 +965,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 109,
+    id: 108,
     pregunta: "La representación del Ayuntamiento compete al/a la/a los:",
     a: "Alcalde.",
     b: "Pleno.",
@@ -983,7 +974,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 110,
+    id: 109,
     pregunta: "La organización municipal complementaria que establezca una Comunidad Autónoma con carácter general, respecto a los Municipios de la misma:",
     a: "Se aplica preferentemente a la establecida con tal carácter por el Estado.",
     b: "Se aplica preferentemente a la establecida por el Reglamento Orgánico de cada Municipio.",
@@ -992,7 +983,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 111,
+    id: 110,
     pregunta: "La inscripción en el Padrón Municipal sólo surtirá efecto por el tiempo que subsista el hecho que la motivó y, en todo caso, cuando se trate de la inscripción de extranjeros no comunitarios sin autorización de residencia permanente, deberá ser objeto de renovación periódica:",
     a: "Cada año.",
     b: "Cada dos años.",
@@ -1001,7 +992,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 112,
+    id: 111,
     pregunta: "La división del término municipal en distritos, barrios, etc., es competencia del/de la:",
     a: "Instituto Geográfico Nacional.",
     b: "Diputación provincial.",
@@ -1010,7 +1001,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 113,
+    id: 112,
     pregunta: "La Junta de Gobierno Local de un Ayuntamiento de Municipio de régimen común tiene, además del Presidente, los siguientes miembros como máximo:",
     a: "Diez.",
     b: "Depende del número de habitantes.",
@@ -1019,7 +1010,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 114,
+    id: 113,
     pregunta: "El Pleno, respecto del nombramiento de los tenientes de Alcalde:",
     a: "Es oído previamente.",
     b: "Toma conocimiento.",
@@ -1028,7 +1019,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 115,
+    id: 114,
     pregunta: "La protección civil es servicio mínimo a prestar por los Municipios de más de:",
     a: "5.000 habitantes.",
     b: "20.000 habitantes.",
@@ -1037,7 +1028,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 116,
+    id: 115,
     pregunta: "La confección del Padrón de españoles residentes en el extranjero es competencia del/de la:",
     a: "Ayuntamiento de su último domicilio en España.",
     b: "Comunidad Autónoma donde hubieren nacido.",
@@ -1046,7 +1037,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 117,
+    id: 116,
     pregunta: "No es posible la consulta popular en la siguiente materia:",
     a: "Sobre competencias municipales.",
     b: "Hacienda Local.",
@@ -1055,7 +1046,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 118,
+    id: 117,
     pregunta: "Los nombramientos de funcionarios en los Ayuntamientos de Municipios de régimen común corresponde al/a la:",
     a: "Pleno.",
     b: "Junta de Gobierno Local.",
@@ -1064,7 +1055,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 119,
+    id: 118,
     pregunta: "Los Concejales-Delegados se nombran por el/la:",
     a: "Presidente.",
     b: "Pleno.",
@@ -1073,7 +1064,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 120,
+    id: 119,
     pregunta: "No es servicio mínimo de un Ayuntamiento de menos de 5.000 habitantes el de:",
     a: "Acceso a los núcleos de población.",
     b: "Alumbrado público.",
@@ -1082,16 +1073,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 121,
-    pregunta: "Y sí lo es el de:",
-    a: "Servicios funerarios.",
-    b: "Medio ambiente urbano.",
-    c: "Extinción de incendios.",
-    d: "Limpieza viaria.",
-    correcta: "d",
-  },
-  {
-    id: 122,
+    id: 120,
     pregunta: "¿Cuál de los siguientes datos no es obligatorio a la hora de la inscripción en el Padrón municipal?",
     a: "Lugar y fecha de nacimiento.",
     b: "Sexo.",
@@ -1100,7 +1082,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 123,
+    id: 121,
     pregunta: "¿Cuál de los siguientes no es uno de los tres elementos que, conforme al artículo 11.2º LRL, constituyen el Municipio?",
     a: "La Organización.",
     b: "La Población.",
@@ -1109,7 +1091,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 124,
+    id: 122,
     pregunta: "La evaluación e información de situaciones de necesidad social y la atención inmediata a personas en situación o riesgo de exclusión social debe prestarse en los Municipios que tengan una población, como mínimo, superior a:",
     a: "50.000 habitantes.",
     b: "5.000 habitantes.",
@@ -1118,7 +1100,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 125,
+    id: 123,
     pregunta: "La creación de nuevos municipios solo podrá realizarse sobre la base de núcleos de población territorialmente diferenciados, de al menos:",
     a: "3.000 habitantes.",
     b: "5.000 habitantes.",
@@ -1127,7 +1109,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 126,
+    id: 124,
     pregunta: "El transporte colectivo urbano de viajeros debe prestarse obligatoriamente en los Municipios de más de:",
     a: "5.000 habitantes.",
     b: "10.000 habitantes.",
@@ -1136,7 +1118,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 127,
+    id: 125,
     pregunta: "El gobierno y la administración municipal corresponde a:",
     a: "Ayuntamiento.",
     b: "Diputación.",
@@ -1145,7 +1127,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 128,
+    id: 126,
     pregunta: "El Alcalde es elegido por:",
     a: "La Comisión de Gobierno.",
     b: "Sufragio universal.",
@@ -1154,7 +1136,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 129,
+    id: 127,
     pregunta: "¿Quién nombra al teniente de Alcalde?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1163,7 +1145,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 130,
+    id: 128,
     pregunta: "¿Quién decide los empates con el voto de calidad?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1172,7 +1154,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 131,
+    id: 129,
     pregunta: "¿Quién preside el pleno del Ayuntamiento?",
     a: "El Pleno.",
     b: "El secretario del pleno.",
@@ -1181,7 +1163,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 132,
+    id: 130,
     pregunta: "¿Por quién está integrado el Ayuntamiento?",
     a: "Por el Pleno y el Alcalde.",
     b: "Por concejales y el pleno.",
@@ -1190,7 +1172,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 133,
+    id: 131,
     pregunta: "¿Quién sanciona las faltas de desobediencia a la autoridad del alcalde?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1199,7 +1181,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 134,
+    id: 132,
     pregunta: "¿Quién inspecciona las obras municipales?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1208,7 +1190,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 135,
+    id: 133,
     pregunta: "El alcalde, los tenientes de alcalde y el pleno existen:",
     a: "En todos los ayuntamientos.",
     b: "Sólo en algunos.",
@@ -1217,7 +1199,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 136,
+    id: 134,
     pregunta: "¿Quién acuerda la alteración del término municipal?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1226,7 +1208,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 137,
+    id: 135,
     pregunta: "¿Quién es el presidente de la corporación municipal?",
     a: "Cualquier concejal.",
     b: "El secretario del pleno.",
@@ -1235,7 +1217,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 138,
+    id: 136,
     pregunta: "¿Quién aprueba la oferta de empleo público del ayuntamiento?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1244,7 +1226,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 139,
+    id: 137,
     pregunta: "¿Quién ejerce de jefe de la policía municipal?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1253,7 +1235,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 140,
+    id: 138,
     pregunta: "Los concejales son elegidos por:",
     a: "El Alcalde.",
     b: "El Pleno.",
@@ -1262,7 +1244,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 141,
+    id: 139,
     pregunta: "¿Quién controla los órganos de Gobierno?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1271,7 +1253,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 142,
+    id: 140,
     pregunta: "¿Quién convoca y preside las sesiones del Pleno?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1280,7 +1262,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 143,
+    id: 141,
     pregunta: "¿Quién dicta bandos?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1289,7 +1271,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 144,
+    id: 142,
     pregunta: "¿Quién asiste al Alcalde en el ejercicio de sus atribuciones?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1298,7 +1280,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 145,
+    id: 143,
     pregunta: "¿Quién dirige el gobierno y la administración municipal?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1307,7 +1289,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 146,
+    id: 144,
     pregunta: "¿Quién acepta la delegación de competencias de otras entidades locales?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1316,7 +1298,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 147,
+    id: 145,
     pregunta: "Si el Alcalde cae enfermo, ¿quién le sustituye?",
     a: "El Secretario del Ayuntamiento.",
     b: "La Comisión de Gobierno.",
@@ -1325,7 +1307,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 148,
+    id: 146,
     pregunta: "¿Quién es el jefe de personal de todo el personal del Ayuntamiento?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1334,7 +1316,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 149,
+    id: 147,
     pregunta: "¿Quién aprueba las ordenanzas municipales?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1343,7 +1325,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 150,
+    id: 148,
     pregunta: "¿Quién ordena la publicación de los acuerdos del Ayuntamiento?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1352,7 +1334,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 151,
+    id: 149,
     pregunta: "¿Quién aprueba la plantilla del personal?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1361,7 +1343,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 152,
+    id: 150,
     pregunta: "¿Quién vota sobre la moción de censura al Alcalde?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1370,7 +1352,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 153,
+    id: 151,
     pregunta: "¿Quién aprueba la alteración de la capitalidad del municipio?",
     a: "El Pleno.",
     b: "La Comisión de Gobierno.",
@@ -1379,7 +1361,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 154,
+    id: 152,
     pregunta: "La ley Reguladora de las Bases del Régimen Local es la:",
     a: "7/1985, de 2 de abril.",
     b: "2/2004, de 5 de marzo.",
@@ -1388,7 +1370,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 155,
+    id: 153,
     pregunta: "Los bienes comunales y demás bienes de dominio público no están sujetos a tributo alguno y son:",
     a: "Inalienables, inembargables e inafectables.",
     b: "Insustituibles, invendibles e imprescriptibles.",
@@ -1397,7 +1379,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 156,
+    id: 154,
     pregunta: "Lo califica la oposición falsa. Las Corporaciones Locales pueden adquirir bienes y derechos:",
     a: "Por herencia, legado o donación.",
     b: "A título oneroso con ejercicio obligatorio de la facultad de expropiación.",
@@ -1406,7 +1388,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 157,
+    id: 155,
     pregunta: "El Real Decreto por el que se aprueba el Reglamento de Bienes de las Entidades Locales es el:",
     a: "1372/1985, de 13 de julio.",
     b: "1373/1985, de 13 de junio.",
@@ -1415,7 +1397,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 158,
+    id: 156,
     pregunta: "Complete la línea de puntos. La adquisición de bienes inmuebles a título oneroso exigirá informe previo pericial, y siendo bienes de valor histórico o artístico se requerirá el informe del órgano estatal o autonómico competente, siempre que su importe exceda del 1 por 100 de los recursos ordinarios del presupuesto de la Corporación o del límite general establecido para la contratación directa en materia de suministros:",
     a: "2",
     b: "4",
@@ -1424,7 +1406,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 159,
+    id: 157,
     pregunta: "La hacienda de las entidades locales estará constituida por una serie de recursos, entre ellos es:",
     a: "Las subvenciones.",
     b: "El producto de las operaciones de crédito.",
@@ -1433,7 +1415,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 160,
+    id: 158,
     pregunta: "Con relación a los bienes de las Entidades locales, marque la respuesta correcta:",
     a: "Tienen la consideración de comunales aquellos bienes que siendo de dominio público, su aprovechamiento corresponde al común de los vecinos.",
     b: "Los bienes comunales no podrán pertenecer a los Municipios y a las Entidades locales menores.",
@@ -1442,7 +1424,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 161,
+    id: 159,
     pregunta: "La alteración de la calificación jurídica de los bienes de las Entidades locales se produce automáticamente en la adscripción de bienes patrimoniales a un uso o servicio públicos:",
     a: "Quince años.",
     b: "Veinte años.",
@@ -1451,7 +1433,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 162,
+    id: 160,
     pregunta: "Indique el enunciado incorrecto en relación a los ingresos de derecho privado:",
     a: "Tendrán la consideración de ingresos de derecho privado el importe obtenido en la enajenación de bienes integrantes del patrimonio de las entidades locales como consecuencia de su desafectación como bienes de dominio público y posterior venta, aunque hasta entonces estuvieran sujetos a concesión administrativa.",
     b: "Constituyen ingresos de derecho privado de las entidades locales los rendimientos o productos de cualquier naturaleza derivados de su patrimonio.",
@@ -1460,7 +1442,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 163,
+    id: 161,
     pregunta: "La alteración de la calificación jurídica de los bienes de las Entidades locales requiere expediente en el que se acrediten su oportunidad y legalidad. El expediente deberá ser resuelto, previa información pública durante un mes, por la Corporación local respectiva, mediante acuerdo adoptado con:",
     a: "El voto favorable de la mayoría absoluta del número legal de miembros de la misma.",
     b: "El voto favorable de la mayoría relativa del número legal de miembros de la misma.",
@@ -1469,7 +1451,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 164,
+    id: 162,
     pregunta: "Señala cuál de las siguientes es una fuente indirecta de nuestro Derecho Administrativo:",
     a: "Los Reglamentos.",
     b: "La Jurisprudencia.",
@@ -1478,7 +1460,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 165,
+    id: 163,
     pregunta: "¿Qué tipo de fuente del Derecho Administrativo son los Reglamentos del Presidente del Gobierno?",
     a: "Directa.",
     b: "Indirecta.",
@@ -1487,7 +1469,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 166,
+    id: 164,
     pregunta: "¿Cómo se denominan las leyes por las que las Cortes Generales, en materia de competencia estatal, pueden atribuir a todas o alguna de las Comunidades Autónomas la facultad de dictar, para sí mismas, normas legislativas en el marco de los principios, bases y directrices fijados por una ley estatal?",
     a: "Leyes orgánicas.",
     b: "Leyes ordinarias.",
@@ -1496,7 +1478,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 167,
+    id: 165,
     pregunta: "¿Qué son los decretos legislativos?",
     a: "Disposiciones del Gobierno sobre derechos y deberes fundamentales.",
     b: "Disposiciones de las Cortes que contienen delegación legislativa.",
@@ -1505,7 +1487,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 168,
+    id: 166,
     pregunta: "En caso de extraordinaria y urgente necesidad, ¿qué disposición legislativa provisional podrá dictar el Gobierno?",
     a: "Decreto legislativo.",
     b: "Ley de bases.",
@@ -1514,7 +1496,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 169,
+    id: 167,
     pregunta: "Los Decretos-Leyes deberán de ser inmediatamente sometidos a debate y votación de totalidad:",
     a: "Al Senado.",
     b: "Al Gobierno.",
@@ -1523,7 +1505,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 170,
+    id: 168,
     pregunta: "Por la relación existente entre los reglamentos y la ley, GARRIDO FALLA Y ENTRENA CUESTA, clasifican los Reglamentos en:",
     a: "Dependientes o independientes.",
     b: "Ejecutivos e independientes.",
@@ -1532,7 +1514,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 171,
+    id: 169,
     pregunta: "El artículo 1.6º del Código Civil establece que la jurisprudencia complementará el ordenamiento jurídico con la doctrina que, de modo reiterado, establezca:",
     a: "El Tribunal Constitucional.",
     b: "La Audiencia Nacional.",
@@ -1541,7 +1523,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 172,
+    id: 170,
     pregunta: "Conforme dispone el artículo 86 de la CE, en caso de extraordinaria y urgente necesidad, el Gobierno podrá dictar disposiciones legislativas provisionales que tomarán la forma de:",
     a: "Leyes Orgánicas.",
     b: "Decretos-Leyes.",
@@ -1550,7 +1532,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 173,
+    id: 171,
     pregunta: "Los Decretos-Leyes deberán ser inmediatamente sometidos a debate y votación de totalidad al Congreso de los Diputados, convocado al efecto si no estuviere reunido, en el plazo de:",
     a: "Los treinta días siguientes a su promulgación.",
     b: "Los veinte días siguientes a su promulgación.",
@@ -1559,7 +1541,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 174,
+    id: 172,
     pregunta: "Las disposiciones del Gobierno que contengan legislación delegada recibirán el título de:",
     a: "Leyes Orgánicas.",
     b: "Decretos-Leyes.",
@@ -1568,7 +1550,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 175,
+    id: 173,
     pregunta: "Por la relación existente entre los Reglamentos y la ley, cabe distinguir entre:",
     a: "Reglamentos Ejecutivos y Reglamentos Independientes.",
     b: "Reglamentos Normativos y Reglamentos Legislativos.",
@@ -1577,7 +1559,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 176,
+    id: 174,
     pregunta: "Como consecuencia del principio de reserva de ley, la Administración no podrá, por vía reglamentaria:",
     a: "Establecer ni imponer penas.",
     b: "Establecer tributos ni otro tipo de exacciones, tasas, cánones, derechos de propaganda, ni otras cargas similares.",
@@ -1586,7 +1568,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 177,
+    id: 175,
     pregunta: "A tenor del artículo 81.1.º CE, son Leyes Orgánicas:",
     a: "Las que regulen el régimen electoral general.",
     b: "Las relativas al desarrollo de los derechos fundamentales y de las libertades públicas.",
@@ -1595,7 +1577,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 178,
+    id: 176,
     pregunta: "Los Reglamentos o disposiciones ministeriales son, respecto al Derecho Administrativo, una fuente:",
     a: "Directa.",
     b: "Directa subsidiaria.",
@@ -1604,7 +1586,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 179,
+    id: 177,
     pregunta: "La costumbre es, respecto al Derecho Administrativo, una fuente:",
     a: "Directa.",
     b: "Directa subsidiaria.",
@@ -1613,7 +1595,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 180,
+    id: 178,
     pregunta: "¿En qué consiste la costumbre?",
     a: "En una ley no escrita de obligado cumplimiento.",
     b: "Son conductas repetidas por los ciudadanos.",
@@ -1622,7 +1604,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 181,
+    id: 179,
     pregunta: "¿Qué es un Principio General del Derecho?",
     a: "Una norma creada por la sociedad.",
     b: "Un principio informador del derecho.",
@@ -1631,7 +1613,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 182,
+    id: 180,
     pregunta: "¿Dónde aparece reconocida la jerarquía normativa?",
     a: "En el código civil.",
     b: "En el código penal.",
@@ -1640,7 +1622,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 183,
+    id: 181,
     pregunta: "¿Cuándo va a regir la aplicación de la costumbre?",
     a: "Cuando no exista una ley aplicable.",
     b: "Cuando no existan principios generales del derecho.",
@@ -1649,7 +1631,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 184,
+    id: 182,
     pregunta: "¿Cuáles son los límites para aplicar la costumbre?",
     a: "Siempre que no sea contraria a la moral o al orden público.",
     b: "Siempre que no sea contraria al interés general.",
@@ -1658,7 +1640,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 185,
+    id: 183,
     pregunta: "¿Qué significa que la constitución tiene aplicabilidad directa?",
     a: "Que vincula a todos los ciudadanos.",
     b: "Que vincula a todos los poderes públicos.",
@@ -1667,7 +1649,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 186,
+    id: 184,
     pregunta: "¿Cuáles son las modalidades de reforma de la constitución?",
     a: "Reforma esencial y fundamental.",
     b: "Reforma principal y no esencial.",
@@ -1676,7 +1658,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 187,
+    id: 185,
     pregunta: "¿Qué mayoría es necesaria para la aprobación de la reforma de la Constitución?",
     a: "Por mayoría de tres tercios de cada cámara.",
     b: "Por mayoría de dos tercios del senado.",
@@ -1685,7 +1667,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 188,
+    id: 186,
     pregunta: "Una vez que se ha aprobado la reforma de la constitución ¿qué ocurre?",
     a: "Debe producirse la disolución de las cortes.",
     b: "Las nuevas cortes deben ratificar la decisión.",
@@ -1694,7 +1676,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 189,
+    id: 187,
     pregunta: "Respecto a la reforma no esencial de la constitución, ¿qué mayoría se necesita para su aprobación?",
     a: "Dos tercios de cada cámara.",
     b: "Tres quintos de cada cámara.",
@@ -1703,7 +1685,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 190,
+    id: 188,
     pregunta: "En caso de conflicto entre la constitución y una ley, ¿Cuál debe prevalecer?",
     a: "La ley que se dicte en primer lugar.",
     b: "La ley orgánica.",
@@ -1712,7 +1694,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 191,
+    id: 189,
     pregunta: "¿De qué poder del estado emana la ley?",
     a: "Poder judicial.",
     b: "Poder ejecutivo.",
@@ -1721,16 +1703,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 192,
-    pregunta: "¿En qué artículo de la Constitución se encuentran recogidas las leyes orgánicas?",
-    a: "91",
-    b: "71",
-    c: "61",
-    d: "81",
-    correcta: "d",
-  },
-  {
-    id: 193,
+    id: 190,
     pregunta: "¿Qué mayoría se exige para la aprobación de una ley orgánica?",
     a: "Mayoría absoluta del senado.",
     b: "Mayoría absoluta del congreso.",
@@ -1739,7 +1712,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 194,
+    id: 191,
     pregunta: "¿A través de qué ley delega las cortes en el gobierno la potestad de dictar normas con rango de ley?",
     a: "Ley de armonización.",
     b: "Ley marco.",
@@ -1748,7 +1721,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 195,
+    id: 192,
     pregunta: "¿Qué es una ley marco?",
     a: "Las leyes dictadas por las cortes para aquellas competencias sobre las que el Estado tenga potestad legislativa, pero son las comunidades quienes ejecutan.",
     b: "Las aprobadas por las cortes atribuyendo la facultad de dictar a todas o alguna de la comunidad en materia de competencia estatal, fijando los límites dentro de los cuales ejercitar la potestad.",
@@ -1757,7 +1730,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 196,
+    id: 193,
     pregunta: "Las normas administrativas vienen reguladas en:",
     a: "El derecho civil.",
     b: "El derecho mercantil.",
@@ -1766,7 +1739,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 197,
+    id: 194,
     pregunta: "La jerarquía de las fuentes del derecho administrativo vienen reguladas con carácter general en:",
     a: "La CE.",
     b: "El CC.",
@@ -1775,7 +1748,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 198,
+    id: 195,
     pregunta: "Las fuentes del ordenamiento jurídico español son:",
     a: "La ley y la jurisprudencia.",
     b: "La ley, la costumbre y los principios generales del Derecho.",
@@ -1784,7 +1757,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 199,
+    id: 196,
     pregunta: "La máxima fuente del derecho administrativo de carácter escrito es:",
     a: "Los Tratados Internacionales.",
     b: "Las Leyes.",
@@ -1793,7 +1766,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 200,
+    id: 197,
     pregunta: "La costumbre es una fuente del Derecho de carácter:",
     a: "Escrito.",
     b: "Indirecto.",
@@ -1802,7 +1775,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 201,
+    id: 198,
     pregunta: "El conjunto de opiniones de los estudiosos de la Ciencia del Derecho Administrativo, se denomina:",
     a: "La doctrina científica.",
     b: "La Jurisprudencia.",
@@ -1811,7 +1784,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 202,
+    id: 199,
     pregunta: "Se tiene que regular por ley orgánica:",
     a: "Las normas que traten del procedimiento administrativo común.",
     b: "Las normas de contratos de las Administraciones Públicas.",
@@ -1820,7 +1793,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 203,
+    id: 200,
     pregunta: "Las leyes ordinarias en general se aprobarán por mayoría:",
     a: "Absoluta.",
     b: "Simple.",
@@ -1829,7 +1802,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 204,
+    id: 201,
     pregunta: "Las leyes orgánicas se aprobarán por mayoría:",
     a: "Absoluta.",
     b: "Simple.",
@@ -1838,7 +1811,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 205,
+    id: 202,
     pregunta: "La ley de bases da lugar, en la delegación legislativa, a la aprobación por parte del Gobierno del Estado, de un:",
     a: "Texto refundido.",
     b: "Texto articulado.",
@@ -1847,7 +1820,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 206,
+    id: 203,
     pregunta: "La ley de autorización da lugar, en la delegación legislativa, a la aprobación por parte del Gobierno del Estado, de un:",
     a: "Texto refundido.",
     b: "Texto articulado.",
@@ -1856,7 +1829,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 207,
+    id: 204,
     pregunta: "Los decretos-leyes no podrán afectar a:",
     a: "Las subvenciones.",
     b: "Las ayudas económicas.",
@@ -1865,7 +1838,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 208,
+    id: 205,
     pregunta: "Se puede regular por decreto-ley:",
     a: "Las ayudas sociales urgentes.",
     b: "Los derechos de los ciudadanos del Título I de la CE.",
@@ -1874,7 +1847,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 209,
+    id: 206,
     pregunta: "Un Real Decreto del Consejo de Ministros es:",
     a: "Una disposición legislativa.",
     b: "Un reglamento.",
@@ -1883,7 +1856,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 210,
+    id: 207,
     pregunta: "Los reglamentos que se limitan a desarrollar una ley se denominan:",
     a: "Independientes.",
     b: "Ejecutivos.",
@@ -1892,7 +1865,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 211,
+    id: 208,
     pregunta: "Los reglamentos que se dictan en casos excepcionales de urgencia y necesidad se denominan:",
     a: "Independientes.",
     b: "Ejecutivos.",
@@ -1901,7 +1874,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 212,
+    id: 209,
     pregunta: "Las normas jurídicas de las Entidades Locales que regulan las relaciones o conductas de los ciudadanos se denominan:",
     a: "Reglamentos.",
     b: "Leyes.",
@@ -1910,7 +1883,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 213,
+    id: 210,
     pregunta: "Los Bandos en los Ayuntamientos son dictados por:",
     a: "El Pleno.",
     b: "Los alcaldes.",
@@ -1919,7 +1892,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 214,
+    id: 211,
     pregunta: "Los principios generales del derecho se aplicarán, conforme al Código Civil,",
     a: "Inmediatamente después de la Ley.",
     b: "En defecto de ley o costumbre.",
@@ -1928,7 +1901,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 215,
+    id: 212,
     pregunta: "Indique la jerarquía de las siguientes normas de mayor rango a menor rango:",
     a: "Ley ordinaria, Constitución Española y reglamento.",
     b: "Constitución Española, reglamento, costumbre y Ley.",
@@ -1937,7 +1910,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 216,
+    id: 213,
     pregunta: "El criterio constante y uniforme de aplicar el derecho mostrado en las Sentencias del Tribunal Supremo, se denomina:",
     a: "Costumbre.",
     b: "Jurisprudencia.",
@@ -1946,7 +1919,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 217,
+    id: 214,
     pregunta: "La ley que desarrolle un derecho fundamental deberá tener rango de ley",
     a: "Ordinaria.",
     b: "Especial.",
@@ -1955,7 +1928,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 218,
+    id: 215,
     pregunta: "Conteste la respuesta verdadera:",
     a: "Se permite la subdelegación de la delegación legislativa.",
     b: "Por medio de la delegación legislativa se puede aprobar una ley orgánica.",
@@ -1964,7 +1937,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 219,
+    id: 216,
     pregunta: "Conteste la respuesta verdadera:",
     a: "Los decretos-leyes no podrán regular el régimen de las CCAA.",
     b: "Los decretos-leyes son normas legislativas definitivas.",
@@ -1973,7 +1946,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 220,
+    id: 217,
     pregunta: "Conteste la respuesta falsa:",
     a: "El Texto Refundido exige una previa ley de autorización.",
     b: "El decreto-ley es una norma legislativa de carácter provisional.",
@@ -1982,7 +1955,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 221,
+    id: 218,
     pregunta: "Están motivados los actos administrativos:",
     a: "Siempre.",
     b: "Sólo si establecen obligaciones impuestas por los interesados.",
@@ -1991,7 +1964,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 222,
+    id: 219,
     pregunta: "Los actos administrativos serán válidos:",
     a: "Cuando se dicten por órgano competente.",
     b: "Cuando su contenido sea lícito.",
@@ -2000,7 +1973,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 223,
+    id: 220,
     pregunta: "La jerarquía se puede vulnerar por:",
     a: "Una disposición de carácter general.",
     b: "Una resolución de un superior jerárquico.",
@@ -2009,7 +1982,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 224,
+    id: 221,
     pregunta: "Son disposiciones administrativas que vulneran lo establecido en:",
     a: "Disposición reglamentaria.",
     b: "Disposición ejecutiva.",
@@ -2018,7 +1991,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 225,
+    id: 222,
     pregunta: "Los actos administrativos son ejecutivos con arreglo a lo establecido en:",
     a: "La ley 30/92.",
     b: "La costumbre.",
@@ -2027,7 +2000,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 226,
+    id: 223,
     pregunta: "Como norma general los actos administrativos producen efecto desde:",
     a: "Que la forma de su dictado.",
     b: "Su notificación.",
@@ -2036,7 +2009,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 227,
+    id: 224,
     pregunta: "¿Cuándo podrá otorgarse eficacia retroactiva a un acto administrativo?",
     a: "Cuando se dicten en sustitución de actos nulos.",
     b: "Cuando produzcan efectos desfavorables.",
@@ -2045,7 +2018,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 228,
+    id: 225,
     pregunta: "Toda notificación deberá ser cursada, desde que haya sido dictada, en el plazo de:",
     a: "10 días.",
     b: "15 días.",
@@ -2054,7 +2027,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 229,
+    id: 226,
     pregunta: "Las notificaciones se practicarán preferentemente:",
     a: "Por correo ordinario.",
     b: "Por medios electrónicos.",
@@ -2063,7 +2036,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 230,
+    id: 227,
     pregunta: "Cuando el interesado o su representante rechace la notificación:",
     a: "Se hará constar y se suspenderá el procedimiento.",
     b: "Se hará constar y se seguirá el procedimiento.",
@@ -2072,7 +2045,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 231,
+    id: 228,
     pregunta: "Cuando al interesado se le notifique por diversos cauces los actos administrativos, se tomará como fecha de notificación:",
     a: "La notificación escrita.",
     b: "La notificación electrónica.",
@@ -2081,7 +2054,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 232,
+    id: 229,
     pregunta: "En las notificaciones en papel, cuando el domicilio del interesado no se halle presente, se podrá hacer cargo de la misma:",
     a: "Cualquier persona mayor de catorce años que se encuentre en el domicilio.",
     b: "Cualquier persona mayor de edad que se encuentre en el domicilio.",
@@ -2090,7 +2063,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 233,
+    id: 230,
     pregunta: "Los interesados en un procedimiento son:",
     a: "El destinatario sea conocido.",
     b: "El destinatario sea una pluralidad determinada de personas.",
@@ -2099,7 +2072,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 234,
+    id: 231,
     pregunta: "Es causa de nulidad de pleno derecho:",
     a: "La incompetencia jerárquica.",
     b: "La incompetencia territorial.",
@@ -2108,7 +2081,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 235,
+    id: 232,
     pregunta: "Es causa de nulidad de pleno derecho:",
     a: "Un acto con contenido imposible.",
     b: "Un acto dictado con incompetencia formal.",
@@ -2117,7 +2090,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 236,
+    id: 233,
     pregunta: "Otros supuestos de nulidad de pleno derecho son los actos administrativos que sean constitutivos de infracción penal:",
     a: "En los procedimientos de simple gestión.",
     b: "En los procedimientos de gestión administrativa.",
@@ -2126,7 +2099,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 237,
+    id: 234,
     pregunta: "Es anulable:",
     a: "La incompetencia material.",
     b: "La incompetencia jerárquica.",
@@ -2135,7 +2108,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 238,
+    id: 235,
     pregunta: "La notificación por medios electrónicos será de carácter obligatorio, o a instancia expresa del interesado, se entenderá rechazada cuando hayan transcurrido:",
     a: "Diez días hábiles desde la puesta a disposición de la notificación sin que se acceda a su contenido.",
     b: "Diez días naturales desde la puesta a disposición de la notificación sin que se acceda a su contenido.",
@@ -2144,7 +2117,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 239,
+    id: 236,
     pregunta: "En los procedimientos iniciados de oficio, el vencimiento del plazo máximo establecido sin que se haya dictado y notificado resolución expresa produce:",
     a: "La caducidad, en todo caso.",
     b: "La caducidad en los procedimientos en que se ejerciten potestades sancionadoras o, en general, de intervención susceptibles de producir efectos desfavorables o de gravamen.",
@@ -2153,7 +2126,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 240,
+    id: 237,
     pregunta: "En los procedimientos iniciados a solicitud del interesado, el vencimiento del plazo máximo sin haberse notificado resolución expresa legitima al interesado para entenderla:",
     a: "Desestimada por silencio administrativo.",
     b: "Estimadas sus pretensiones por silencio administrativo.",
@@ -2162,7 +2135,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 241,
+    id: 238,
     pregunta: "En los casos de estimación por silencio administrativo, la resolución expresa posterior a la producción del acto sólo podrá dictarse de ser:",
     a: "Confirmatoria del mismo.",
     b: "Derogatoria del mismo.",
@@ -2171,7 +2144,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 242,
+    id: 239,
     pregunta: "Las Administraciones Públicas no iniciarán ninguna actuación material de ejecución de resoluciones que limite derechos:",
     a: "Que haya pasado el trámite de audiencia.",
     b: "Que haya resolución administrativa previa.",
@@ -2180,7 +2153,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 243,
+    id: 240,
     pregunta: "Como norma general, los actos de las Administraciones Públicas sujetos a Derecho Administrativo serán inmediatamente:",
     a: "Ejecutables.",
     b: "Recurribles.",
@@ -2189,7 +2162,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 244,
+    id: 241,
     pregunta: "Diga cuál de éstos no es un medio de ejecución forzosa:",
     a: "Apremio sobre el patrimonio.",
     b: "Multa coercitiva.",
@@ -2198,7 +2171,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 245,
+    id: 242,
     pregunta: "La ejecución subsidiaria se podrá dar en casos de actos:",
     a: "Personalísimos.",
     b: "Fungibles.",
@@ -2207,7 +2180,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 246,
+    id: 243,
     pregunta: "La compulsión sobre las personas se dará en aquellos casos de actos administrativos que impongan una obligación:",
     a: "Personalísima.",
     b: "Transferible.",
@@ -2216,7 +2189,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 247,
+    id: 244,
     pregunta: "Los términos que han de ser cumplimentados por los interesados se cumplirán en el plazo de:",
     a: "15 días.",
     b: "10 días.",
@@ -2225,7 +2198,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 248,
+    id: 245,
     pregunta: "Los interesados podrán, en cualquier momento del procedimiento anterior al trámite de audiencia, aducir alegaciones y aportar documentos u otros elementos de juicio:",
     a: "En cualquier momento del procedimiento.",
     b: "Solo en la fase de prueba.",
@@ -2234,7 +2207,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 249,
+    id: 246,
     pregunta: "Pondrán fin al procedimiento:",
     a: "La resolución.",
     b: "El desistimiento.",
@@ -2243,7 +2216,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 250,
+    id: 247,
     pregunta: "Diga cuál de los anteriores no se considera una fase del procedimiento administrativo:",
     a: "Instrucción.",
     b: "Impugnación.",
@@ -2252,7 +2225,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 251,
+    id: 248,
     pregunta: "Como regla general, el plazo de subsanación podrá ser ampliado prudencialmente hasta:",
     a: "5 días.",
     b: "10 días.",
@@ -2261,7 +2234,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 252,
+    id: 249,
     pregunta: "Contra el Acuerdo de acumulación de procedimientos:",
     a: "Se podrá interponer recurso en el plazo de 10 días.",
     b: "Se podrá interponer recurso en el plazo de 5 días.",
@@ -2270,7 +2243,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 253,
+    id: 250,
     pregunta: "En los procedimientos de responsabilidad patrimonial será preceptivo solicitar informe al servicio cuyo funcionamiento haya ocasionado la presunta lesión indemnizable:",
     a: "Por cinco días.",
     b: "Por diez días.",
@@ -2279,7 +2252,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 254,
+    id: 251,
     pregunta: "La presentación de una denuncia y la comparecencia en el trámite de información pública:",
     a: "No confieren, por sí solas, la condición de interesado.",
     b: "Confieren siempre la condición de interesado.",
@@ -2288,7 +2261,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 255,
+    id: 252,
     pregunta: "Toda notificación deberá ser cursada dentro del plazo de:",
     a: "Diez días.",
     b: "Quince días.",
@@ -2297,7 +2270,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 256,
+    id: 253,
     pregunta: "Los interesados podrán aportar documentos en cualquier fase del procedimiento anterior al trámite de audiencia:",
     a: "Solo si son requeridos.",
     b: "Siempre.",
@@ -2306,7 +2279,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 257,
+    id: 254,
     pregunta: "En los procedimientos sancionadores, la propuesta de resolución:",
     a: "Será vinculante.",
     b: "No podrá modificarse.",
@@ -2315,7 +2288,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 258,
+    id: 255,
     pregunta: "La resolución de los procedimientos administrativos:",
     a: "Debe ser motivada en todo caso.",
     b: "Resolverá todas las cuestiones planteadas.",
@@ -2324,7 +2297,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 259,
+    id: 256,
     pregunta: "Los procedimientos administrativos se impulsarán:",
     a: "A instancia de parte.",
     b: "De oficio en todos sus trámites.",
@@ -2333,7 +2306,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 260,
+    id: 257,
     pregunta: "El trámite de audiencia en el procedimiento será, con carácter general, por un plazo:",
     a: "No inferior a diez días ni superior a quince.",
     b: "No inferior a cinco días.",
@@ -2342,7 +2315,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 261,
+    id: 258,
     pregunta: "La terminación del procedimiento se podrá realizar:",
     a: "Por resolución.",
     b: "Por desistimiento.",
@@ -2351,7 +2324,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 262,
+    id: 259,
     pregunta: "Las resoluciones contendrán:",
     a: "La decisión.",
     b: "Los recursos que procedan.",
@@ -2360,7 +2333,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 263,
+    id: 260,
     pregunta: "Transcurrido qué plazo desde que se inició el procedimiento sin que haya recaído y se haya notificado resolución expresa podrá entenderse que la resolución es contraria a la solicitud:",
     a: "Un mes.",
     b: "Tres meses.",
@@ -2369,7 +2342,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 264,
+    id: 261,
     pregunta: "La Administración aceptará de plano el desistimiento o la renuncia y declarará concluso el procedimiento salvo que terceros interesados insten su continuación en el plazo de:",
     a: "Un mes.",
     b: "Veinte días.",
@@ -2378,7 +2351,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 265,
+    id: 262,
     pregunta: "En los procedimientos iniciados a solicitud del interesado, cuando se produzca su paralización por causa imputable al mismo, la Administración le advertirá que se producirá la caducidad del procedimiento transcurridos:",
     a: "Un mes.",
     b: "Tres meses.",
@@ -2387,7 +2360,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 266,
+    id: 263,
     pregunta: "Las medidas provisionales se deberán acordar en base a los principios de:",
     a: "Efectividad, proporcionalidad y mayor onerosidad.",
     b: "Necesidad, efectividad y menor onerosidad.",
@@ -2396,7 +2369,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 267,
+    id: 264,
     pregunta: "En los procedimientos de responsabilidad patrimonial el derecho a reclamar por parte de los interesados es de:",
     a: "1 año.",
     b: "4 años.",
@@ -2405,7 +2378,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 268,
+    id: 265,
     pregunta: "El impulso administrativo está sometido a:",
     a: "El principio de simplificación.",
     b: "El principio de legalidad.",
@@ -2414,7 +2387,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 269,
+    id: 266,
     pregunta: "La única cuestión incidental que suspenderá la tramitación del procedimiento será:",
     a: "La abstención.",
     b: "La recusación.",
@@ -2423,7 +2396,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 270,
+    id: 267,
     pregunta: "En las resoluciones de los procedimientos sancionadores:",
     a: "El órgano competente resolverá considerando únicamente los hechos probados.",
     b: "Se concederá al inculpado un plazo de diez días para alegaciones.",
@@ -2432,7 +2405,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 271,
+    id: 268,
     pregunta: "¿En qué casos se puede suspender la ejecución de una resolución ejecutiva?",
     a: "Si el interesado manifiesta a la Administración su intención de interponer recurso contencioso-administrativo contra resolución firme en vía administrativa.",
     b: "Si el interesado manifiesta su intención de interponer recurso de alzada.",
@@ -2441,7 +2414,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 272,
+    id: 269,
     pregunta: "En los casos de procedimientos de responsabilidad patrimonial:",
     a: "Transcurridos seis meses desde su inicio sin resolución se entenderá desestimada.",
     b: "Transcurridos seis meses desde su inicio sin resolución expresa podrá entenderse desestimada.",
@@ -2450,7 +2423,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 273,
+    id: 270,
     pregunta: "La Administración podrá revocar:",
     a: "Sus actos de gravamen cuando no exista dispensa o exención no permitida.",
     b: "Sus actos favorables mientras no hayan producido efectos.",
@@ -2459,7 +2432,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 274,
+    id: 271,
     pregunta: "En los casos de nulidad de una disposición el artículo 106.4 establece que:",
     a: "Se anularán todos los actos dictados en aplicación de la misma.",
     b: "Podrán conservarse los actos firmes dictados en aplicación de la norma.",
@@ -2468,7 +2441,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 275,
+    id: 272,
     pregunta: "En los procedimientos sancionadores, si el infractor reconoce su responsabilidad:",
     a: "El órgano competente aplicará reducción del 20%.",
     b: "El órgano competente aplicará reducción del 50%.",
@@ -2477,7 +2450,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 276,
+    id: 273,
     pregunta: "Las actuaciones complementarias deberán practicarse:",
     a: "En un plazo superior a quince días.",
     b: "En un plazo de siete días.",
@@ -2486,7 +2459,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 277,
+    id: 274,
     pregunta: "¿En qué momento puede la Administración revisar una disposición o acto nulo?",
     a: "En el plazo de cuatro años.",
     b: "Únicamente a solicitud del interesado.",
@@ -2495,7 +2468,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 278,
+    id: 275,
     pregunta: "La declaración de lesividad caducará:",
     a: "Transcurridos seis meses desde su iniciación sin declararse.",
     b: "Transcurridos cuatro años desde el acto.",
@@ -2504,7 +2477,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 279,
+    id: 276,
     pregunta: "En cuanto a la tramitación simplificada:",
     a: "Se podrá adoptar de oficio sin oposición del interesado.",
     b: "Cuando la Administración acuerde de oficio la tramitación simplificada, si el interesado manifiesta oposición expresa, continuará la ordinaria.",
@@ -2513,7 +2486,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 280,
+    id: 277,
     pregunta: "¿En qué caso podrá la Administración recabar pruebas?",
     a: "Cuando sean manifiestamente improcedentes.",
     b: "Cuando sean manifiestamente innecesarias.",
@@ -2522,7 +2495,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 281,
+    id: 278,
     pregunta: "Las alegaciones en el procedimiento administrativo podrán realizarse:",
     a: "Solo al inicio del procedimiento.",
     b: "En cualquier momento anterior al trámite de audiencia.",
@@ -2531,7 +2504,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 282,
+    id: 279,
     pregunta: "¿Se podrá prescindir del trámite de audiencia?",
     a: "Nunca.",
     b: "Antes de redactar la propuesta de resolución.",
@@ -2540,7 +2513,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 283,
+    id: 280,
     pregunta: "¿Cuál de los siguientes es un derecho de los interesados?",
     a: "No presentar documentos ya en poder de la Administración.",
     b: "Presentar documentos solo en papel.",
@@ -2549,7 +2522,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 284,
+    id: 281,
     pregunta: "La Ley de Régimen Jurídico del Sector Público se aplica al sector público formado por:",
     a: "La Administración General del Estado.",
     b: "Las Comunidades Autónomas.",
@@ -2558,7 +2531,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 285,
+    id: 282,
     pregunta: "Los particulares tendrán derecho a ser indemnizados por las Administraciones Públicas por toda lesión que sufran en cualquiera de sus bienes y derechos:",
     a: "Siempre que la lesión sea consecuencia del funcionamiento normal de los servicios públicos.",
     b: "Solo cuando exista culpa de la Administración.",
@@ -2567,7 +2540,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 286,
+    id: 283,
     pregunta: "Principios de intervención de las Administraciones Públicas para el desarrollo de una actividad:",
     a: "Aplicarán proporcionalidad y motivarán su necesidad.",
     b: "Aplicarán el principio de proporcionalidad y elegirán la medida menos restrictiva.",
@@ -2576,7 +2549,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 287,
+    id: 284,
     pregunta: "Las infracciones muy graves prescribirán:",
     a: "A los dos años.",
     b: "A los tres años.",
@@ -2585,7 +2558,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 288,
+    id: 285,
     pregunta: "Las Administraciones Públicas sirven con objetividad:",
     a: "Los intereses generales.",
     b: "Las políticas del Gobierno.",
@@ -2594,7 +2567,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 289,
+    id: 286,
     pregunta: "¿Cuándo prescriben las sanciones impuestas por faltas graves?",
     a: "A los cinco años.",
     b: "A los tres años.",
@@ -2603,7 +2576,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 290,
+    id: 287,
     pregunta: "Las sanciones administrativas de naturaleza pecuniaria podrán implicar privación de libertad:",
     a: "Cuando la infracción sea muy grave.",
     b: "Cuando afecte al interés público general.",
@@ -2612,16 +2585,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 291,
-    pregunta: "La responsabilidad administrativa se trata en el artículo de la Constitución:",
-    a: "137.",
-    b: "9.3.",
-    c: "103.",
-    d: "106.",
-    correcta: "d",
-  },
-  {
-    id: 292,
+    id: 288,
     pregunta: "Una disposición administrativa sancionadora puede tener efecto retroactivo:",
     a: "Respecto de todo tipo de preceptos.",
     b: "Nunca.",
@@ -2630,7 +2594,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 293,
+    id: 289,
     pregunta: "Las infracciones administrativas se clasificarán por la ley en:",
     a: "Leves, graves y muy graves.",
     b: "Leves y graves.",
@@ -2639,7 +2603,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 294,
+    id: 290,
     pregunta: "Las Administraciones Públicas podrán rectificar en cualquier momento:",
     a: "Errores materiales, de hecho o aritméticos.",
     b: "Solo errores aritméticos.",
@@ -2648,7 +2612,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 295,
+    id: 291,
     pregunta: "Cuando de la comisión de una infracción derive necesariamente la comisión de otra:",
     a: "Únicamente se sancionará la infracción más grave.",
     b: "Se impondrá la sanción de la primera infracción.",
@@ -2657,7 +2621,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 296,
+    id: 292,
     pregunta: "Las disposiciones sancionadoras producirán efecto retroactivo:",
     a: "Siempre.",
     b: "Solo cuando sean más gravosas.",
@@ -2666,7 +2630,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 297,
+    id: 293,
     pregunta: "La Ley del Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común establecía principios de:",
     a: "Simplificación únicamente.",
     b: "Potestad reglamentaria.",
@@ -2675,7 +2639,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 298,
+    id: 294,
     pregunta: "Las sanciones leves prescriben:",
     a: "A los seis meses.",
     b: "Al año.",
@@ -2684,7 +2648,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 299,
+    id: 295,
     pregunta: "Las sanciones impuestas por faltas muy graves prescriben:",
     a: "A los tres años.",
     b: "A los cuatro años.",
@@ -2693,7 +2657,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 300,
+    id: 296,
     pregunta: "La indemnización se calculará con arreglo a:",
     a: "Los criterios de valoración fiscal.",
     b: "Las normas aplicables ponderándose valoraciones predominantes en el mercado.",
@@ -2702,7 +2666,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 301,
+    id: 297,
     pregunta: "La Ley de Régimen Jurídico del Sector Público derogó:",
     a: "La Ley 30/1992.",
     b: "La Constitución.",
@@ -2711,7 +2675,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 302,
+    id: 298,
     pregunta: "¿Cuál es el objeto de la Ley 40/2015?",
     a: "Regular exclusivamente la potestad sancionadora.",
     b: "Establecer y regular las bases del régimen jurídico de las Administraciones Públicas y el sistema de responsabilidad.",
@@ -2720,7 +2684,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 303,
+    id: 299,
     pregunta: "El sector público comprende:",
     a: "La Administración General del Estado.",
     b: "Las Administraciones de las Comunidades Autónomas y Entidades Locales.",
@@ -2729,7 +2693,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 304,
+    id: 300,
     pregunta: "Cuando una Administración Pública establezca medidas limitativas de derechos deberá:",
     a: "Aplicar el principio de proporcionalidad y elegir la medida menos restrictiva.",
     b: "Elegir la medida más rápida.",
@@ -2738,7 +2702,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 305,
+    id: 301,
     pregunta: "Entre los principios de la potestad sancionadora se encuentran:",
     a: "Legalidad.",
     b: "Irretroactividad.",
@@ -2747,7 +2711,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 306,
+    id: 302,
     pregunta: "Se regulará exclusivamente por norma con rango de Ley:",
     a: "El ejercicio de la potestad sancionadora.",
     b: "Las circulares administrativas.",
@@ -2756,7 +2720,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 307,
+    id: 303,
     pregunta: "Las disposiciones sancionadoras favorables se aplicarán retroactivamente:",
     a: "Solo a los presuntos infractores.",
     b: "Solo a la tipificación.",
@@ -2765,7 +2729,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 308,
+    id: 304,
     pregunta: "Por el principio de tipicidad, solo una Ley puede:",
     a: "Establecer infracciones administrativas.",
     b: "Delimitar sanciones administrativas.",
@@ -2774,7 +2738,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 309,
+    id: 305,
     pregunta: "Podrán ser sancionadas por hechos constitutivos de infracciones administrativas:",
     a: "Personas físicas.",
     b: "Personas jurídicas.",
@@ -2783,7 +2747,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 310,
+    id: 306,
     pregunta: "Una Ley puede reconocer capacidad de obrar a:",
     a: "Grupos de afectados.",
     b: "Uniones y entidades sin personalidad jurídica.",
@@ -2792,7 +2756,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 311,
+    id: 307,
     pregunta: "Cuando el cumplimiento de una obligación corresponda a varias personas conjuntamente:",
     a: "Responderán solidariamente como regla general.",
     b: "Responderán siempre individualmente.",
@@ -2801,7 +2765,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 312,
+    id: 308,
     pregunta: "Las sanciones administrativas muy graves podrán implicar privación de libertad:",
     a: "Sí, en casos excepcionales.",
     b: "Solo con autorización judicial.",
@@ -2810,7 +2774,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 313,
+    id: 309,
     pregunta: "La graduación de la sanción considerará especialmente:",
     a: "El grado de culpabilidad o intencionalidad.",
     b: "La continuidad o persistencia en la conducta infractora.",
@@ -2819,7 +2783,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 314,
+    id: 310,
     pregunta: "Las responsabilidades administrativas derivadas de una infracción:",
     a: "Son incompatibles con otras medidas.",
     b: "Implican siempre reposición.",
@@ -2828,7 +2792,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 315,
+    id: 311,
     pregunta: "El plazo de prescripción de infracciones continuadas comenzará:",
     a: "Desde la comisión inicial.",
     b: "Desde el descubrimiento.",
@@ -2837,7 +2801,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 316,
+    id: 312,
     pregunta: "Las sanciones impuestas por faltas leves prescriben:",
     a: "A los tres años.",
     b: "A los dos años.",
@@ -2846,7 +2810,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 317,
+    id: 313,
     pregunta: "No podrán sancionarse los hechos ya sancionados cuando exista identidad de:",
     a: "Sujeto.",
     b: "Hecho.",
@@ -2855,7 +2819,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 318,
+    id: 314,
     pregunta: "Los particulares tendrán derecho a ser indemnizados:",
     a: "Por toda lesión grave.",
     b: "Solo por funcionamiento anormal.",
@@ -2864,7 +2828,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 319,
+    id: 315,
     pregunta: "El daño alegado habrá de ser:",
     a: "Efectivo.",
     b: "Evaluable económicamente.",
@@ -2873,7 +2837,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 320,
+    id: 316,
     pregunta: "La lesión puede producirse también por causa de:",
     a: "Actos legislativos no expropiatorios.",
     b: "Norma declarada inconstitucional.",
@@ -2882,7 +2846,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 321,
+    id: 317,
     pregunta: "La indemnización de lesiones producidas por la Administración:",
     a: "Cabrá solo si el particular no tiene el deber jurídico de soportarlas.",
     b: "No cabrá por daños imprevisibles según el estado de la ciencia.",
@@ -2891,7 +2855,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 322,
+    id: 318,
     pregunta: "La indemnización se calculará según criterios establecidos en:",
     a: "La legislación fiscal.",
     b: "La legislación de expropiación forzosa.",
@@ -2900,7 +2864,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 323,
+    id: 319,
     pregunta: "En casos de muerte o lesiones, la indemnización podrá tomar como referencia:",
     a: "El IPC.",
     b: "La Ley de Presupuestos.",
@@ -2909,7 +2873,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 324,
+    id: 320,
     pregunta: "La Administración que hubiera indemnizado a los lesionados exigirá responsabilidad a su personal ponderando:",
     a: "El resultado dañoso.",
     b: "El grado de culpabilidad.",
@@ -2918,7 +2882,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 325,
+    id: 321,
     pregunta: "¿Cómo se pueden convocar y celebrar las sesiones del órgano colegiado?",
     a: "De manera presencial siempre.",
     b: "Tanto de manera presencial como a distancia.",
@@ -2927,7 +2891,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 326,
+    id: 322,
     pregunta: "¿Qué medios electrónicos se consideran válidos para una sesión a distancia?",
     a: "Telefónicos y audiovisuales.",
     b: "Correo electrónico, audioconferencias y videoconferencias.",
@@ -2936,7 +2900,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 327,
+    id: 323,
     pregunta: "¿Cuándo se entiende válidamente constituido el órgano colegiado?",
     a: "Cuando asistan presidente, secretario y la mitad de miembros.",
     b: "Cuando asistan presidente, secretario y la totalidad.",
@@ -2945,7 +2909,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 328,
+    id: 324,
     pregunta: "¿En qué caso pueden celebrar sesión sin convocatoria previa?",
     a: "Cuando asistan presidente, secretario y la mitad.",
     b: "Cuando asistan presidente, secretario o suplentes y la totalidad de miembros.",
@@ -2954,7 +2918,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 329,
+    id: 325,
     pregunta: "Respecto al régimen de convocatorias del órgano colegiado:",
     a: "Siempre viene previsto en la ley.",
     b: "Podrán establecerlo siempre.",
@@ -2963,7 +2927,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 330,
+    id: 326,
     pregunta: "¿Cómo se envían las convocatorias?",
     a: "Siempre por medios electrónicos.",
     b: "Salvo que no resulte posible, por medios electrónicos.",
@@ -2972,7 +2936,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 331,
+    id: 327,
     pregunta: "¿Qué tiene que contener la convocatoria?",
     a: "Los asistentes y deliberaciones.",
     b: "Orden del día, condiciones de la sesión, sistema de conexión y medios técnicos.",
@@ -2981,7 +2945,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 332,
+    id: 328,
     pregunta: "¿Cuándo se puede debatir un asunto fuera del orden del día?",
     a: "Con la mitad de miembros.",
     b: "Con presidente y secretario.",
@@ -2990,7 +2954,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 333,
+    id: 329,
     pregunta: "¿Cómo se adoptan los acuerdos?",
     a: "Por mayoría absoluta.",
     b: "Por unanimidad.",
@@ -2999,7 +2963,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 334,
+    id: 330,
     pregunta: "En reuniones a distancia, los acuerdos se entienden adoptados:",
     a: "En la sede del presidente.",
     b: "En el lugar más cercano a la sede.",
@@ -3008,7 +2972,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 335,
+    id: 331,
     pregunta: "¿Cuándo quedan exentos de responsabilidad los miembros del órgano colegiado?",
     a: "Cuando no voten.",
     b: "Cuando voten en contra o se abstengan.",
@@ -3017,7 +2981,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 336,
+    id: 332,
     pregunta: "¿Quién expide el certificado sobre los acuerdos?",
     a: "El presidente.",
     b: "El secretario.",
@@ -3026,7 +2990,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 337,
+    id: 333,
     pregunta: "¿Cómo será expedido el certificado?",
     a: "Por medios electrónicos salvo imposibilidad.",
     b: "Siempre por medios electrónicos.",
@@ -3035,7 +2999,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 338,
+    id: 334,
     pregunta: "¿Quiénes pueden solicitar el certificado?",
     a: "Cualquier ciudadano.",
     b: "El interesado.",
@@ -3044,7 +3008,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 339,
+    id: 335,
     pregunta: "¿Quién levanta el acta?",
     a: "Los miembros.",
     b: "El presidente.",
@@ -3053,7 +3017,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 340,
+    id: 336,
     pregunta: "¿Qué debe contener el acta?",
     a: "Asistentes y sistema de conexión.",
     b: "Orden del día y medios técnicos.",
@@ -3062,7 +3026,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 341,
+    id: 337,
     pregunta: "¿Cuándo se debe aprobar el acta?",
     a: "En la misma sesión.",
     b: "En la misma o en la inmediata siguiente.",
@@ -3071,7 +3035,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 342,
+    id: 338,
     pregunta: "¿Quién da el visto bueno al acta?",
     a: "El presidente.",
     b: "El órgano colegiado.",
@@ -3080,7 +3044,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 343,
+    id: 339,
     pregunta: "¿En qué casos puede sustituirse al presidente?",
     a: "Vacante, ausencia, enfermedad, abstención o recusación.",
     b: "Vacante, ausencia, enfermedad u otra causa legal.",
@@ -3089,7 +3053,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 344,
+    id: 340,
     pregunta: "¿Quién sustituye al presidente?",
     a: "El vicepresidente.",
     b: "Vicepresidente y, en su defecto, miembro de mayor edad.",
@@ -3098,7 +3062,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 345,
+    id: 341,
     pregunta: "¿Con cuánta antelación deben recibir la convocatoria los miembros del órgano colegiado?",
     a: "2 días.",
     b: "Antelación mínima de 2 días.",
@@ -3107,7 +3071,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 346,
+    id: 342,
     pregunta: "¿En qué casos se puede sustituir a un miembro del órgano colegiado?",
     a: "Ausencia, vacante o enfermedad.",
     b: "Ausencia, enfermedad o causa justificada.",
@@ -3116,7 +3080,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 347,
+    id: 343,
     pregunta: "¿Cuándo estamos ante un órgano colegiado?",
     a: "Cuando lo integran 3 personas.",
     b: "Cuando lo integran 4 personas.",
@@ -3125,7 +3089,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 348,
+    id: 344,
     pregunta: "¿Qué carácter tiene la actuación de los órganos administrativos?",
     a: "Preceptivo.",
     b: "Voluntario.",
@@ -3134,7 +3098,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 349,
+    id: 345,
     pregunta: "¿Qué es requisito para la creación de un órgano administrativo?",
     a: "Determinación de integración.",
     b: "Delimitación de funciones y competencia.",
@@ -3143,7 +3107,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 350,
+    id: 346,
     pregunta: "¿Cuándo no se podrán crear órganos?",
     a: "Cuando supongan duplicidad con otros existentes.",
     b: "Cuando sean similares.",
@@ -3152,7 +3116,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 351,
+    id: 347,
     pregunta: "¿Cómo dirigirán los órganos administrativos las actividades de órganos dependientes?",
     a: "Mediante supervisión.",
     b: "Mediante instrucciones.",
@@ -3161,7 +3125,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 352,
+    id: 348,
     pregunta: "¿Cómo puede articularse la administración consultiva?",
     a: "Mediante órganos genéricos.",
     b: "Mediante órganos específicos.",
@@ -3170,7 +3134,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 353,
+    id: 349,
     pregunta: "¿Cómo es la competencia administrativa?",
     a: "Renunciable.",
     b: "Irrenunciable.",
@@ -3179,7 +3143,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 354,
+    id: 350,
     pregunta: "¿Qué competencias no podrán ser objeto de delegación?",
     a: "Asuntos de Jefatura del Estado.",
     b: "Presidencia del Gobierno.",
@@ -3188,7 +3152,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 355,
+    id: 351,
     pregunta: "Las resoluciones adoptadas por delegación se consideran dictadas:",
     a: "Por el órgano delegante.",
     b: "Por el órgano delegado.",
@@ -3197,7 +3161,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 356,
+    id: 352,
     pregunta: "La delegación será revocable:",
     a: "Nunca.",
     b: "En un mes.",
@@ -3206,7 +3170,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 357,
+    id: 353,
     pregunta: "¿Qué circunstancias justifican la avocación?",
     a: "Índole económica.",
     b: "Índole técnica.",
@@ -3215,7 +3179,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 358,
+    id: 354,
     pregunta: "¿Quién puede avocar en delegación entre órganos no jerárquicamente dependientes?",
     a: "El delegado.",
     b: "El delegante.",
@@ -3224,7 +3188,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 359,
+    id: 355,
     pregunta: "¿Qué recurso cabe contra el acuerdo de avocación?",
     a: "Súplica.",
     b: "Reforma.",
@@ -3233,7 +3197,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 360,
+    id: 356,
     pregunta: "¿Cuándo puede darse una encomienda de gestión?",
     a: "Por razones de eficacia.",
     b: "Por falta de medios técnicos.",
@@ -3242,7 +3206,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 361,
+    id: 357,
     pregunta: "¿Qué supone la encomienda de gestión?",
     a: "Cesión de titularidad.",
     b: "Cesión del ejercicio.",
@@ -3251,7 +3215,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 362,
+    id: 358,
     pregunta: "Sobre la delegación de firma:",
     a: "Altera la competencia.",
     b: "No requiere publicación para su validez.",
@@ -3260,7 +3224,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 363,
+    id: 359,
     pregunta: "¿Cuáles son motivos de abstención?",
     a: "Interés personal.",
     b: "Vínculo matrimonial.",
@@ -3269,7 +3233,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 364,
+    id: 360,
     pregunta: "¿Quiénes pueden promover la recusación?",
     a: "Interesados al inicio.",
     b: "Interesados en cualquier momento.",
@@ -3278,7 +3242,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 365,
+    id: 361,
     pregunta: "¿En qué plazo resolverá el superior si el recusado niega la causa?",
     a: "15 días.",
     b: "3 días.",
@@ -3287,7 +3251,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "b",
   },
   {
-    id: 366,
+    id: 362,
     pregunta: "¿Qué recurso cabe contra resoluciones sobre recusación?",
     a: "Súplica.",
     b: "Reforma.",
@@ -3296,7 +3260,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 367,
+    id: 363,
     pregunta: "Delegación de competencias y revocación:",
     a: "No deben publicarse.",
     b: "Solo se publica delegación.",
@@ -3305,7 +3269,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 368,
+    id: 364,
     pregunta: "La avocación debe realizarse:",
     a: "Mediante acuerdo motivado sin recurso.",
     b: "Con recurso en 10 días.",
@@ -3314,7 +3278,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 369,
+    id: 365,
     pregunta: "Delegar la firma:",
     a: "No altera la competencia.",
     b: "Altera la competencia.",
@@ -3323,7 +3287,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 370,
+    id: 366,
     pregunta: "Cuando un órgano se estime incompetente:",
     a: "Remitirá actuaciones al órgano competente notificándolo.",
     b: "Resolverá igualmente.",
@@ -3332,7 +3296,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "a",
   },
   {
-    id: 371,
+    id: 367,
     pregunta: "Cuando la falta de competencia es apreciada por interesados:",
     a: "Pueden requerir inhibición.",
     b: "No pueden pedir inhibición.",
@@ -3341,7 +3305,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 372,
+    id: 368,
     pregunta: "En la Ley 40/2015, “conocer” significa:",
     a: "Tener relación con interesados.",
     b: "Saber mucho de un tema.",
@@ -3350,7 +3314,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "c",
   },
   {
-    id: 373,
+    id: 369,
     pregunta: "Son funciones del presidente de un órgano colegiado:",
     a: "Presidir sesiones.",
     b: "Dirimir empates.",
@@ -3359,7 +3323,7 @@ export const derechoPenalQuestions: Question[] = [
     correcta: "d",
   },
   {
-    id: 374,
+    id: 370,
     pregunta: "¿Quién puede ser secretario de un órgano colegiado?",
     a: "Persona al servicio de la Administración.",
     b: "Funcionario.",

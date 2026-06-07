@@ -12,7 +12,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 2,
-  pregunta: "¿Cuál es la sanción prevista para las infracciones graves?",
+  pregunta: "¿Cuál es la sanción prevista para las infracciones graves de tráfico?",
   a: "Hasta 100 euros",
   b: "Hasta 200 euros",
   c: "Hasta 500 euros",
@@ -39,7 +39,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 5,
-  pregunta: "En el supuesto de la infracción muy grave relativa a incumplir las normas sobre autorización administrativa, podrá existir una sanción de suspensión de la autorización de:",
+  pregunta: "En el supuesto de la infracción muy grave relativa a incumplir las normas sobre autorización administrativa de tráfico, podrá existir una sanción de suspensión de la autorización de:",
   a: "1 año",
   b: "Hasta 1 año",
   c: "6 meses",
@@ -48,7 +48,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 6,
-  pregunta: "Respecto a la pregunta anterior, en el caso de realización de actividades durante el tiempo de suspensión de la autorización llevará aparejada una nueva suspensión de la autorización:",
+  pregunta: "En el caso de realización de actividades durante el tiempo de suspensión de la autorización de tráfico llevará aparejada una nueva suspensión de la autorización:",
   a: "6 meses al cometerse el primer quebrantamiento y de hasta un año si se produce un segundo quebrantamiento",
   b: "6 meses al cometerse el primer quebrantamiento y un año si se produce un segundo quebrantamiento",
   c: "Un año al cometerse el primer quebrantamiento y de hasta 6 meses si se produce un segundo sucesivos quebrantamientos",
@@ -66,7 +66,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 8,
-  pregunta: "¿Cuál es el porcentaje en el que se podrá ver incrementada la cuantía de las multas?",
+  pregunta: "¿Cuál es el porcentaje en el que se podrá ver incrementada la cuantía de las multas de tráfico?",
   a: "En un 10%",
   b: "En un 50%",
   c: "En un 30%",
@@ -264,7 +264,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 30,
-  pregunta: "Como regla general, ¿cómo se notificarán las denuncias?",
+  pregunta: "Como regla general, ¿cómo se notificarán las denuncias de tráfico?",
   a: "En la dirección electrónica vial",
   b: "En el domicilio que conste en tráfico",
   c: "En el acto",
@@ -273,7 +273,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 31,
-  pregunta: "Si no se notifiquen en el acto, ¿cómo se realizarán?",
+  pregunta: "Si no se notifiquen en el acto las denuncias de tráfico, ¿cómo se realizarán?",
   a: "En la dirección electrónica vial",
   b: "En el domicilio que hubiese indicado para el procedimiento",
   c: "En el domicilio que conste en tráfico",
@@ -282,7 +282,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 32,
-  pregunta: "Si nadie se hace cargo de la notificación, ¿qué se hace?",
+  pregunta: "Si nadie se hace cargo de la notificación de tráfico, ¿qué se hace?",
   a: "Se publicará en el BOE",
   b: "Se dejará constancia del intento junto con el día y la hora en que se intentó y se practicará de nuevo a los 3 días",
   c: "Se dejará constancia del intento junto con el día y la hora en que se intentó y se practicará de nuevo dentro de los 3 días siguientes",
@@ -1281,7 +1281,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 143,
-  pregunta: "Las infracciones leves serán sancionadas con multa de hasta:",
+  pregunta: "Las infracciones leves de tráfico serán sancionadas con multa de hasta:",
   a: "300 euros.",
   b: "200 euros.",
   c: "100 euros.",
@@ -1290,7 +1290,7 @@ export const traficoQuestions: Question[] = [
 },
 {
   id: 144,
-  pregunta: "Las infracciones graves serán sancionadas con multa de:",
+  pregunta: "Las infracciones graves de tráfico serán sancionadas con multa de:",
   a: "Hasta 200 euros.",
   b: "200 euros.",
   c: "500 euros.",
